@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+<br><br><br>
+
+
+<!-- Section des publications -->
+<div class="container">
+  <div class="row"> <!-- Ajout de la ligne (row) -->
+
+      <!-- Publication exemple 1 -->
+      <div class="col-md-3"> <!-- Chaque carte occupe 3 colonnes -->
+          <div class="card mb-4">
+              <img src="assets/images/Champs.jpg" alt="Image de la publication 1" class="card-img-top">
+              <div class="card-body">
+                  <h5 class="card-title">Comment planifier efficacement votre saison de récolte ?</h5>
+                  <p class="card-text">17 octobre 2023</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                      Lire plus
+                  </button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Ajoutez les autres publications de la même manière ... -->
+
+  </div> <!-- Fin de la ligne (row) -->
+</div>
+
+
+<!-- Modal pour la publication 1 -->
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Entête du modal -->
+            <div class="modal-header">
+                <h4 class="modal-title">Titre de la publication 1</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Corps du modal -->
+            <div class="modal-body">
+                Contenu complet de la publication...
+            </div>
+            <!-- Pied de page du modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

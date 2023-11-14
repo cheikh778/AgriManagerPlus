@@ -17,6 +17,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { Page404Component } from './page404/page404.component';
 import { Page403Component } from './page403/page403.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { Page403Component } from './page403/page403.component';
     PublicationsComponent,
     Page404Component,
     Page403Component,
+    SidebarComponent,
 
   ],
   imports: [

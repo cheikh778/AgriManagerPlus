@@ -14,7 +14,16 @@ body {
 }
 
 .navbar {
+  top: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  height: 60px;
+}
+.navbar-brand img{
+  top: 0;
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 
@@ -34,16 +43,6 @@ body {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   background-color: #28a745;
   color: #fff;
-}
-#joinUsSection h2{
-    font-size :3rem ;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    background-color: #28a745;
-    color: #fff;
-}
-#joinUsSection p{
-  font-style: bold;
 }
 /*slides*/
 #equipe .carousel {
@@ -179,35 +178,37 @@ footer h4 {
 }
 .carousel-control-prev-icon,.carousel-control-next-icon{
   background-color: #28a745;
-  background-origin: padding-box;
-  border: #28a745 solid 2px;
-  border-radius: 50%;
 }
-/*loader
-.hidden {
-  display: none;
-}
-
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
+#app-container {
+  max-width: 900px;
+  margin: 2em auto;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.fas.fa-seedling {
-  font-size: 3em;
-  animation: fadeInOut 1.5s infinite;
+h1 {
+  color: #28a745;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0.2; }
-  50% { opacity: 1; }
-  100% { opacity: 0.2; }
-}*/
+h2 {
+  color: #28a745;
+  margin-top: 2em;
+}
+
+ul {
+  margin-top: 1em;
+}
+
+li {
+  margin-bottom: 1em;
+}
+.col-md-6 img
+{
+  width: 700px;
+  height: 700px;
+}

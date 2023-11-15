@@ -1,5 +1,5 @@
 import { Component, Renderer2, ElementRef} from '@angular/core';
-import { Chart } from 'chart.js';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,11 @@ import { Chart } from 'chart.js';
 export class AppComponent {
   title = 'AgriManagerPlus';
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+
+
+  }
 
   ngOnInit() {
     setTimeout(() => {

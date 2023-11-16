@@ -1,134 +1,224 @@
+<!-- SIDEBAR -->
+<section [ngClass]="status ? 'hide' : ''" id="sidebar">
+  <a class="brand" href="paysanDashboard">
+    <!-- <i class='bx bxs-smile'></i>
+    <span class="text">AdminHub</span> -->
+    <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
+  </a>
+  <ul class="side-menu top">
+    <li class="active">
+      <a href="paysanDashboard">
+        <i class='bx bxs-dashboard' ></i>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='fas fa-seedling'> &nbsp;</i>
+        <span class="text">Les Cultures</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-group'></i>
+        <span class="text">Les employés</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-store-alt'></i>
+        <span class="text">Materiels</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-basket'></i>
+        <span class="text">Semences</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bxs-layer-plus'></i>
+        <span class="text">Parcelles Agricoles</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-water'></i>
+        <span class="text">Gestion de l'eau</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-task'></i>
+        <span class="text">Tâches</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-repost'></i>
+        <span class="text">Publier une Culture</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a href="#">
+        <i class='bx bxs-cog' ></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a class="logout" href="#">
+        <i class='bx bxs-log-out-circle' ></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- SIDEBAR -->
 
 
-<div class="container">
-  <div class="topbar">
-    <div class="logo">
-      <h2>AgriManager+.</h2>
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- navbar.component.html -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+    <div class="dropdown">
+      <a (click)="toggleNotificationDropdown()" class="notification" href="">
+        <i class='bx bxs-bell'></i>
+        <span class="num">8</span>
+      </a>
+      <div *ngIf="showNotificationDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Notification -->
+        <a href="#">Notification 1</a>
+        <a href="#">Notification 2</a>
+        <!-- Ajoutez d'autres éléments selon vos besoins -->
+      </div>
     </div>
-    <div class="search">
-      <input name="search" placeholder="search here" type="text">
-      <label for="search"><i class="fas fa-search"></i></label>
+    <div class="dropdown">
+      <a (click)="toggleProfileDropdown()" class="profile" href="">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+      <div *ngIf="showProfileDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Profile -->
+        <a href="#">Mon Profil</a>
+        <a href="#">Paramètres</a>
+        <a href="#">Déconnexion</a>
+      </div>
     </div>
-    <i class="fas fa-bell"></i>
-    <div class="user">
-      <img alt="" src="user.png">
-    </div>
-  </div>
-  <div class="sidebar">
-    <ul>
-      <li>
-        <a href="#">
-          <i class="fas fa-th-large"></i>
-          <div>Dashboard</div>
-        </a>
-      </li>
-      <!-- <li>
-          <a href="#">
-              <i class="fas fa-seedling"></i>
-              <div>Cultures</div>
-          </a>
-      </li> -->
-      <li class="dropdown">
-        <a href="#">
-          <i class="fas fa-seedling"></i>
-          <div>Cultures</div>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Culture 1</a></li>
-          <li><a href="#">Culture 2</a></li>
-          <li><a href="#">Culture 3</a></li>
-          <!-- Ajoutez autant d'éléments de liste que nécessaire -->
+  </nav>
+
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+          </li>
         </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-tractor"></i>
-          <div>Materiels</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-users"></i>
-          <div>Employees</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-chart-bar"></i>
-          <div>Analytics</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-hand-holding-usd"></i>
-          <div>Earnings</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-cog"></i>
-          <div>Settings</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-question"></i>
-          <div>Help</div>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="main">
-
-    <marquee><H1 class="text-center" style="color: #28a745;">Ajouter un projet Agricole</H1></marquee>
-    <div class="add-culture-form">
-      <h2>Ajouter une culture</h2>
-      <form action="#" id="cultureForm" method="post">
-        <div class="form-group">
-          <label for="nomProjet">Nom du Projet:</label>
-          <input id="nomProjet" name="nomProjet" required type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="dateDebut">Date de Début:</label>
-          <input id="dateDebut" name="dateDebut" required type="date">
-        </div>
-
-        <div class="form-group">
-          <label for="dateFin">Date de Fin:</label>
-          <input id="dateFin" name="dateFin" required type="date">
-        </div>
-
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <textarea id="description" name="description" required rows="4"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="lieu">Lieu:</label>
-          <input id="lieu" name="lieu" required type="text">
-        </div>
-        <div class="form-group">
-          <label for="tache">Tache:</label>
-          <Select class="form-group">
-            <option value="">Choisir une tâche</option>
-            <option value="Agriculture">Agriculture</option>
-            <option value="Forestry">Forestry</option>
-
-          </Select>
-        </div>
-        <div class="form-group">
-          <label for="semence">Semence:</label>
-          <Select class="form-group">
-            <option value="">Choisir une semence</option>
-            <option value="Agriculture">Agriculture</option>
-            <option value="Forestry">Forestry</option>
-
-          </Select>
-        </div>
-
-        <button type="submit">Ajouter Culture</button>
-      </form>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
     </div>
-  </div>
+
+    <div class="table-data">
+      <div class="order">
+        <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
+        <div class="head">
+          <div class="container mt-3">
+
+            <div class="row justify-content-center mt-4">
+
+              <div class="col-6 ">
+
+                    <form >
+
+                      <div class="mb-3">
+                        <label class="form-label" for="name">
+                          <i class="fas fa-user"></i> Nom
+                        </label>
+                        <input  class="form-control"
+                               id="name" name="nom"
+                               placeholder="Entrez votre nom " type="text">
+                      </div>
+
+                      <div class="mb-3">
+                        <label  class="form-label">
+                          <i class="fas fa-artstation"></i> Description
+                        </label>
+                        <textarea class="form-control">
+
+                        </textarea>
+                      </div>
+
+                      <div class="mb-3">
+                        <label  class="form-label">
+                          <i class="fas fa-image"></i> Tâche
+                        </label>
+                        <select  class="form-control"
+                                name="departement">
+                          <option value="">--Selectionner une tâche</option>
+                          <option></option>
+                        </select>
+                      </div>
+                      <div class="mb-1">
+                        <label class="form-label" for="filiere">
+                          <i class="fas fa-image"></i> Parcelle Agricole
+                        </label>
+                        <select class="form-control" id="filiere" name="filiere">
+                          <option value="">--Selectionner votre champ de culture</option>
+                          <option ></option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="form-label" for="promotion">
+                          <i class="fas fa-image"></i> Promotion
+                        </label>
+                        <Select class="form-control" id="promotion" name="promotion">
+                          <option value="">--Selectionner une Promotion</option>
+                          <option></option>
+                        </Select>
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        <i class="fas fa-user-plus"></i> Ajouter
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
+        </div>
+
+
+
+
+
+
+
+  </main>
+  <!-- MAIN -->
+</section>
+<!-- CONTENT -->

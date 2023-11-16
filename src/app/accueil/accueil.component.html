@@ -167,46 +167,110 @@
     <div class="container mt-5" id="contact">
         <h2 class="text-center mb-4">Contactez-nous</h2>
 
-        <div class="row" id="formulaire">
-            <!-- Formulaire de contact à gauche -->
-            <div class="col-lg-6">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name" placeholder="Entrez votre nom">
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="wrapper">
+                <div class="row mb-5">
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-map-marker"></span>
+                      </div>
+                      <div class="text text-bolder">
+                        <p style="color:#28a745"><span><strong>Address:</strong>&nbsp; </span> <strong>Rufisque, Diamniadio, Cité du savoir , Sd city</strong></p>
+                      </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-phone"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Phone: </strong></span>&nbsp; <a href="tel:7770260066" style="text-decoration: none;"><strong> + 221 77 702 60 66</strong></a></p>
+                      </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="4"></textarea>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Email:</strong></span> &nbsp;<a href="mailto:agrimanagerplus@gmail.com" style="text-decoration: none;"><strong> agrimanagerplus@gmail.com</strong></a></p>
+                      </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Envoyer</button>
-                </form>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-globe"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Website:</strong></span> &nbsp; <a href="#" style="text-decoration: none;"> <strong>agrimanagerplus.com</strong></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row no-gutters">
+                  <div class="col-md-7">
+                    <div class="contact-wrap w-100 p-md-5 p-4">
+                      <h3 class="mb-4">Contactez Nous</h3>
+                      <div class="mb-4" id="form-message-warning"></div>
+                      <div class="mb-4" id="form-message-success">
+                        Your message was sent, thank you!
+                      </div>
+                      <form class="contactForm" id="contactForm" method="POST" name="contactForm">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="label" for="name">Nom Complet</label>
+                              <input class="form-control" id="name" name="name" placeholder="Nom Complet" type="text">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="label" for="email">Email </label>
+                              <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="label" for="subject">Objet</label>
+                              <input class="form-control" id="subject" name="subject" placeholder="Objet" type="text">
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="label" for="#">Message</label>
+                              <textarea class="form-control" cols="30" id="message" name="message" placeholder="Message" rows="4"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <br>
+                              <input class="btn btn-primary" type="submit" value="Envoyer votre Message">
+                              <div class="submitting"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-5 d-flex align-items-stretch">
+                    <div class="info-wrap w-100 p-5 img" style="background-image: url(./assets/images/sensors.jpg);">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <!-- Détails du service à droite -->
-            <div class="col-lg-6">
-                <div class="info-box mb-4">
-                    <i class="fas fa-map-marker-alt fa-2x text-success"></i>
-                    <p>Rufisque cité, du savoir, SD City</p>
-                </div>
-                <div class="info-box mb-4">
-                    <i class="fas fa-phone fa-2x text-success"></i>
-                    <p>+221 77 702 60 66</p>
-                </div>
-                <div class="info-box mb-4">
-                    <i class="fas fa-envelope fa-2x text-success"></i>
-                    <p>agrimanagerplus@gmail.com</p>
-                </div>
-                <div class="info-box">
-                    <i class="fas fa-clock fa-2x text-success"></i>
-                    <p>Lundi - Vendredi: 9h - 18h</p>
-                </div>
-            </div>
+          </div>
         </div>
+      </section>
     </div>
 
     <!-- <div class="loading-container">
@@ -217,7 +281,7 @@
 
 
 
-
+<app-footer></app-footer>
 
 
 

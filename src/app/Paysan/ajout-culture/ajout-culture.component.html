@@ -1,0 +1,134 @@
+
+
+<div class="container">
+  <div class="topbar">
+    <div class="logo">
+      <h2>AgriManager+.</h2>
+    </div>
+    <div class="search">
+      <input name="search" placeholder="search here" type="text">
+      <label for="search"><i class="fas fa-search"></i></label>
+    </div>
+    <i class="fas fa-bell"></i>
+    <div class="user">
+      <img alt="" src="user.png">
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fas fa-th-large"></i>
+          <div>Dashboard</div>
+        </a>
+      </li>
+      <!-- <li>
+          <a href="#">
+              <i class="fas fa-seedling"></i>
+              <div>Cultures</div>
+          </a>
+      </li> -->
+      <li class="dropdown">
+        <a href="#">
+          <i class="fas fa-seedling"></i>
+          <div>Cultures</div>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Culture 1</a></li>
+          <li><a href="#">Culture 2</a></li>
+          <li><a href="#">Culture 3</a></li>
+          <!-- Ajoutez autant d'éléments de liste que nécessaire -->
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-tractor"></i>
+          <div>Materiels</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-users"></i>
+          <div>Employees</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-chart-bar"></i>
+          <div>Analytics</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-hand-holding-usd"></i>
+          <div>Earnings</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <div>Settings</div>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-question"></i>
+          <div>Help</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+
+    <marquee><H1 class="text-center" style="color: #28a745;">Ajouter un projet Agricole</H1></marquee>
+    <div class="add-culture-form">
+      <h2>Ajouter une culture</h2>
+      <form action="#" id="cultureForm" method="post">
+        <div class="form-group">
+          <label for="nomProjet">Nom du Projet:</label>
+          <input id="nomProjet" name="nomProjet" required type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="dateDebut">Date de Début:</label>
+          <input id="dateDebut" name="dateDebut" required type="date">
+        </div>
+
+        <div class="form-group">
+          <label for="dateFin">Date de Fin:</label>
+          <input id="dateFin" name="dateFin" required type="date">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="lieu">Lieu:</label>
+          <input id="lieu" name="lieu" required type="text">
+        </div>
+        <div class="form-group">
+          <label for="tache">Tache:</label>
+          <Select class="form-group">
+            <option value="">Choisir une tâche</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Forestry">Forestry</option>
+
+          </Select>
+        </div>
+        <div class="form-group">
+          <label for="semence">Semence:</label>
+          <Select class="form-group">
+            <option value="">Choisir une semence</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Forestry">Forestry</option>
+
+          </Select>
+        </div>
+
+        <button type="submit">Ajouter Culture</button>
+      </form>
+    </div>
+  </div>
+
+

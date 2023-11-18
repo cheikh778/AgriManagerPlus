@@ -15,7 +15,7 @@ export class LoginPageService {
   constructor(private http: HttpClient, public router: Router) {}
   // Sign-up
   signUp(user: Authentification): Observable<any> {
-    let api = `${this.endpoint}`;
+    let api = `${this.endpoint}/res`;
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
   // Sign-in

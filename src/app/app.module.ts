@@ -32,6 +32,7 @@ import { AjoutTacheComponent } from './Paysan/ajout-tache/ajout-tache.component'
 import { ListeTacheComponent } from './Paysan/liste-tache/liste-tache.component';
 import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 
+import { CorsInterceptor } from './shared/cors.interceptor';
 
 
 
@@ -77,7 +78,13 @@ import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.comp
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CorsInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

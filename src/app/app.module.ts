@@ -23,7 +23,7 @@ import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component'
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
 import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component';
-
+import { CorsInterceptor } from './shared/cors.interceptor';
 
 
 
@@ -61,7 +61,13 @@ import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-pro
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CorsInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

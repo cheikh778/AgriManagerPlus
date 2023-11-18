@@ -422,7 +422,7 @@ body {
   align-items: center;
   grid-gap: 24px;
 }
-#content main .box-info li .bx {
+#content main .box-info li .bx, #content main .box-info li .fas {
   width: 80px;
   height: 80px;
   border-radius: 10px;
@@ -435,11 +435,19 @@ body {
   background: var(--light-blue);
   color: var(--blue);
 }
+#content main .box-info li:nth-child(1) .fas {
+  background: var(--light-blue);
+  color: var(--blue);
+}
 #content main .box-info li:nth-child(2) .bx {
   background: var(--light-blue);
   color: var(--blue);
 }
 #content main .box-info li:nth-child(3) .bx {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+#content main .box-info li:nth-child(3) .fas {
   background: var(--light-blue);
   color: var(--blue);
 }

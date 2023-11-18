@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
+import { AjoutCultureComponent } from "./Paysan/Culture/ajout-culture/ajout-culture.component";
+import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { BlogComponent } from './blog/blog.component';
 import { ConditionsComponent } from './conditions/conditions.component';
@@ -8,9 +11,6 @@ import { Page403Component } from './page403/page403.component';
 import { Page404Component } from './page404/page404.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { TermesComponent } from './termes/termes.component';
-import {AjoutCultureComponent} from "./Paysan/ajout-culture/ajout-culture.component";
-import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
-import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },

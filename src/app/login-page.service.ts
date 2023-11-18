@@ -29,12 +29,16 @@ export class LoginPageService {
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
           this.router.navigate(['adminDashboard']);
+          console.log("Bienvenue Admin");
         } else if (roles === 'paysan') {
           this.router.navigate(['paysanDashboard']);
+          console.log("Bienvenue Paysan");
         } else if (roles === 'employe') {
           this.router.navigate(['employeeDashboard']);
+          console.log("Bienvenue Employe")
         } else {
           this.router.navigate(['clientDashboard']);
+          console.log("Bienvenue Client")
         }
         // this.getUserProfile(res._id).subscribe((res) => {
         //   this.currentUser = res;
@@ -82,7 +86,7 @@ export class LoginPageService {
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(msg);
-  }  
+  }
   public deconnecter(){
     localStorage.removeItem('access_token');
   }

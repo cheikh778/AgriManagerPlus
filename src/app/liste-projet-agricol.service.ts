@@ -18,4 +18,8 @@ export class ListeProjetAgricolService {
     return this.__httpClient.get<ValidationProjet[]>("http://localhost:8081/api/demandeProjet/listerProjetValider");
 
   }
+
+  // listeEnAttente(data: any): Observable<ValidationProjet[]>{
+  //   return this.__httpClient.get<ValidationProjet[]>('http://localhost:8081/api/demandeProjet/listerProjetEnAttente', data);
+  // } 
 }

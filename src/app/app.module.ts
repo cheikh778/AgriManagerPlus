@@ -23,6 +23,14 @@ import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component'
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
 import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component';
+import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-utilisateurs.component';
+import { HeaderDashbaordComponent } from './Admin/header-dashbaord/header-dashbaord.component';
+import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
+import { AjoutEmployeComponent } from './Paysan/ajout-employe/ajout-employe.component';
+import { ListeEmployeComponent } from './Paysan/liste-employe/liste-employe.component';
+import { AjoutTacheComponent } from './Paysan/ajout-tache/ajout-tache.component';
+import { ListeTacheComponent } from './Paysan/liste-tache/liste-tache.component';
+import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 
 
 
@@ -51,6 +59,14 @@ import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-pro
     DashboardEComponent,
     DashboardAComponent,
     ListeProjetEnAttenteComponent,
+    ListeUtilisateursComponent,
+    HeaderDashbaordComponent,
+    AjoutUtilisateurComponent,
+    AjoutEmployeComponent,
+    ListeEmployeComponent,
+    AjoutTacheComponent,
+    ListeTacheComponent,
+    AjoutSemenceComponent,
 
 
 

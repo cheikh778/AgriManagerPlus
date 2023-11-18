@@ -37,17 +37,17 @@ export class ListeProjetEnAttenteComponent {
   )
 
 
-  this.validerSevice.getListeProjetValider().subscribe(
-    {next : (apps) => {
-      this.projetValider = apps;
-    },
-    error:(err) =>{
-      this.errorMessage="Erreur de requete"
-    },
-    complete:() =>{
-      this.sucessMessage="Requete valider"
-    }
-  }
-  )
+  // this.validerSevice.getListeProjetValider().subscribe(
+  //   {next : (apps) => {
+  //     this.projetValider = apps;
+  //   },
+  //   error:(err) =>{
+  //     this.errorMessage="Erreur de requete"
+  //   },
+  //   complete:() =>{
+  //     this.sucessMessage="Requete valider"
+  //   }
+  // }
+  // )
  }
 }

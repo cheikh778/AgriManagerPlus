@@ -21,3 +21,13 @@ export interface ValidationProjet{
     description : string;
     status : string;
 }
+
+export interface User{
+    id : number;
+    nom : string;
+    prenom : string;
+    contact : string;
+    email : string;
+    password : string;
+    role : string
+}

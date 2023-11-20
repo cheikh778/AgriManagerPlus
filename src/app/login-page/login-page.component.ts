@@ -11,7 +11,10 @@ export class LoginPageComponent {
     email : '',
     password : '',
     role : '',
+<<<<<<< HEAD
     token:''
+=======
+>>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
   };
 
 

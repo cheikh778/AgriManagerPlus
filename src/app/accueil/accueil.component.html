@@ -102,6 +102,7 @@
       </div>
       <div class="modal-body">
 
+<<<<<<< HEAD
         <form action="/path_to_backend_logic" method="POST" #etuForm="ngForm" (ngSubmit)="demandeValidation()">
             <div class="mb-3">
                 <label for="name">Nom Complet</label>
@@ -131,6 +132,29 @@
         </form>
       </div>
       
+=======
+        <form>
+         <div class="mb-3">
+           <label for="name">Nom Complet</label>
+           <input type="text" class="form-control" id="name" placeholder="Nom">
+         </div>
+          <div class="mb-3">
+            <label for="projet">Projet Agricole</label>
+            <input type="email" class="form-control" id="projet" placeholder="projet">
+          </div>
+          <div class="mb-3">
+            <label for="description">Description de Votre projet agricole</label>
+            <textarea class="form-control"></textarea>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-success">Envoyer</button>
+      </div>
+>>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
     </div>
   </div>
 </div>
@@ -175,6 +199,7 @@
     <div class="container mt-5" id="contact">
         <h2 class="text-center mb-4">Contactez-nous</h2>
 
+<<<<<<< HEAD
         <div class="row" id="formulaire">
             <!-- Formulaire de contact à gauche -->
             <div class="col-lg-6">
@@ -215,6 +240,112 @@
                 </div>
             </div>
         </div>
+=======
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center">
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="wrapper">
+                <div class="row mb-5">
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-map-marker"></span>
+                      </div>
+                      <div class="text text-bolder">
+                        <p style="color:#28a745"><span><strong>Address:</strong>&nbsp; </span> <strong>Rufisque, Diamniadio, Cité du savoir , Sd city</strong></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-phone"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Phone: </strong></span>&nbsp; <a href="tel:7770260066" style="text-decoration: none;"><strong> + 221 77 702 60 66</strong></a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Email:</strong></span> &nbsp;<a href="mailto:agrimanagerplus@gmail.com" style="text-decoration: none;"><strong> agrimanagerplus@gmail.com</strong></a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="dbox w-100 text-center">
+                      <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-globe"></span>
+                      </div>
+                      <div class="text">
+                        <p><span><strong>Website:</strong></span> &nbsp; <a href="#" style="text-decoration: none;"> <strong>agrimanagerplus.com</strong></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row no-gutters">
+                  <div class="col-md-7">
+                    <div class="contact-wrap w-100 p-md-5 p-4">
+                      <h3 class="mb-4">Contactez Nous</h3>
+                      <div class="mb-4" id="form-message-warning"></div>
+                      <div class="mb-4" id="form-message-success">
+                        Your message was sent, thank you!
+                      </div>
+                      <form class="contactForm" id="contactForm" method="POST" name="contactForm">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="label" for="name">Nom Complet</label>
+                              <input class="form-control" id="name" name="name" placeholder="Nom Complet" type="text">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="label" for="email">Email </label>
+                              <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="label" for="subject">Objet</label>
+                              <input class="form-control" id="subject" name="subject" placeholder="Objet" type="text">
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="label" for="#">Message</label>
+                              <textarea class="form-control" cols="30" id="message" name="message" placeholder="Message" rows="4"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <br>
+                              <input class="btn btn-primary" type="submit" value="Envoyer votre Message">
+                              <div class="submitting"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-5 d-flex align-items-stretch">
+                    <div class="info-wrap w-100 p-5 img" style="background-image: url(./assets/images/sensors.jpg);">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+>>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
     </div>
 
     <!-- <div class="loading-container">
@@ -225,7 +356,11 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+<app-footer></app-footer>
+>>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
 
 
 

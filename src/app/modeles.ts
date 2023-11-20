@@ -11,6 +11,7 @@ export interface Authentification{
     email : string;
     password : string;
     role : string;
+<<<<<<< HEAD
     token : string;
 };
 
@@ -32,3 +33,6 @@ export interface User{
     password : string;
     role : string
 }
+=======
+};
+>>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772

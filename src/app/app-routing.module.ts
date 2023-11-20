@@ -11,6 +11,7 @@ import { TermesComponent } from './termes/termes.component';
 import {AjoutCultureComponent} from "./Paysan/ajout-culture/ajout-culture.component";
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
+import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-utilisateurs.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component'
 
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path:'', component:Page404Component},
   { path:'listeProjet', component:ListeProjetEnAttenteComponent},
   { path:'listeUser', component:ListeUtilisateursComponent},
+  { path:'ajoutUser', component:AjoutUtilisateurComponent},
+  
 
 ];
 

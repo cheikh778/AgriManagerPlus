@@ -22,6 +22,20 @@ export class ListeProjetEnAttenteComponent {
 
   constructor(private validerSevice : ListeProjetAgricolService){}
   
+
+  valider(id: number) {
+    this.validerSevice.validerProjet(id).subscribe(
+      response => {
+        // Gérer la réponse de la requête
+        console.log('Projet validé avec succès', response);
+      },
+      error => {
+        // Gérer les erreurs éventuelles
+        console.error('Erreur lors de la validation du projet', error);
+      }
+    );
+  }
+
   ngOnInit(): void {
     this.validerSevice.getListeProjet().subscribe(
     {next : (apps) => {

@@ -1,9 +1,9 @@
 <!-- SIDEBAR -->
-<section [ngClass]="status ? 'hide' : ''" id="sidebar">
-    <a class="brand" href="paysanDashboard">
+<!-- <section [ngClass]="status ? 'hide' : ''" id="sidebar">
+    <a class="brand" href="paysanDashboard"> -->
       <!-- <i class='bx bxs-smile'></i>
       <span class="text">AdminHub</span> -->
-      <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
+      <!-- <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
     </a>
     <ul class="side-menu top">
       <li class="active">
@@ -75,10 +75,10 @@
         </a>
       </li>
     </ul>
-  </section>
+  </section> -->
   <!-- SIDEBAR -->
   
-  
+  <header-dashbaord></header-dashbaord>
   
   <!-- CONTENT -->
   <section id="content">
@@ -163,7 +163,7 @@
                 <th>Email</th>
                 <th>Nom Projet</th>
                 <th>Description</th>
-                <th>Status</th>
+                <th colspan="2">Status</th>
               </tr>
             </thead>
             <tbody *ngFor="let v of validerProjet">
@@ -174,7 +174,8 @@
                 <td>{{v.email}}</td>
                 <td>{{v.nomProjet}}</td>
                 <td>{{v.description}}</td>
-                <td><span class="status completed">{{v.status}}</span></td>
+                <td><span class="status completed">{{v.id}}</span></td>
+                <td><button type="submit" class="status completed" (click)="valider(v.id)">Pour valider</button></td>
                 
             </tbody>
           </table>
@@ -196,7 +197,7 @@
                 <th>Email</th>
                 <th>Nom Projet</th>
                 <th>Description</th>
-                <th>Status</th>
+                <th colspan="2">Status</th>
               </tr>
             </thead>
             <tbody *ngFor="let c of projetValider">
@@ -208,6 +209,7 @@
                 <td>{{c.nomProjet}}</td>
                 <td>{{c.description}}</td>
                 <td><span class="status completed">{{c.status}}</span></td>
+                <td><span class="status completed">valider</span></td>
               </tr>
               
             </tbody>

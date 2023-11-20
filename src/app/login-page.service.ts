@@ -55,12 +55,42 @@ export class LoginPageService {
     let authToken = localStorage.getItem('access_token');
     return authToken !== null ? true : false;
   }
+
+
+  private logoutUrl = 'http://localhost:8081/api/auth/logout';
   doLogout() {
-    let removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
-      this.router.navigate(['log-in']);
-    }
+    this.http.post(this.logoutUrl, {}).pipe(
+catchError((error) => {
+        console.error('La déconnexion a échoué', error);
+        return throwError(error);
+      })
+    ).
+      
+   
+subscribe(
+      () => this.handleLogoutSuccess(),
+      
+    
+() => this.handleLogoutSuccess()
+    );
   }
+
+  private handleLogoutSuccess() {
+    localStorage.removeItem('access_token');
+    this.router.navigate(['login']);
+  }
+
+
+
+
+
+  
+  // doLogout() {
+  //   let removeToken = localStorage.removeItem('access_token');
+  //   if (removeToken == null) {
+  //     this.router.navigate(['log-in']);
+  //   }
+  // }
   // User profile
   getUserProfile(id: any): Observable<any> {
     let api = `${this.endpoint}/user-profile/${id}`;

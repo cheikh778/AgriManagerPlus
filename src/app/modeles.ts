@@ -15,6 +15,7 @@ export interface Authentification{
 };
 
 export interface ValidationProjet{
+    id :number;
     nomComplet : string;
     email : string;
     nomProjet : string;

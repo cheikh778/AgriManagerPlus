@@ -11,6 +11,8 @@ import { Page403Component } from './page403/page403.component';
 import { Page404Component } from './page404/page404.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { TermesComponent } from './termes/termes.component';
+import { ListeCultureComponent } from './Paysan/Culture/liste-culture/liste-culture.component';
+import { UpdateCultureComponent } from './Paysan/Culture/update-culture/update-culture.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'login', component:LoginPageComponent },
   { path: 'register', component:RegisterPageComponent },
   { path: 'blog', component:BlogComponent},
-  { path:  'ajoutCulture', component:AjoutCultureComponent},
+  { path: 'ajoutCulture', component:AjoutCultureComponent},
+  { path: 'listeCulture', component:ListeCultureComponent},
+  { path: 'updateCulture', component:UpdateCultureComponent},
   { path: 'paysanDashboard', component:DashboardPComponent},
   { path: 'adminDashboard', component:DashboardAComponent},
   { path:'pageNotAuthorized', component:Page403Component},

@@ -141,83 +141,76 @@
     </div>
 
     <div class="table-data">
-      <div class="order">
-        <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
-        <div class="head">
-          <div class="container mt-3">
-
-            <div class="row justify-content-center mt-4">
-
-              <div class="col-6 ">
-
-                    <form >
-
-                      <div class="mb-3">
-                        <label class="form-label" for="name">
-                          <i class="fas fa-user"></i> Nom
-                        </label>
-                        <input  class="form-control"
-                               id="name" name="nom"
-                               placeholder="Entrez votre nom " type="text">
-                      </div>
-
-                      <div class="mb-3">
-                        <label  class="form-label">
-                          <i class="fas fa-artstation"></i> Description
-                        </label>
-                        <textarea class="form-control">
-
-                        </textarea>
-                      </div>
-
-                      <div class="mb-3">
-                        <label  class="form-label">
-                          <i class="fas fa-image"></i> Tâche
-                        </label>
-                        <select  class="form-control"
-                                name="departement">
-                          <option value="">--Selectionner une tâche</option>
-                          <option></option>
-                        </select>
-                      </div>
-                      <div class="mb-1">
-                        <label class="form-label" for="filiere">
-                          <i class="fas fa-image"></i> Parcelle Agricole
-                        </label>
-                        <select class="form-control" id="filiere" name="filiere">
-                          <option value="">--Selectionner votre champ de culture</option>
-                          <option ></option>
-                        </select>
-                      </div>
-
-                      <div class="mb-3">
-                        <label class="form-label" for="promotion">
-                          <i class="fas fa-image"></i> Promotion
-                        </label>
-                        <Select class="form-control" id="promotion" name="promotion">
-                          <option value="">--Selectionner une Promotion</option>
-                          <option></option>
-                        </Select>
-                      </div>
-                      <button class="btn btn-success" type="submit">
-                        <i class="fas fa-user-plus"></i> Ajouter
-                      </button>
-                    </form>
-                  </div>
-                </div>
+      <div class="ajout-form">
+         
               </div>
-            </div>
+          
+      </div>
+      <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
+      <div class="container ">
+          <div class="row justify-content-center mt-4">
+              
+                <form>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row mb-5">
+                    <div class="col">
+                      <div class="form-outline">
+                        <input type="text" id="form6Example1" class="form-control" />
+                        <label class="form-label" for="form6Example1">First name</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-outline">
+                        <input type="text" id="form6Example2" class="form-control" />
+                        <label class="form-label" for="form6Example2">Last name</label>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- Text input -->
+                  <div class="form-outline mb-5">
+                    <input type="text" id="form6Example3" class="form-control" />
+                    <label class="form-label" for="form6Example3">Company name</label>
+                  </div>
+                
+                  <!-- Text input -->
+                  <div class="form-outline mb-5">
+                    <input type="text" id="form6Example4" class="form-control" />
+                    <label class="form-label" for="form6Example4">Address</label>
+                  </div>
+                
+                  <!-- Email input -->
+                  <div class="form-outline mb-5">
+                    <input type="email" id="form6Example5" class="form-control" />
+                    <label class="form-label" for="form6Example5">Email</label>
+                  </div>
+                
+                  <!-- Number input -->
+                  <div class="form-outline mb-5">
+                    <input type="number" id="form6Example6" class="form-control" />
+                    <label class="form-label" for="form6Example6">Phone</label>
+                  </div>
+                
+                  <!-- Message input -->
+                  <div class="form-outline mb-5">
+                    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+                    <label class="form-label" for="form6Example7">Additional information</label>
+                  </div>
+                
+                  <!-- Checkbox -->
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+                    <label class="form-check-label" for="form6Example8"> Create an account? </label>
+                  </div>
+                
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-primary btn-block mb-5">Place order</button>
+                </form>
+              </div>
           </div>
+   
 
-
-        </div>
-
-
-
-
-
-
-
+  
   </main>
   <!-- MAIN -->
 </section>

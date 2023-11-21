@@ -11,12 +11,11 @@ export interface Authentification{
     email : string;
     password : string;
     role : string;
-<<<<<<< HEAD
     token : string;
 };
 
 export interface ValidationProjet{
-    id :number;
+    idDemande :number;
     nomComplet : string;
     email : string;
     nomProjet : string;
@@ -31,8 +30,6 @@ export interface User{
     contact : string;
     email : string;
     password : string;
-    role : string
+    role : string;
+    status : string;
 }
-=======
-};
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772

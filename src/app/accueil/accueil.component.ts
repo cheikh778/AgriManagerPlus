@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { DemandeValidationProjetService } from '../demande-validation-projet.service';
 import { Router } from '@angular/router';
-=======
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
 
 @Component({
   selector: 'app-accueil',
@@ -12,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AccueilComponent {
 
-<<<<<<< HEAD
   demande = {
     nomComplet : '',
     email : '',
@@ -42,6 +38,5 @@ export class AccueilComponent {
       }
     );
   }
-=======
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
+
 }

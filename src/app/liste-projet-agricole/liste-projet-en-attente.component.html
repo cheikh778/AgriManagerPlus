@@ -174,9 +174,9 @@
                 <td>{{v.email}}</td>
                 <td>{{v.nomProjet}}</td>
                 <td>{{v.description}}</td>
-                <td><span class="status completed">{{v.id}}</span></td>
-                <td><button type="submit" class="status completed" (click)="valider(v.id)">Pour valider</button></td>
-                
+                <td><span class="status completed">{{v.status}}</span></td>
+                <td><button type="submit" class="status completed" (click)="valider(v.idDemande)">Pour valider</button></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -209,7 +209,7 @@
                 <td>{{c.nomProjet}}</td>
                 <td>{{c.description}}</td>
                 <td><span class="status completed">{{c.status}}</span></td>
-                <td><span class="status completed">valider</span></td>
+                <!-- <td><span class="status completed">valider</span></td> -->
               </tr>
               
             </tbody>

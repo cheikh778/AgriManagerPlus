@@ -36,4 +36,49 @@ export class ListeUtilisateursComponent {
   }
   )
 }
+
+
+
+blockUser(userId: number): void {
+  this.userSevice.bloquer(userId).subscribe(
+    {
+      next: () => {
+        this.sucessMessage = "Utilisateur bloqué avec succès";
+        // const userIndex = this.user.findIndex(user => user.id === userId);
+        // if (userIndex !== -1) {
+        //   this.user[userIndex].status = 'bloquer';
+        // }
+      },
+      error: (err) => {
+        this.errorMessage = "Erreur lors du blocage de l'utilisateur";
+      }
+    }
+  );
+}
+
+// Function to unblock a user
+unblockUser(userId: number): void {
+  this.userSevice.debloquer(userId).subscribe(
+    {
+      next: () => {
+        this.sucessMessage = "Utilisateur débloqué avec succès";
+        // const userIndex = this.user.findIndex(user => user.id === userId);
+        // if (userIndex !== -1) {
+        //   this.user[userIndex].status = 'debloquer';
+        // }
+      },
+      error: (err) => {
+        this.errorMessage = "Erreur lors du déblocage de l'utilisateur";
+      }
+    }
+  );
+}
+
+private updateUserStatus(userId: number, newStatus: string): number {
+  const userIndex = this.user.findIndex(user => user.id === userId);
+  if (userIndex !== -1) {
+    this.user[userIndex].status = newStatus;
+  }
+  return userIndex;
+}
 }

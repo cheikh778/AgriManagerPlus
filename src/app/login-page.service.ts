@@ -15,11 +15,7 @@ export class LoginPageService {
   constructor(private http: HttpClient, public router: Router) {}
   // Sign-up
   signUp(user: Authentification): Observable<any> {
-<<<<<<< HEAD
-    let api = `${this.endpoint}/res`;
-=======
     let api = `${this.endpoint}/register-user`;
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
   // Sign-in
@@ -28,21 +24,9 @@ export class LoginPageService {
       .post<any>(`${this.endpoint}`, user)
       .subscribe((res: any) => {
         console.log('Roles reçus du serveur :', res.role)
-<<<<<<< HEAD
         console.log('access_token', res.access_token);
         localStorage.setItem('access_token', res.access_token);
-        const roles = res.role; // Obtenez les rôles de la réponse
-        if (roles === 'admin') {
-          this.router.navigate(['adminDashboard']);
-        } else if (roles === 'paysan') {
-          this.router.navigate(['paysanDashboard']);
-        } else if (roles === 'employe') {
-          this.router.navigate(['employeeDashboard']);
-        } else {
-          this.router.navigate(['clientDashboard']);
-=======
-        console.log('access_token', res.token);
-        localStorage.setItem('access_token', res.token);
+      
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
           this.router.navigate(['adminDashboard']);
@@ -56,7 +40,6 @@ export class LoginPageService {
         } else {
           this.router.navigate(['clientDashboard']);
           console.log("Bienvenue Client")
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
         }
         // this.getUserProfile(res._id).subscribe((res) => {
         //   this.currentUser = res;
@@ -77,7 +60,6 @@ export class LoginPageService {
     let authToken = localStorage.getItem('access_token');
     return authToken !== null ? true : false;
   }
-<<<<<<< HEAD
 
 
   private logoutUrl = 'http://localhost:8081/api/auth/logout';
@@ -87,10 +69,7 @@ catchError((error) => {
         console.error('La déconnexion a échoué', error);
         return throwError(error);
       })
-    ).
-      
-   
-subscribe(
+    ).subscribe(
       () => this.handleLogoutSuccess(),
       
     
@@ -114,14 +93,12 @@ subscribe(
   //     this.router.navigate(['log-in']);
   //   }
   // }
-=======
-  doLogout() {
-    let removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
-      this.router.navigate(['log-in']);
-    }
-  }
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
+  // doLogout() {
+  //   let removeToken = localStorage.removeItem('access_token');
+  //   if (removeToken == null) {
+  //     this.router.navigate(['log-in']);
+  //   }
+  // }
   // User profile
   getUserProfile(id: any): Observable<any> {
     let api = `${this.endpoint}/user-profile/${id}`;
@@ -143,12 +120,9 @@ subscribe(
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(msg);
-<<<<<<< HEAD
   }  
-=======
   }
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
-  public deconnecter(){
-    localStorage.removeItem('access_token');
-  }
-}
+  // public deconnecter(){
+  //   localStorage.removeItem('access_token');
+  // }
+

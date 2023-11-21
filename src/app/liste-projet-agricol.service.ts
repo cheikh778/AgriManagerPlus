@@ -20,7 +20,8 @@ export class ListeProjetAgricolService {
   }
 
   validerProjet(id: number) {
-    return this.__httpClient.post('http://localhost:8081/api/demandeProjet/validerStatus/${id}', {});
+    const numericId = parseInt(id.toString(), 10);
+    return this.__httpClient.post('http://localhost:8081/api/demandeProjet/validerStatus/'+numericId, {});
   } 
 
   // listeEnAttente(data: any): Observable<ValidationProjet[]>{

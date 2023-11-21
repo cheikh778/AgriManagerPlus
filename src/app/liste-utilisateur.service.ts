@@ -14,4 +14,13 @@ export class ListeUtilisateurService {
     return this.__httpClient.get<User[]>("http://localhost:8081/api/v1/users/listeUser");
 
   }
+
+  bloquer(userId: number): Observable<any> {
+    return this.__httpClient.put(`http://localhost:8081/api/v1/users/bloquer/${userId}`, {});
+  }
+
+  // Add a method to unblock a user by user ID
+  debloquer(userId: number): Observable<any> {
+    return this.__httpClient.put(`http://localhost:8081/api/v1/users/debloquer/${userId}`, {});
+  }
 }

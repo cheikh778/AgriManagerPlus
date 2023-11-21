@@ -152,21 +152,22 @@
       <div class="table-data">
         <div class="order">
           <div class="head">
-            <h3>Listes des Projets En Attente</h3>
+            <h3>Listes Ulitisateurs</h3>
             <i class='bx bx-search' ></i>
             <i class='bx bx-filter'></i>
           </div>
           <table>
             <thead>
               <tr>
-                <th>Nom Complet</th>
+                <th>Nom</th>
+                <th>Prenom</th>
                 <th>Email</th>
-                <th>Nom Projet</th>
-                <th>Description</th>
+                <th>Contact</th>
+                <th>Profil</th>
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody *ngFor="let v of user">
+            <tbody *ngFor="let v of user; let i = index">
               <tr>
                 <td>
                   <p>{{v.nom}}</p>
@@ -175,8 +176,15 @@
                 <td>{{v.email}}</td>
                 <td>{{v.contact}}</td>
                 <td>{{v.role}}</td>
-                <td><span class="status completed">Modifier</span></td>
-                
+              
+                  <!-- Check user status to display "Bloquer" or "Débloquer" -->
+                  <td>
+                    <button type="button" class="status completed" (click)="v.status === 'bloquer' ? unblockUser(v.id) : blockUser(v.id)">
+                      {{ v.status === 'bloquer' ? 'Débloquer' : 'Bloquer' }}
+                    
+                      
+                  </button>
+               
             </tbody>
           </table>
         </div>

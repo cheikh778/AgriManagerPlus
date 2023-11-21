@@ -16,13 +16,32 @@ export class CorsInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const authToken = this.authService.getToken();
-    const modifiedRequest = request.clone({
-      setHeaders: {
-        Authorization: "Bearer " + authToken,
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:4200', 
-      },
-    });
+    const targetUrls = [
+      // 'http://localhost:8081/api/demandeProjet/*',
+      // 'http://localhost:8081/api/v1/users/*',
+      // 'http://localhost:8081/api/demandeProjet/listerProjetEnAttente'
+      'http://localhost:8081/api/demandeProjet/ajout'
+      // Ajoutez d'autres URLs si nécessaire
+    ];
+    const shouldAddToken = !targetUrls.some(url => request.url.startsWith(url));
+
+    const modifiedRequest = shouldAddToken
+      ? request.clone({
+          setHeaders: {
+            Authorization: 'Bearer ' + authToken,
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:4200',
+          },
+        })
+      : request;
+
+    // const modifiedRequest = request.clone({
+    //   setHeaders: {
+    //     Authorization: "Bearer " + authToken,
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Origin': 'http://localhost:4200', 
+    //   },
+    // });
 
     return next.handle(modifiedRequest);
   }

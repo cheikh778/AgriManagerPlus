@@ -27,12 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets/images/A1-removebg-preview.png",
-<<<<<<< HEAD
               "src/assets/images"
-=======
-              "src/assets/images",
-              "src/assets"
->>>>>>> 00c887a026285c701b8cc3e0ab4716dbbb2ae772
 
             ],
             "styles": [

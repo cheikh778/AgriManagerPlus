@@ -27,10 +27,7 @@ export class RegisterPageComponent {
     this.registerService.inscription(this.user).subscribe(
       response => {
         console.log('Ajout réussi', response);
-        // this.authService.setAuthToken(response.accessToken);
-
-        // this._router.navigate(['/inscription'])
-        // Faire quelque chose avec la réponse
+        
       },
       error => {
         console.error('Erreur lors de l\'ajout', error);

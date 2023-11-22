@@ -78,8 +78,8 @@
   </section> -->
   <!-- SIDEBAR -->
   <header-dashbaord></header-dashbaord>
-  
-  
+
+
   <!-- CONTENT -->
   <section id="content">
     <!-- NAVBAR -->
@@ -101,7 +101,7 @@
       </a>
     </nav>
     <!-- NAVBAR -->
-  
+
     <!-- MAIN -->
     <main>
       <div class="head-title">
@@ -122,7 +122,7 @@
           <span class="text">Download PDF</span>
         </a>
       </div>
-  
+
       <ul class="box-info">
         <li>
           <i class='bx bxs-group' ></i>
@@ -145,10 +145,10 @@
             <p>Total Sales</p>
           </span>
         </li>
-  
+
       </ul>
-  
-  
+
+
       <div class="table-data">
         <div class="order">
           <div class="head">
@@ -176,21 +176,21 @@
                 <td>{{v.email}}</td>
                 <td>{{v.contact}}</td>
                 <td>{{v.role}}</td>
-              
+
                   <!-- Check user status to display "Bloquer" or "Débloquer" -->
                   <td>
-                    <button type="button" class="status completed" (click)="v.status === 'bloquer' ? unblockUser(v.id) : blockUser(v.id)">
+                    <button type="button" class="status completed btn btn-warning" (click)="v.status === 'bloquer' ? unblockUser(v.id) : blockUser(v.id)">
                       {{ v.status === 'bloquer' ? 'Débloquer' : 'Bloquer' }}
-                    
-                      
+
+
                   </button>
-               
+
             </tbody>
           </table>
         </div>
-  
+
       </div>
-        
+
       <!-- <div class="table-data">
         <div class="order">
           <div class="head">
@@ -218,14 +218,13 @@
                 <td>{{c.description}}</td>
                 <td><span class="status completed">{{c.status}}</span></td>
               </tr>
-              
+
             </tbody>
           </table>
-        </div> 
-  
+        </div>
+
       </div>-->
     </main>
     <!-- MAIN -->
   </section>
   <!-- CONTENT -->
-  

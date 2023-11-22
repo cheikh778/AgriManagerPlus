@@ -22,7 +22,6 @@ export interface ValidationProjet{
     description : string;
     status : string;
 }
-
 export interface User{
     id : number;
     nom : string;
@@ -32,4 +31,13 @@ export interface User{
     password : string;
     role : string;
     status : string;
+}
+
+export interface Semence {
+  id : number;
+  nom : string;
+  description : string;
+  type : string;
+  quantite: number;
+  paysan_id: number;
 }

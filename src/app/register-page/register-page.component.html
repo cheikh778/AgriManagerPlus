@@ -4,11 +4,11 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="bg-success">
-      <p *ngIf="successMessage" class="text-light">{{ successMessage }}</p>
+    <div class=" message-container" style="background-color:#dff0d8; ;">
+      <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
     </div>
-    <div class="bg-danger">
-      <p *ngIf="errorMessage" class="text-light">{{ errorMessage }}</p>
+    <div class="error-container" style="background-color: #f2dede;">
+      <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
     </div>
 
 

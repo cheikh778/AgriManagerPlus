@@ -48,3 +48,43 @@ export interface Mail{
     objet : string;
     message : string;
 }
+
+export interface  Culture
+{
+
+}
+
+export interface  Tache
+{
+
+}
+
+export interface  ParcelleAgricole
+{
+
+}
+
+export interface  Eau
+{
+
+}
+
+export interface  intratAgricole
+{
+
+}
+
+export interface  Publication
+{
+
+}
+
+export interface  Materiel
+{
+
+}
+
+export interface  Culture
+{
+
+}

@@ -1,38 +1,45 @@
-import { HttpClient } from '@angular/common/http';
+// semence.service.ts
+
 import { Injectable } from '@angular/core';
-import { Semence } from './modeles';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Semence } from './modeles';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SemenceService {
 
-  private baseUrl = "http://localhost:8080/api/semence";
+  private apiUrl = 'http://localhost:8080/api/semences';
 
-  constructor(private __httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getSemence(id:  number):Observable<any>{
-    return this.__httpClient.get(this.baseUrl + "/" + id);
+  ajouterSemence(semence: Semence): Observable<Semence> {
+    return this.http.post<Semence>(this.apiUrl, semence);
   }
 
-  getSemenceList(): Observable<Semence[]> {
-    return this.__httpClient.get<Semence[]>(`${this.baseUrl}`);
+  getSemences(): Observable<Semence[]> {
+    return this.http.get<Semence[]>(this.apiUrl);
   }
 
-  createSemence(semence: Semence): Observable<Object> {
-    return this.__httpClient.post(`${this.baseUrl}`, semence);
+  getSemencesParAgriculteur(agriculteurId: number): Observable<Semence[]> {
+    
+    const url = `${this.apiUrl}/agriculteur/${agriculteurId}`;
+    return this.http.get<Semence[]>(url);
   }
 
-  getSemenceById(id: number): Observable<Semence> {
-    return this.__httpClient.get<Semence>(`${this.baseUrl}/${id}`);
+  getSemenceParId(id: number): Observable<Semence> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Semence>(url);
   }
 
-  updateSemence(id: number, semence: Semence): Observable<Object> {
-    return this.__httpClient.put(`${this.baseUrl}/${id}`, semence);
+  supprimerSemence(id: number): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 
-  deleteSemence(id: number): Observable<Object> {
-    return this.__httpClient.delete(`${this.baseUrl}/${id}`);
+  updateSemence(id: number, nouvelleSemence: Semence): Observable<Semence> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<Semence>(url, nouvelleSemence);
   }
 }

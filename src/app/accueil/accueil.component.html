@@ -101,11 +101,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="bg-success">
-          <p *ngIf="message" class="text-light">{{ message }}</p>
+        <div style="background-color:#dff0d8;">
+          <p *ngIf="message" class="text-success">{{ message }}</p>
         </div>
-        <div class="bg-danger">
-          <p *ngIf="messageError" class="text-light">{{ message }}</p>
+        <div style="background-color: #f2dede;">
+          <p *ngIf="messageError" class="text-danger">{{ message }}</p>
         </div>
         <form action="" method="POST" #etuForm="ngForm" (ngSubmit)="demandeValidation()">
             <div class="mb-3">

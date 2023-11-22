@@ -33,3 +33,9 @@ export interface User{
     role : string;
     status : string;
 }
+
+export interface Mail{
+    objet : string;
+    message : string;
+
+}

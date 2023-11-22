@@ -27,4 +27,9 @@ export class ListeProjetAgricolService {
   // listeEnAttente(data: any): Observable<ValidationProjet[]>{
   //   return this.__httpClient.get<ValidationProjet[]>('http://localhost:8081/api/demandeProjet/listerProjetEnAttente', data);
   // } 
+
+  envoieEmail(mail: string,data: any) {
+    // const numericId = parseInt(id.toString(), 10);
+    return this.__httpClient.post('http://localhost:8081/api/mail/send/'+mail, data);
+  } 
 }

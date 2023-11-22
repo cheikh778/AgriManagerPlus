@@ -33,6 +33,7 @@ export interface User{
     status : string;
 }
 
+
 export interface Semence {
   id : number;
   nom : string;
@@ -40,4 +41,10 @@ export interface Semence {
   type : string;
   quantite: number;
   paysan_id: number;
+}
+
+
+export interface Mail{
+    objet : string;
+    message : string;
 }

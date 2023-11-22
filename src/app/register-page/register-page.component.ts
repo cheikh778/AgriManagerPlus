@@ -9,30 +9,34 @@ import { RegisterPageService } from '../register-page.service';
 })
 export class RegisterPageComponent {
   user = {
-    nom : '',
-    prenom : '',
-    contact : '',
-    email : '',
-    password : '',
-    role : 'client',
+    nom: '',
+    prenom: '',
+    contact: '',
+    email: '',
+    password: '',
+    role: 'client',
   };
 
+  successMessage: string | undefined;
+  errorMessage: string | undefined;
 
-
-  constructor(private registerService: RegisterPageService,
-    private _router: Router) {}
+  constructor(private registerService: RegisterPageService, private _router: Router) {}
 
   submitForm() {
-    console.log('Formulaire soumis', this.user); // Vérifiez si les données sont correctes
+    console.log('Formulaire soumis', this.user);
     this.registerService.inscription(this.user).subscribe(
       response => {
         console.log('Ajout réussi', response);
-        
+        this.successMessage = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
+
+        setTimeout(() => {
+          this._router.navigate(['/login']);
+        }, 2000);
       },
       error => {
         console.error('Erreur lors de l\'ajout', error);
-        console.log(this.user)
-        // Gérer l'erreur
+        this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
+        console.log(this.user);
       }
     );
   }

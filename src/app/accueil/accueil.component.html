@@ -101,11 +101,16 @@
         </button>
       </div>
       <div class="modal-body">
-
+        <div class="bg-success">
+          <p *ngIf="message" class="text-light">{{ message }}</p>
+        </div>
+        <div class="bg-danger">
+          <p *ngIf="messageError" class="text-light">{{ message }}</p>
+        </div>
         <form action="" method="POST" #etuForm="ngForm" (ngSubmit)="demandeValidation()">
             <div class="mb-3">
                 <label for="name">Nom Complet</label>
-                <input type="text" class="form-control" id="name" name="nomComplet" 
+                <input type="text" class="form-control" id="name" name="nomComplet"
                 [(ngModel)]="demande.nomComplet" placeholder="Nom">
               </div>
               <div class="mb-3">
@@ -130,28 +135,6 @@
               </div>
         </form>
       </div>
-      
-        <!-- <form>
-         <div class="mb-3">
-           <label for="name">Nom Complet</label>
-           <input type="text" class="form-control" id="name" placeholder="Nom">
-         </div>
-          <div class="mb-3">
-            <label for="projet">Projet Agricole</label>
-            <input type="email" class="form-control" id="projet" placeholder="projet">
-          </div>
-          <div class="mb-3">
-            <label for="description">Description de Votre projet agricole</label>
-            <textarea class="form-control"></textarea>
-          </div>
-
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-success">Envoyer</button>
-      </div> -->
     </div>
   </div>
 </div>

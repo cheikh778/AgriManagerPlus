@@ -10,33 +10,33 @@ import { Router } from '@angular/router';
 export class AccueilComponent {
 
   demande = {
-    nomComplet : '',
-    email : '',
-    nomProjet : '',
-    description : '',
-    status : 'en_attente'
+    nomComplet: '',
+    email: '',
+    nomProjet: '',
+    description: '',
+    status: 'en_attente'
+  };
 
-  }
+  message: string | undefined;
+  messageError: string |undefined;
 
-  constructor(private demandeService: DemandeValidationProjetService,
-    private _router: Router) {}
+  constructor(private demandeService: DemandeValidationProjetService, private _router: Router) {}
 
   demandeValidation() {
-    console.log('Formulaire soumis', this.demande); // Vérifiez si les données sont correctes
+    console.log('Formulaire soumis', this.demande);
+
     this.demandeService.demande(this.demande).subscribe(
       response => {
-        console.log('Demande Envoyer', response);
-        // this.authService.setAuthToken(response.accessToken);
+        console.log('Demande Envoyée', response);
+        this.message = 'La demande a été envoyée avec succès.Vous Pouvez fermer la fenêtre de demande';
 
-        // this._router.navigate(['/inscription'])
-        // Faire quelque chose avec la réponse
       },
       error => {
         console.error('Erreur lors de la demande', error);
-        console.log(this.demande)
-        // Gérer l'erreur
+        this.messageError = 'Une erreur s\'est produite lors de l\'envoi de la demande. Veuillez réessayer plus tard';
+        console.log(this.demande);
+
       }
     );
   }
-
 }

@@ -49,9 +49,20 @@ export interface Mail{
     message : string;
 }
 
-export interface  Culture
-{
+export interface Culture {
+  id: number;
+  nom: string;
+  dateAjout: Date;
+  dateDebut: Date;
+  dateFin: Date;
+  semence: Semence;
+  paysan: User; 
+  status: CultureStatus;
+}
 
+export enum CultureStatus {
+  ENCOURS = 'ENCOURS',
+  TERMINE = 'TERMINE'
 }
 
 export interface  Tache
@@ -84,9 +95,10 @@ export interface  Materiel
 
 }
 
-export interface  Culture
+export interface  Semence
 {
-
+  id: number;
+  nom: string;
 }
 export interface  AssignationTache
 {

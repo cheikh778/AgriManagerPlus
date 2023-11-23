@@ -69,7 +69,7 @@ export interface  Eau
 
 }
 
-export interface  intratAgricole
+export interface  IntratAgricole
 {
 
 }

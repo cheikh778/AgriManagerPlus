@@ -33,6 +33,7 @@ import { ListeTacheComponent } from './Paysan/liste-tache/liste-tache.component'
 import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 
 import { CorsInterceptor } from './shared/cors.interceptor';
+import { SidebarPaysanComponent } from './Paysan/sidebar-paysan/sidebar-paysan.component';
 
 
 
@@ -67,6 +68,7 @@ import { CorsInterceptor } from './shared/cors.interceptor';
     AjoutTacheComponent,
     ListeTacheComponent,
     AjoutSemenceComponent,
+    SidebarPaysanComponent,
 
 
 

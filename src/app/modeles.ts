@@ -88,3 +88,7 @@ export interface  Culture
 {
 
 }
+export interface  AssignationTache
+{
+
+}

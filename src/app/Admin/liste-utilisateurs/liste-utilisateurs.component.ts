@@ -21,7 +21,7 @@ export class ListeUtilisateursComponent {
   sucessMessage= "";
 
   constructor(private userSevice : ListeUtilisateurService){}
-  
+
   ngOnInit(): void {
     this.userSevice.getListeUser().subscribe(
     {next : (apps) => {
@@ -44,10 +44,7 @@ blockUser(userId: number): void {
     {
       next: () => {
         this.sucessMessage = "Utilisateur bloqué avec succès";
-        // const userIndex = this.user.findIndex(user => user.id === userId);
-        // if (userIndex !== -1) {
-        //   this.user[userIndex].status = 'bloquer';
-        // }
+
       },
       error: (err) => {
         this.errorMessage = "Erreur lors du blocage de l'utilisateur";
@@ -56,16 +53,13 @@ blockUser(userId: number): void {
   );
 }
 
-// Function to unblock a user
+
 unblockUser(userId: number): void {
   this.userSevice.debloquer(userId).subscribe(
     {
       next: () => {
         this.sucessMessage = "Utilisateur débloqué avec succès";
-        // const userIndex = this.user.findIndex(user => user.id === userId);
-        // if (userIndex !== -1) {
-        //   this.user[userIndex].status = 'debloquer';
-        // }
+
       },
       error: (err) => {
         this.errorMessage = "Erreur lors du déblocage de l'utilisateur";

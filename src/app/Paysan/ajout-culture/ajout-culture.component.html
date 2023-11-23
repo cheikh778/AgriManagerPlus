@@ -121,15 +121,20 @@
           <form>
               <div class="row">
                   <div class="column">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" placeholder="Your name here">
+                      <label for="name">Nom du culture</label>
+                      <input type="text" id="name" placeholder="Nom de La culture" name="nom">
                   </div>
                   <div class="column">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" placeholder="Your email here">
+                      <label for="semence">Semence</label>
+                      <select id="semence" name="semence">
+                        <option value="1">Semence 1</option>
+                        <option value="2">Semence 2</option>
+                        <option value="3">Semence 3</option>
+                      </select>
+
                   </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                   <div class="column">
                       <label for="subject">Subject</label>
                       <input type="text" id="subject" placeholder="Your subject here">
@@ -138,11 +143,11 @@
                       <label for="contact">Contact Number</label>
                       <input type="tel" id="contact" placeholder="Your phone number here">
                   </div>
-              </div>
+              </div> -->
               <div class="row">
                   <div class="column">
-                      <label for="issue">Describe your issue</label>
-                      <textarea id="issue" placeholder="Describe your issue in detail here" rows="3"></textarea>
+                      <label for="issue">Description</label>
+                      <textarea id="issue" placeholder="Descrition de votre culture" rows="3"></textarea>
                   </div>
               </div>
               <button>Submit</button>

@@ -629,7 +629,7 @@ label{
   font-size: 14px;
 }
 textarea,
-input{
+input,select{
   width: 100%;
   font-weight: 400;
   padding: 8px 10px;
@@ -641,7 +641,7 @@ textarea{
   resize: none;
 }
 textarea:focus,
-input:focus{
+input:focus,select:focus{
   outline: none;
   border-color: #28a745;
 }

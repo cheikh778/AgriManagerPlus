@@ -52,11 +52,12 @@ export interface Mail{
 export interface Culture {
   id: number;
   nom: string;
+  description: string;
   dateAjout: Date;
   dateDebut: Date;
   dateFin: Date;
   semence: Semence;
-  paysan: User; 
+  paysan: User;
   status: CultureStatus;
 }
 

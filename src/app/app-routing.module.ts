@@ -14,6 +14,7 @@ import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utili
 import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-utilisateurs.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component'
 import { AjoutCultureComponent } from './Paysan/ajout-culture/ajout-culture.component';
+import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -27,10 +28,11 @@ const routes: Routes = [
   { path: 'paysanDashboard', component:DashboardPComponent},
   { path: 'adminDashboard', component:DashboardAComponent},
   { path:'pageNotAuthorized', component:Page403Component},
-  { path:'**', component:Page404Component},
   { path:'listeProjet', component:ListeProjetEnAttenteComponent},
   { path:'listeUser', component:ListeUtilisateursComponent},
   { path:'ajoutUser', component:AjoutUtilisateurComponent},
+  { path:'ajoutSemence', component:AjoutSemenceComponent},
+  { path:'**', component:Page404Component}
 
 
 ];

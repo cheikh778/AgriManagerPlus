@@ -22,8 +22,13 @@ export class ListeUtilisateursComponent {
   errorMessage = "";
   sucessMessage= "";
 
+<<<<<<< HEAD
   constructor(private userSevice : ListeUtilisateurService,private zone: NgZone,private cdr: ChangeDetectorRef){}
   
+=======
+  constructor(private userSevice : ListeUtilisateurService){}
+
+>>>>>>> 15abc0724628b3e362a1380b2d6808e6e7e8839c
   ngOnInit(): void {
     this.userSevice.getListeUser().subscribe(
     {next : (apps) => {
@@ -53,6 +58,7 @@ export class ListeUtilisateursComponent {
 //   });
 // }
 blockUser(userId: number): void {
+<<<<<<< HEAD
   this.userSevice.bloquer(userId).subscribe({
     next: () => {
       this.sucessMessage = "Utilisateur bloqué avec succès";
@@ -61,10 +67,22 @@ blockUser(userId: number): void {
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du blocage de l'utilisateur";
+=======
+  this.userSevice.bloquer(userId).subscribe(
+    {
+      next: () => {
+        this.sucessMessage = "Utilisateur bloqué avec succès";
+
+      },
+      error: (err) => {
+        this.errorMessage = "Erreur lors du blocage de l'utilisateur";
+      }
+>>>>>>> 15abc0724628b3e362a1380b2d6808e6e7e8839c
     }
   });
 }
 
+<<<<<<< HEAD
 unblockUser(userId: number): void {
   this.userSevice.debloquer(userId).subscribe({
     next: () => {
@@ -73,6 +91,19 @@ unblockUser(userId: number): void {
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du déblocage de l'utilisateur";
+=======
+
+unblockUser(userId: number): void {
+  this.userSevice.debloquer(userId).subscribe(
+    {
+      next: () => {
+        this.sucessMessage = "Utilisateur débloqué avec succès";
+
+      },
+      error: (err) => {
+        this.errorMessage = "Erreur lors du déblocage de l'utilisateur";
+      }
+>>>>>>> 15abc0724628b3e362a1380b2d6808e6e7e8839c
     }
   });
 }

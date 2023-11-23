@@ -375,7 +375,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+#content main .box-info li .fas {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #content main .box-info li:nth-child(1) .bx {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+#content main .box-info li:nth-child(1) .fas {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+#content main .box-info li:nth-child(3) .fas {
   background: var(--light-blue);
   color: var(--blue);
 }
@@ -384,6 +401,26 @@ body {
   color: var(--yellow);
 }
 #content main .box-info li:nth-child(3) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li:nth-child(4) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li:nth-child(5) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li:nth-child(6) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li:nth-child(7) .bx {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+#content main .box-info li:nth-child(8) .bx {
   background: var(--light-orange);
   color: var(--orange);
 }

@@ -118,7 +118,7 @@
 
 
 
-          <form>
+          <form (ngSubmit)="ajouterSemence()">
               <div class="row">
                   <div class="column">
                       <label for="name">Nom de la Semence</label>
@@ -126,10 +126,11 @@
                   </div>
                   <div class="column">
                       <label for="semence">Type de Sememce</label>
-                      <select id="semence" name="typeSemence">
-                        <option value="1">Semence 1</option>
-                        <option value="2">Semence 2</option>
-                        <option value="3">Semence 3</option>
+                      <select id="semence" [(ngModel)]="nouvelleSemence.typeSemence" name="typeSemence">
+                        <option value="semences hybrides">Semences hybrides</option>
+                        <option value="semences non hybrides (reproductibles)">Semences non hybrides (reproductibles)</option>
+                        <option value="semences OGM">Semences OGM</option>
+                        <option value="semences biologiques">Semences biologiques</option>
                       </select>
 
                   </div>
@@ -137,20 +138,20 @@
               <div class="row">
                   <div class="column">
                       <label for="quantite">Quantité</label>
-                      <input type="text" id="quantite" placeholder="qunatite de votre semnece" name="quntite">
+                      <input type="number" [(ngModel)]="nouvelleSemence.quantite" name="quantite" required placeholder="qunatite de votre semnece" >
                   </div>
-                  <!-- <div class="column">
-                      <label for="contact">Contact Number</label>
-                      <input type="tel" id="contact" placeholder="Your phone number here">
-                  </div> -->
+
               </div>
               <div class="row">
                   <div class="column">
                       <label for="issue">Description</label>
-                      <textarea id="issue" placeholder="Descrition de votre culture" rows="3"></textarea>
+                      <textarea id="issue" placeholder="Descrition de votre culture" rows="3"  [(ngModel)]="nouvelleSemence.description" name="description" required></textarea>
                   </div>
               </div>
-              <button>Submit</button>
+              <div class="row">
+                <input type="hidden" name="paysan_id" [(ngModel)]="nouvelleSemence.paysan_id" value="{{ utilisateurId}}">
+              </div>
+              <button  type="submit">Ajouter une semence</button>
           </form>
         </div>
 

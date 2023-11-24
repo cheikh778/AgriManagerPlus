@@ -35,12 +35,13 @@ export interface User{
 
 
 export interface Semence {
+typeSemence: any;
   id : number;
   nom : string;
   description : string;
   type : string;
   quantite: number;
-  paysan_id: number;
+  paysan_id: User;
 }
 
 
@@ -96,11 +97,7 @@ export interface  Materiel
 
 }
 
-export interface  Semence
-{
-  id: number;
-  nom: string;
-}
+
 export interface  AssignationTache
 {
 

@@ -2,8 +2,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
-// import { User } from '../types/user';
-import { Authentification } from './modeles';
+
+import { Authentification, User } from './modeles';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +12,10 @@ export class LoginPageService {
   endpoint: string = 'http://localhost:8081/api/v1/auth/authenticate';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
+  semenceService: any;
+  private utilisateurConnecte: any;
   constructor(private http: HttpClient, public router: Router) {}
-  // Sign-up
+
   signUp(user: Authentification): Observable<any> {
     let api = `${this.endpoint}/register-user`;
     return this.http.post(api, user).pipe(catchError(this.handleError));
@@ -26,7 +28,7 @@ export class LoginPageService {
         console.log('Roles reçus du serveur :', res.role)
         console.log('access_token', res.access_token);
         localStorage.setItem('access_token', res.access_token);
-      
+
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
           this.router.navigate(['adminDashboard']);
@@ -41,18 +43,25 @@ export class LoginPageService {
           this.router.navigate(['clientDashboard']);
           console.log("Bienvenue Client")
         }
-        // this.getUserProfile(res._id).subscribe((res) => {
-        //   this.currentUser = res;
-        //   this.router.navigate(['user-profile/' + res.msg._id]);
-        // });
-        //}
+
+        this.utilisateurConnecte = res.user;
+
+         this.semenceService.setUtilisateurConnecte(this.utilisateurConnecte);
+
+
+
       },
        (error) => {
-        console.error('Erreur lors de la connexion :', error); // Affiche l'erreur dans la console
-        // Vous pouvez également gérer l'erreur ici, par exemple afficher un message d'erreur à l'utilisateur
+        console.error('Erreur lors de la connexion :', error);
+
       }
       );
   }
+  getUtilisateurId(): number {
+    return this.utilisateurConnecte ? this.utilisateurConnecte.id : null;
+  }
+
+
   getToken() {
     return localStorage.getItem('access_token');
   }
@@ -71,8 +80,8 @@ catchError((error) => {
       })
     ).subscribe(
       () => this.handleLogoutSuccess(),
-      
-    
+
+
 () => this.handleLogoutSuccess()
     );
   }
@@ -84,22 +93,6 @@ catchError((error) => {
 
 
 
-
-
-  
-  // doLogout() {
-  //   let removeToken = localStorage.removeItem('access_token');
-  //   if (removeToken == null) {
-  //     this.router.navigate(['log-in']);
-  //   }
-  // }
-  // doLogout() {
-  //   let removeToken = localStorage.removeItem('access_token');
-  //   if (removeToken == null) {
-  //     this.router.navigate(['log-in']);
-  //   }
-  // }
-  // User profile
   getUserProfile(id: any): Observable<any> {
     let api = `${this.endpoint}/user-profile/${id}`;
     return this.http.get(api, { headers: this.headers }).pipe(
@@ -120,9 +113,7 @@ catchError((error) => {
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(msg);
-  }  
   }
-  // public deconnecter(){
-  //   localStorage.removeItem('access_token');
-  // }
+  }
+
 

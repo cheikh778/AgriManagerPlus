@@ -22,15 +22,15 @@ export class AuthGuard implements CanActivate {
     ): Observable<boolean> | Promise<boolean> | boolean {
       if (this.authService.getToken() !== null) {
         const role = next.data['role'];
-    
+
         if (role) {
           const match = this.authService.roleMatch(role);
-    
+
           if (match) {
             return true;
           } else {
             console.log('Role not found ' + role);
-            this.router.navigate(['pageNotAuthorized']);
+            this.router.navigate(['pageForbidden']);
             return false;
           }
         }
@@ -42,5 +42,5 @@ export class AuthGuard implements CanActivate {
     }
     return true;
   }
-   
+
 }

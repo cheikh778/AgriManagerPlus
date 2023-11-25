@@ -1,7 +1,8 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 
 import { AccueilComponent } from './accueil/accueil.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +38,7 @@ import { HeaderCultureComponent } from './Culture/header-culture/header-culture.
 // import { NgModule, HeaderPaysanComponent } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Page401Component } from './page401/page401.component';
 
 
 
@@ -73,6 +75,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
+    Page401Component,
 
   ],
   imports: [
@@ -82,6 +85,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
+   
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

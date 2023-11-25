@@ -14,8 +14,7 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./ajout-culture.component.scss']
 })
 export class AjoutCultureComponent {
-  // userId: number | null = null;
-
+  
   culture = {
     nom:'',
     dateDebut: new Date(),
@@ -28,14 +27,13 @@ export class AjoutCultureComponent {
   constructor(private cultureService: AjoutCultureService, private _router: Router,
     private authService : LoginPageService,private cdr: ChangeDetectorRef) {}
 
-    
+
   submitForm() {
     console.log('Formulaire soumis', this.culture);
 
   try {
- 
-    // const userId = this.authService.getId();
-    // this.cdr.detectChanges();
+
+
 
       this.cultureService.ajoutCulture(this.culture).subscribe(
         response => {
@@ -47,7 +45,7 @@ export class AjoutCultureComponent {
         this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
       }
     );
-  
+
   } catch (error) {
     console.error('Erreur lors de la récupération de l\'utilisateur connecté:', error);
   }
@@ -75,6 +73,6 @@ export class AjoutCultureComponent {
   logout() {
     this.authService.doLogout(); // Appel de la méthode doLogout() du service AuthService
   }
- 
-  
+
+
 }

@@ -1,3 +1,6 @@
+import { Page401Component } from './page401/page401.component';
+import { Culture } from 'src/app/modeles';
+import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -15,7 +18,8 @@ import { ListeCultureComponent } from "./Paysan/Culture/liste-culture/liste-cult
 import {AuthGuard} from "./shared/auth.guard";
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
-import { AjoutCultureComponent } from './Paysan/ajout-culture/ajout-culture.component';
+import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -25,14 +29,17 @@ const routes: Routes = [
   { path: 'login', component:LoginPageComponent },
   { path: 'register', component:RegisterPageComponent },
   { path: 'blog', component:BlogComponent},
-  { path:  'ajoutCulture', component:AjoutCultureComponent},
+  { path: 'ajoutCulture', component:AjoutCultureComponent},
   { path: 'paysanDashboard', component:DashboardPComponent, canActivate:[AuthGuard], data:{role:'paysan'} } ,
   { path: 'adminDashboard', component:DashboardAComponent, canActivate:[AuthGuard], data:{role:'admin'} },
-  { path:'pageNotAuthorized', component:Page403Component},
+  { path:'pageForbidden', component:Page403Component},
   { path:'listeProjet', component:ListeProjetEnAttenteComponent},
   { path:'listeUser', component:ListeUtilisateursComponent},
   { path:'ajoutUser', component:AjoutUtilisateurComponent},
   { path:'listeCulture', component:ListeCultureComponent},
+  { path: 'ajoutSemence', component:AjoutSemenceComponent},
+
+  { path:'pageNotAuthorized', component:Page401Component},
   { path:'**', component:Page404Component}
 
 

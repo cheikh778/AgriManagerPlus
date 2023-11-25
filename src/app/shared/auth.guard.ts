@@ -1,8 +1,9 @@
 import { CanActivateFn } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { LoginPageService } from '../login-page.service';
+import { delay } from 'rxjs/operators';
 
 export const authGuard: CanActivateFn = (route, state) => {
   return true;
@@ -36,11 +37,24 @@ export class AuthGuard implements CanActivate {
         }
       }
 
-    if (this.authService.isLoggedIn !== true) {
-      window.alert("Access not allowed!");
-      this.router.navigate(['login'])
+      if (this.authService.isLoggedIn !== true) {
+
+
+
+        of(true).pipe(delay(0)).subscribe(() => {
+          this.router.navigate(['pageNotAuthorized']);
+
+
+          of(true).pipe(delay(5000)).subscribe(() => {
+            this.router.navigate(['login']);
+          });
+        });
+
+
+        return false;
+      }
+
+      return true;
     }
-    return true;
-  }
 
 }

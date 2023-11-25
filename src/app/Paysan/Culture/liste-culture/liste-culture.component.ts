@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Culture } from 'src/app/modeles';
+import { Router } from '@angular/router';
 import { CultureService } from 'src/app/culture.service';
 
 @Component({
@@ -35,7 +36,7 @@ export class ListeCultureComponent {
   errorMessage = "";
   sucessMessage= "";
 
-  constructor(private cultureSevice : CultureService){}
+  constructor(private cultureSevice : CultureService,private _router: Router){}
   
   ngOnInit(): void {
     this.cultureSevice.getCultures().subscribe(
@@ -50,6 +51,13 @@ export class ListeCultureComponent {
     }
    } )
   }
+
+  modifierCulture(cultureId: number) {
+    // Rediriger vers la page de mise à jour avec l'ID de la culture
+    console.log("id : ",cultureId)
+    this._router.navigate(['updateCulture', cultureId]);
+  }
+
 }
 //   )
 // }

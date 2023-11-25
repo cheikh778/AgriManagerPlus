@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { PublicationsComponent } from './publications/publications.component';
 import { Page404Component } from './page404/page404.component';
 import { Page403Component } from './page403/page403.component';
 import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
+import { UpdateCultureComponent } from './Paysan/Culture/update-culture/update-culture.component';
 import { ListeCultureComponent } from './Paysan/Culture/liste-culture/liste-culture.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
@@ -74,6 +76,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
+    UpdateCultureComponent,
+  
 
   ],
   imports: [
@@ -83,6 +87,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
+    ReactiveFormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

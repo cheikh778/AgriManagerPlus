@@ -14,7 +14,10 @@ export class HeaderPaysanComponent {
     this.status = !this.status;
   }
 
-  // logout() {
-  //   this.authService.doLogout(); // Appel de la méthode doLogout() du service AuthService
-  // }
+  constructor(private authService: LoginPageService) {} // Injection du service AuthService
+
+
+  logout() {
+    this.authService.doLogout(); // Appel de la méthode doLogout() du service AuthService
+  }
 }

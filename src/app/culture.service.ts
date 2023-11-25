@@ -38,8 +38,8 @@ export class CultureService {
     return this.http.delete<void>(url);
   }
 
-  updateCulture(id: number, nouvelleCulture: Culture): Observable<Culture> {
-    const url = `${this.apiUrl}/${id}`;
+  updateCulture(id: number, nouvelleCulture: any): Observable<Culture> {
+    const url = `${this.apiUrl}/update/${id}`;
     return this.http.put<Culture>(url, nouvelleCulture);
   }
 }

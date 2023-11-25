@@ -219,6 +219,7 @@
               <th>Nom</th>
               <th>Date Debut</th>
               <th>Date Fin</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody *ngFor="let c of culture">
@@ -226,7 +227,7 @@
               <td>{{c.nom}}</td>
               <td>{{c.dateDebut}}</td>
               <td>{{c.dateFin}}</td>
-              <td><span class="status completed">Modifier</span></td>
+              <td><button class="status completed" (click)="modifierCulture(c.id)">Modifier</button></td>
             </tr>
            
           </tbody>

@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AjoutCultureComponent {
 
-  status = false;
+ 
 
+  status = false;
   addToggle()
   {
     this.status = !this.status;

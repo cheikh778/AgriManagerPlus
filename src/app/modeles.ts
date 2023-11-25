@@ -50,16 +50,14 @@ export interface Mail{
     message : string;
 }
 
-export interface Culture {
-  id: number;
-  nom: string;
-  description: string;
-  dateAjout: Date;
-  dateDebut: Date;
-  dateFin: Date;
-  semence: Semence;
-  paysan: User;
-  status: CultureStatus;
+export interface  Culture
+{
+    id : number;
+    nom : String;
+    dateDebut : Date;
+    dateFin : Date;
+    paysan : number | null;
+    status: CultureStatus;
 }
 
 export enum CultureStatus {

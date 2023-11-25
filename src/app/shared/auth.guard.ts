@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginPageService } from '../login-page.service';
+
 export const authGuard: CanActivateFn = (route, state) => {
   return true;
 };
@@ -17,10 +18,27 @@ export class AuthGuard implements CanActivate {
   ) { }
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+    state: RouterStateSnapshot
+    ): Observable<boolean> | Promise<boolean> | boolean {
+      if (this.authService.getToken() !== null) {
+        const role = next.data['role'];
+    
+        if (role) {
+          const match = this.authService.roleMatch(role);
+    
+          if (match) {
+            return true;
+          } else {
+            console.log('Role not found ' + role);
+            this.router.navigate(['pageNotAuthorized']);
+            return false;
+          }
+        }
+      }
+
     if (this.authService.isLoggedIn !== true) {
       window.alert("Access not allowed!");
-      this.router.navigate(['log-in'])
+      this.router.navigate(['login'])
     }
     return true;
   }

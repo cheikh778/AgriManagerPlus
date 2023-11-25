@@ -176,36 +176,36 @@ catchError((error) => {
   }
 
 
-  getCurrentUser(): number | null {
-    const token = localStorage.getItem('access_token');
-    console.log(localStorage.getItem('access_token'))
+  // getCurrentUser(): number | null {
+  //   const token = localStorage.getItem('access_token');
+  //   console.log(localStorage.getItem('access_token'))
 
-    if (token) {
-      // Décodez le jeton JWT pour obtenir les informations de l'utilisateur
-      const decodedToken = this.decodeToken(token);
-      if (decodedToken && decodedToken.id) {
-        return decodedToken.id;
-      }
-      console.log('Decoded Token:', decodedToken);
-      return decodedToken;
-    }
+  //   if (token) {
+  //     // Décodez le jeton JWT pour obtenir les informations de l'utilisateur
+  //     const decodedToken = this.decodeToken(token);
+  //     if (decodedToken && decodedToken.id) {
+  //       return decodedToken.id;
+  //     }
+  //     console.log('Decoded Token:', decodedToken);
+  //     return decodedToken;
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 
-  private decodeToken(token: string): any {
-    try {
+  // private decodeToken(token: string): any {
+  //   try {
 
-  const decodedToken = jwtDecode(token);
+  // const decodedToken = jwtDecode(token);
 
 
-  return decodedToken;
-    } catch (error) {
-      console.error('Erreur lors du décodage du jeton JWT :', error);
-      return null;
-    }
+  // return decodedToken;
+  //   } catch (error) {
+  //     console.error('Erreur lors du décodage du jeton JWT :', error);
+  //     return null;
+  //   }
 
-  }
+  // }
   // public deconnecter(){
   //   localStorage.removeItem('access_token');
   // }

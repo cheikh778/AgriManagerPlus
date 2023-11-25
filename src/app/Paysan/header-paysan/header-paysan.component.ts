@@ -1,0 +1,20 @@
+import { Component } from '@angular/core';
+import { LoginPageService } from 'src/app/login-page.service';
+
+
+@Component({
+  selector: 'header-paysan',
+  templateUrl: './header-paysan.component.html',
+  styleUrls: ['./header-paysan.component.scss']
+})
+export class HeaderPaysanComponent {
+  status = false;
+  addToggle()
+  {
+    this.status = !this.status;
+  }
+
+  // logout() {
+  //   this.authService.doLogout(); // Appel de la méthode doLogout() du service AuthService
+  // }
+}

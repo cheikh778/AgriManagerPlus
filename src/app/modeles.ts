@@ -27,7 +27,7 @@ export interface User{
     nom : string;
     prenom : string;
     contact : string;
-    email : string;
+    email : string; 
     password : string;
     role : string;
     status : string;
@@ -51,6 +51,11 @@ export interface Mail{
 
 export interface  Culture
 {
+    id : number;
+    nom : String;
+    dateDebut : Date;
+    dateFin : Date;
+    paysan : number | null;
 
 }
 

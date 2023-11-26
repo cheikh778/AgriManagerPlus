@@ -36,7 +36,7 @@ export class UpdateCultureComponent {
     this.cultureService.updateCulture(this.id, this.culture).subscribe({
       next: (data) => {
         console.log(data);
-        this.redirectToCandidatList();
+        this.redirectToCultureList();
       },
       error: (e) => {
         console.log(e);
@@ -44,7 +44,7 @@ export class UpdateCultureComponent {
     });
   }
 
-  redirectToCandidatList() {
+  redirectToCultureList() {
     this.router.navigate(['listeCulture']);
   }
 

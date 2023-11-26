@@ -36,10 +36,10 @@ export class ListeCultureComponent {
   errorMessage = "";
   sucessMessage= "";
 
-  constructor(private cultureSevice : CultureService,private _router: Router){}
+  constructor(private cultureService : CultureService,private _router: Router){}
   
   ngOnInit(): void {
-    this.cultureSevice.getCultures().subscribe(
+    this.cultureService.getCultures().subscribe(
     {next : (apps) => {
       this.culture = apps;
     },
@@ -58,6 +58,20 @@ export class ListeCultureComponent {
     this._router.navigate(['updateCulture', cultureId]);
   }
 
+  deleteCulture(cultureId: number) {
+    this.cultureService.supprimerCulture(cultureId).subscribe({
+      next: (data) => {
+        console.log(data);
+        this._router.navigate(['listeCulture']);
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    });
+  }
+  redirectToCultureList() {
+    this._router.navigate(['listeCulture']);
+  }
 }
 //   )
 // }

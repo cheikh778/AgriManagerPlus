@@ -10,36 +10,36 @@ import { Culture } from './modeles';
 })
 export class CultureService {
 
-  private apiUrl = 'http://localhost:8081/api/cultures'; 
+  private apiUrl = 'http://localhost:8081/api/cultures';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  ajouterCulture(culture: Culture): Observable<Culture> {
-    return this.http.post<Culture>(this.apiUrl, culture);
+  createCulture(culture: any): Observable<any> {
+    return this.httpClient.post(this.apiUrl, culture);
   }
 
+  getCultureById(id: number): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/${id}`);
+  }
   getCultures(): Observable<Culture[]> {
-    return this.http.get<Culture[]>(this.apiUrl);
+    return this.httpClient.get<Culture[]>(this.apiUrl);
   }
 
-  getCulturesParAgriculteur(agriculteurId: number): Observable<Culture[]> {
+  // updateCulture(id: number, updatedCulture: any): Observable<any> {
+  //   return this.httpClient.put(`${this.apiUrl}/${id}`, updatedCulture);
+  // }
 
-    const url = `${this.apiUrl}/agriculteur/${agriculteurId}`;
-    return this.http.get<Culture[]>(url);
-  }
-
-  getCultureParId(id: number): Observable<Culture> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Culture>(url);
+  deleteCulture(id: number): Observable<any> {
+    return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
 
   supprimerCulture(id: number): Observable<void> {
     const url = `${this.apiUrl}/delete/${id}`;
-    return this.http.delete<void>(url);
+    return this.httpClient.delete<void>(url);
   }
 
   updateCulture(id: number, nouvelleCulture: any): Observable<Culture> {
     const url = `${this.apiUrl}/update/${id}`;
-    return this.http.put<Culture>(url, nouvelleCulture);
+    return this.httpClient.put<Culture>(url, nouvelleCulture);
   }
 }

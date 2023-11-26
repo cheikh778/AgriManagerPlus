@@ -37,13 +37,13 @@ export class ListeCultureComponent {
   sucessMessage= "";
 
   constructor(private cultureService : CultureService,private _router: Router){}
-  
+
   ngOnInit(): void {
     this.cultureService.getCultures().subscribe(
-    {next : (apps) => {
+    {next : (apps: Culture[]) => {
       this.culture = apps;
     },
-    error:(err) =>{
+    error:() =>{
       this.errorMessage="Erreur de requete"
     },
     complete:() =>{
@@ -53,7 +53,7 @@ export class ListeCultureComponent {
   }
 
   modifierCulture(cultureId: number) {
-    // Rediriger vers la page de mise à jour avec l'ID de la culture
+    
     console.log("id : ",cultureId)
     this._router.navigate(['updateCulture', cultureId]);
   }
@@ -73,9 +73,8 @@ export class ListeCultureComponent {
     this._router.navigate(['listeCulture']);
   }
 }
-//   )
-// }
 
 
 
-// }
+
+

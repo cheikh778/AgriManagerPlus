@@ -12,14 +12,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UpdateCultureComponent {
 
   id!: number;
-  culture: Culture = { id: 0, nom: '', dateDebut: new Date(), dateFin: new Date(), paysan: null };
+  culture: Culture = {
+    id: 0, nom: '', dateDebut: new Date(), dateFin: new Date(), paysan: null
+  };
 
   constructor(private cultureService: CultureService, private route: ActivatedRoute, private router: Router) { }
 
   private getCandidatById() {
     this.id = this.route.snapshot.params['id'];
-    this.cultureService.getCultureParId(this.id).subscribe({
-      next: (data) => {
+    this.cultureService.getCultureById(this.id).subscribe({
+      next: (data: Culture) => {
         this.culture = data;
       },
       error: (e) => {
@@ -63,13 +65,13 @@ export class UpdateCultureComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+
     this.showProfileDropdown = false;
   }
 
   toggleProfileDropdown() {
     this.showProfileDropdown = !this.showProfileDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+
     this.showNotificationDropdown = false;
   }
 }

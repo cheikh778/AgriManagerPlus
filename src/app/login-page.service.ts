@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
 // import { User } from '../types/user';
 import { Authentification } from './modeles';
-import { jwtDecode } from 'jwt-decode';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,13 +12,15 @@ export class LoginPageService {
   endpoint: string = 'http://localhost:8081/api/v1/auth/authenticate';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
+  semenceService: any;
+  private utilisateurConnecte: any;
   constructor(private http: HttpClient, public router: Router) {}
-  // Sign-up
+
   signUp(user: Authentification): Observable<any> {
     let api = `${this.endpoint}/register-user`;
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
-  
+
   setRole(role: string): void {
     localStorage.setItem('role', role);
   }
@@ -52,19 +54,21 @@ export class LoginPageService {
           this.router.navigate(['clientDashboard']);
           console.log("Bienvenue Client")
         }
-        // this.getUserProfile(res._id).subscribe((res) => {
-        //   this.currentUser = res;
-        //   this.router.navigate(['user-profile/' + res.msg._id]);
-        // });
-        //}
+
+        this.utilisateurConnecte = res.user;
+
+         this.semenceService.setUtilisateurConnecte(this.utilisateurConnecte);
+
+
+
       },
        (error) => {
-        console.error('Erreur lors de la connexion :', error); // Affiche l'erreur dans la console
-        // Vous pouvez également gérer l'erreur ici, par exemple afficher un message d'erreur à l'utilisateur
+        console.error('Erreur lors de la connexion :', error);
+
       }
       );
   }
-  
+
   // private getId(paysan : number){
   //    this.http
   //   .post<any>(`${this.endpoint}`, user)
@@ -72,7 +76,7 @@ export class LoginPageService {
   //   paysan = res.id
   //     return paysan
   //   })
-   
+
   // }
   // getId(): Observable<number> {
   //   return this.http.post<any>(`${this.endpoint}`, user).pipe(
@@ -107,8 +111,8 @@ catchError((error) => {
       })
     ).subscribe(
       () => this.handleLogoutSuccess(),
-      
-    
+
+
 () => this.handleLogoutSuccess()
     );
   }
@@ -135,7 +139,7 @@ catchError((error) => {
   }
 
 
-  
+
   // doLogout() {
   //   let removeToken = localStorage.removeItem('access_token');
   //   if (removeToken == null) {
@@ -169,39 +173,39 @@ catchError((error) => {
       msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(msg);
-  }  
-
-
-  getCurrentUser(): number | null {
-    const token = localStorage.getItem('access_token');
-    console.log(localStorage.getItem('access_token'))
-  
-    if (token) {
-      // Décodez le jeton JWT pour obtenir les informations de l'utilisateur
-      const decodedToken = this.decodeToken(token);
-      if (decodedToken && decodedToken.id) {
-        return decodedToken.id;
-      }
-      console.log('Decoded Token:', decodedToken);
-      return decodedToken;
-    }
-  
-    return null;
   }
 
-  private decodeToken(token: string): any {
-    try {
-      
-  const decodedToken = jwtDecode(token);
-      
-      
-  return decodedToken;
-    } catch (error) {
-      console.error('Erreur lors du décodage du jeton JWT :', error);
-      return null;
-    }
-  
-  }
+
+  // getCurrentUser(): number | null {
+  //   const token = localStorage.getItem('access_token');
+  //   console.log(localStorage.getItem('access_token'))
+
+  //   if (token) {
+  //     // Décodez le jeton JWT pour obtenir les informations de l'utilisateur
+  //     const decodedToken = this.decodeToken(token);
+  //     if (decodedToken && decodedToken.id) {
+  //       return decodedToken.id;
+  //     }
+  //     console.log('Decoded Token:', decodedToken);
+  //     return decodedToken;
+  //   }
+
+  //   return null;
+  // }
+
+  // private decodeToken(token: string): any {
+  //   try {
+
+  // const decodedToken = jwtDecode(token);
+
+
+  // return decodedToken;
+  //   } catch (error) {
+  //     console.error('Erreur lors du décodage du jeton JWT :', error);
+  //     return null;
+  //   }
+
+  // }
   // public deconnecter(){
   //   localStorage.removeItem('access_token');
   // }

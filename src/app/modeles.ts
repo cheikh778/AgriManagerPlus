@@ -27,7 +27,7 @@ export interface User{
     nom : string;
     prenom : string;
     contact : string;
-    email : string; 
+    email : string;
     password : string;
     role : string;
     status : string;
@@ -56,7 +56,12 @@ export interface  Culture
     dateDebut : Date;
     dateFin : Date;
     paysan : number | null;
+    
+}
 
+export enum CultureStatus {
+  ENCOURS = 'ENCOURS',
+  TERMINE = 'TERMINE'
 }
 
 export interface  Tache
@@ -74,7 +79,7 @@ export interface  Eau
 
 }
 
-export interface  intratAgricole
+export interface  IntratAgricole
 {
 
 }
@@ -89,7 +94,12 @@ export interface  Materiel
 
 }
 
-export interface  Culture
+
+export interface  AssignationTache
+{
+
+}
+export interface  AssignationTache
 {
 
 }

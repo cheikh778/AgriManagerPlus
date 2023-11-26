@@ -64,7 +64,7 @@ unblockUser(userId: number): void {
       this.sucessMessage = "Utilisateur débloqué avec succès";
       this.updateUserStatus(userId, 'debloquer');
 
-      // Attendre 2 secondes avant de recharger la page
+
       setTimeout(() => {
         location.reload();
       }, 2000);

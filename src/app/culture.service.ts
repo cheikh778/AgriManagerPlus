@@ -1,4 +1,4 @@
-// culture.service.ts
+
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,6 +13,11 @@ export class CultureService {
   private apiUrl = 'http://localhost:8081/api/cultures';
 
   constructor(private httpClient: HttpClient) {}
+
+  
+   getCultures(): Observable<Culture[]> {
+    return this.httpClient.get<Culture[]>(this.apiUrl);
+  }
 
   createCulture(culture: any): Observable<any> {
     return this.httpClient.post(this.apiUrl, culture);
@@ -35,8 +40,7 @@ export class CultureService {
     return this.httpClient.delete<void>(url);
   }
 
-  // updateCulture(id: number, nouvelleCulture: any): Observable<Culture> {
-  //   const url = `${this.apiUrl}/update/${id}`;
-  //   return this.http.put<Culture>(url, nouvelleCulture);
-  // }
+
 }
+
+

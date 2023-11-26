@@ -53,7 +53,7 @@ export class ListeCultureComponent {
   }
 
   modifierCulture(cultureId: number) {
-    
+
     console.log("id : ",cultureId)
     this._router.navigate(['updateCulture', cultureId]);
   }

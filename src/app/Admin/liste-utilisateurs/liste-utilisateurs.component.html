@@ -72,13 +72,14 @@
 
 
       <div class="table-data">
-        <div style="background-color:#dff0d8;">
-          <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
-        </div>
-        <div style="background-color: #f2dede;">
-          <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-        </div>
+
         <div class="order">
+          <div style="background-color:#dff0d8;">
+            <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
+          </div>
+          <div style="background-color: #f2dede;">
+            <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+          </div>
 
           <div class="head">
             <h3>Listes Ulitisateurs</h3>

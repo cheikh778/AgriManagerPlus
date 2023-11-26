@@ -19,7 +19,7 @@ import { UpdateCultureComponent } from "./Paysan/Culture/update-culture/update-c
 import {AuthGuard} from "./shared/auth.guard";
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
-import { AjoutCultureComponent } from './Paysan/ajout-culture/ajout-culture.component';
+import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
 
 
 const routes: Routes = [

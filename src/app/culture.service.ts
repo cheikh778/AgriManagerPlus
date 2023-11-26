@@ -14,7 +14,7 @@ export class CultureService {
 
   constructor(private httpClient: HttpClient) {}
 
-  
+
    getCultures(): Observable<Culture[]> {
     return this.httpClient.get<Culture[]>(this.apiUrl);
   }
@@ -26,10 +26,11 @@ export class CultureService {
   getCultureById(id: number): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/${id}`);
   }
+  
 
-  updateCulture(id: number, updatedCulture: any): Observable<any> {
-    return this.httpClient.put(`${this.apiUrl}/${id}`, updatedCulture);
-  }
+  // updateCulture(id: number, updatedCulture: any): Observable<any> {
+  //   return this.httpClient.put(`${this.apiUrl}/${id}`, updatedCulture);
+  // }
 
   deleteCulture(id: number): Observable<any> {
     return this.httpClient.delete(`${this.apiUrl}/${id}`);
@@ -40,7 +41,10 @@ export class CultureService {
     return this.httpClient.delete<void>(url);
   }
 
-
+  updateCulture(id: number, nouvelleCulture: any): Observable<Culture> {
+    const url = `${this.apiUrl}/update/${id}`;
+    return this.httpClient.put<Culture>(url, nouvelleCulture);
+  }
 }
 
 

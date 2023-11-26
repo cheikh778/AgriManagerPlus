@@ -35,13 +35,12 @@ export interface User{
 
 
 export interface Semence {
-typeSemence: any;
-  id : number;
+   id : number;
   nom : string;
   description : string;
-  type : string;
+  typeSemence : string;
   quantite: number;
-  paysan_id: User;
+//   paysan_id: number;
 }
 
 

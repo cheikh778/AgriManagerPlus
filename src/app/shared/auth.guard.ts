@@ -31,7 +31,7 @@ export class AuthGuard implements CanActivate {
             return true;
           } else {
             console.log('Role not found ' + role);
-            this.router.navigate(['pageForbidden']);
+            this.router.navigate(['forbidden']);
             return false;
           }
         }

@@ -11,25 +11,17 @@ import { User } from './modeles';  // Assurez-vous d'importer le modèle User
 export class SemenceService {
 
   private apiUrl = 'http://localhost:8081/api/semences';
-  private utilisateurConnecte!: User;
 
   constructor(private http: HttpClient) { }
 
   // Mettez à jour l'utilisateur connecté
-  setUtilisateurConnecte(utilisateur: User) {
-    this.utilisateurConnecte = utilisateur;
-  }
+  // setUtilisateurConnecte(utilisateur: User) {
+  //   this.utilisateurConnecte = utilisateur;
+  // }
 
   ajouterSemence(semence: Semence): Observable<Semence> {
-    if (!this.utilisateurConnecte) {
-
-      console.error('Utilisateur non connecté');
-    }
-
-    // Utilisez l'id de l'utilisateur connecté comme paysan_id
-    semence.paysan_id = this.utilisateurConnecte;
-
-    return this.http.post<Semence>(this.apiUrl, semence);
+    const url = `${this.apiUrl}/ajout`;
+    return this.http.post<Semence>(url, semence);
   }
 
   getSemences(): Observable<Semence[]> {
@@ -47,12 +39,12 @@ export class SemenceService {
   }
 
   supprimerSemence(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/delete/${id}`;
     return this.http.delete<void>(url);
   }
 
   updateSemence(id: number, nouvelleSemence: Semence): Observable<Semence> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/update/${id}`;
     return this.http.put<Semence>(url, nouvelleSemence);
   }
 }

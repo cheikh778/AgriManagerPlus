@@ -28,18 +28,18 @@ import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
 import { HeaderDashbaordComponent } from './Admin/header-dashbaord/header-dashbaord.component';
 import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-utilisateurs.component';
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
-import { AjoutEmployeComponent } from './Paysan/ajout-employe/ajout-employe.component';
-import { AjoutTacheComponent } from './Paysan/ajout-tache/ajout-tache.component';
-import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
+
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
-
-
 import { CorsInterceptor } from './shared/cors.interceptor';
 
 import { HeaderPaysanModule } from './Paysan/header-paysan/header-paysan.module';
 import { HeaderCultureComponent } from './Culture/header-culture/header-culture.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+//Semence
+import { ListeSemenceComponent } from './Paysan/Semence/liste-semence/liste-semence.component';
+import { AjoutSemenceComponent } from './Paysan/Semence/ajout-semence/ajout-semence.component';
+import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-semence.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { Page401Component } from './page401/page401.component';
 
@@ -72,15 +72,15 @@ import { Page401Component } from './page401/page401.component';
     ListeUtilisateursComponent,
     HeaderDashbaordComponent,
     AjoutUtilisateurComponent,
-    AjoutEmployeComponent,
-    AjoutTacheComponent,
     AjoutSemenceComponent,
-    //HeaderPaysanComponent,
+    // HeaderPaysanComponent,
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
     UpdateCultureComponent,
-
+    ListeSemenceComponent,
+    UpdateSemenceComponent,
+  
 
   ],
   imports: [

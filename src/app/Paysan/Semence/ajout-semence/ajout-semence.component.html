@@ -1,10 +1,10 @@
 <!-- SIDEBAR -->
 <!-- [ngClass]="status ? 'hide' : ''" -->
-<section  id="sidebar">
-    <a class="brand" href="paysanDashboard">
+<!-- <section  id="sidebar">
+    <a class="brand" href="paysanDashboard">  -->
       <!-- <i class='bx bxs-smile'></i>
       <span class="text">AdminHub</span> -->
-       <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
+       <!-- <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
     </a>
     <ul class="side-menu top">
       <li class="active">
@@ -76,11 +76,11 @@
         </a>
       </li>
     </ul>
-  </section>
+  </section>  -->
   <!-- SIDEBAR -->
-  <!-- <header-paysan></header-paysan> -->
-
-
+  <header-paysan></header-paysan>
+  
+  
   <!-- CONTENT -->
   <section id="content">
     <!-- navbar.component.html -->
@@ -150,10 +150,10 @@
         <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
         <div class="container ">
             <div class="row justify-content-center mt-4">
-
-                  <form method="POST" >
+                
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
                     <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <div class="row mb-5">
+                    <!-- <div class="row mb-5">
                       <div class="col">
                         <div class="form-outline">
                           <input type="text" id="form6Example1" class="form-control" />
@@ -166,45 +166,49 @@
                           <label class="form-label" for="form6Example2">Last name</label>
                         </div>
                       </div>
-                    </div>
-
+                    </div> -->
+                  
                     <!-- Text input -->
                     <div class="form-outline mb-5">
-                      <input type="text" id="form6Example3" class="form-control" />
-                      <label class="form-label" for="form6Example3">Company name</label>
+                      <input type="text" id="form6Example3" class="form-control" 
+                      name="nom" [(ngModel)]="semence.nom"/>
+                      <label class="form-label" for="form6Example3">Nom</label>
                     </div>
                     <!-- Text input -->
                     <div class="form-outline mb-5">
-                      <input type="text" id="form6Example4" class="form-control" />
-                      <label class="form-label" for="form6Example4">Address</label>
+                      <input type="text" id="form6Example4" class="form-control" 
+                      name="typeSemence" [(ngModel)]="semence.typeSemence"/>
+                      <label class="form-label" for="form6Example4">Type De Semence</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-5">
-                      <input type="email" id="form6Example5" class="form-control" />
-                      <label class="form-label" for="form6Example5">Email</label>
+                      <input type="email" id="form6Example5" class="form-control" 
+                      name="quantite" [(ngModel)]="semence.quantite"/>
+                      <label class="form-label" for="form6Example5">Quantité</label>
                     </div>
 
                     <!-- Number input -->
-                    <div class="form-outline mb-5">
+                    <!-- <div class="form-outline mb-5">
                       <input type="number" id="form6Example6" class="form-control" />
                       <label class="form-label" for="form6Example6">Phone</label>
-                    </div>
-
+                    </div> -->
+                  
                     <!-- Message input -->
                     <div class="form-outline mb-5">
-                      <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                      <label class="form-label" for="form6Example7">Additional information</label>
+                      <textarea class="form-control" id="form6Example7" rows="4" name="description"
+                      [(ngModel)]="semence.description"></textarea>
+                      <label class="form-label" for="form6Example7">Description</label>
                     </div>
 
                     <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-center mb-5">
+                    <!-- <div class="form-check d-flex justify-content-center mb-5">
                       <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
                       <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                    </div>
-
+                    </div> -->
+                  
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-5">Place order</button>
+                    <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
                   </form>
                 </div>
             </div>

@@ -32,13 +32,14 @@ import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component'
 
 
 import { CorsInterceptor } from './shared/cors.interceptor';
-// import { HeaderPaysanComponent } from './Paysan/header-paysan/header-paysan.component';
+
 import { HeaderPaysanModule } from './Paysan/header-paysan/header-paysan.module';
 import { HeaderCultureComponent } from './Culture/header-culture/header-culture.component';
-// import { NgModule, HeaderPaysanComponent } from '@angular/core';
+
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Page401Component } from './page401/page401.component';
+
 
 
 
@@ -71,7 +72,7 @@ import { Page401Component } from './page401/page401.component';
     AjoutEmployeComponent,
     AjoutTacheComponent,
     AjoutSemenceComponent,
-    // HeaderPaysanComponent,
+    //HeaderPaysanComponent,
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
@@ -85,7 +86,7 @@ import { Page401Component } from './page401/page401.component';
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-   
+
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

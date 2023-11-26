@@ -57,7 +57,7 @@ export interface  Culture
     dateDebut : Date;
     dateFin : Date;
     paysan : number | null;
-    status: CultureStatus;
+    
 }
 
 export enum CultureStatus {

@@ -45,7 +45,11 @@ blockUser(userId: number): void {
     next: () => {
       this.sucessMessage = "Utilisateur bloqué avec succès";
       this.updateUserStatus(userId, 'bloquer');
-      this.cdr.detectChanges();
+
+      // Attendre 2 secondes avant de recharger la page
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du blocage de l'utilisateur";
@@ -53,11 +57,17 @@ blockUser(userId: number): void {
   });
 }
 
+
 unblockUser(userId: number): void {
   this.userSevice.debloquer(userId).subscribe({
     next: () => {
       this.sucessMessage = "Utilisateur débloqué avec succès";
       this.updateUserStatus(userId, 'debloquer');
+
+      // Attendre 2 secondes avant de recharger la page
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du déblocage de l'utilisateur";

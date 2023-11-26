@@ -30,11 +30,13 @@ export class CultureService {
     return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
 
-  getAllCultures(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.apiUrl);
+  supprimerCulture(id: number): Observable<void> {
+    const url = `${this.apiUrl}/delete/${id}`;
+    return this.httpClient.delete<void>(url);
   }
 
-  getCulturesByPaysan(paysanId: number): Observable<any[]> {
-    return this.httpClient.get<any[]>(`${this.apiUrl}/paysan/${paysanId}`);
-  }
+  // updateCulture(id: number, nouvelleCulture: any): Observable<Culture> {
+  //   const url = `${this.apiUrl}/update/${id}`;
+  //   return this.http.put<Culture>(url, nouvelleCulture);
+  // }
 }

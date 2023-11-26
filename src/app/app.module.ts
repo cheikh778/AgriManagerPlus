@@ -2,6 +2,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AccueilComponent } from './accueil/accueil.component';
@@ -17,6 +19,8 @@ import { ConditionsComponent } from './conditions/conditions.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { Page404Component } from './page404/page404.component';
 import { Page403Component } from './page403/page403.component';
+import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
+import { UpdateCultureComponent } from './Paysan/Culture/update-culture/update-culture.component';
 import { ListeCultureComponent } from './Paysan/Culture/liste-culture/liste-culture.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component';
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
@@ -24,7 +28,6 @@ import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
 import { HeaderDashbaordComponent } from './Admin/header-dashbaord/header-dashbaord.component';
 import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-utilisateurs.component';
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
-import { AjoutCultureComponent } from './Paysan/ajout-culture/ajout-culture.component';
 import { AjoutEmployeComponent } from './Paysan/ajout-employe/ajout-employe.component';
 import { AjoutTacheComponent } from './Paysan/ajout-tache/ajout-tache.component';
 import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
@@ -76,7 +79,8 @@ import { Page401Component } from './page401/page401.component';
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
-    Page401Component,
+    UpdateCultureComponent,
+
 
   ],
   imports: [
@@ -86,7 +90,7 @@ import { Page401Component } from './page401/page401.component';
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-
+    ReactiveFormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

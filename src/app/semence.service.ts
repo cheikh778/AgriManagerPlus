@@ -10,12 +10,13 @@ import { Semence } from './modeles';
 })
 export class SemenceService {
 
-  private apiUrl = 'http://localhost:8080/api/semences';
+  private apiUrl = 'http://localhost:8081/api/semences';
 
   constructor(private http: HttpClient) { }
 
   ajouterSemence(semence: Semence): Observable<Semence> {
-    return this.http.post<Semence>(this.apiUrl, semence);
+    const url = `${this.apiUrl}/ajout`;
+    return this.http.post<Semence>(url, semence);
   }
 
   getSemences(): Observable<Semence[]> {
@@ -34,12 +35,12 @@ export class SemenceService {
   }
 
   supprimerSemence(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/delete/${id}`;
     return this.http.delete<void>(url);
   }
 
   updateSemence(id: number, nouvelleSemence: Semence): Observable<Semence> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/update/${id}`;
     return this.http.put<Semence>(url, nouvelleSemence);
   }
 }

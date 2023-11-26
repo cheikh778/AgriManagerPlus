@@ -32,7 +32,6 @@ import { HeaderDashbaordComponent } from './Admin/header-dashbaord/header-dashba
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { AjoutEmployeComponent } from './Paysan/ajout-employe/ajout-employe.component';
 import { AjoutTacheComponent } from './Paysan/ajout-tache/ajout-tache.component';
-import { AjoutSemenceComponent } from './Paysan/ajout-semence/ajout-semence.component';
 
 import { CorsInterceptor } from './shared/cors.interceptor';
 // import { HeaderPaysanComponent } from './Paysan/header-paysan/header-paysan.component';
@@ -40,6 +39,10 @@ import { HeaderPaysanModule } from './Paysan/header-paysan/header-paysan.module'
 import { HeaderCultureComponent } from './Culture/header-culture/header-culture.component';
 // import { NgModule, HeaderPaysanComponent } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+//Semence
+import { ListeSemenceComponent } from './Paysan/Semence/liste-semence/liste-semence.component';
+import { AjoutSemenceComponent } from './Paysan/Semence/ajout-semence/ajout-semence.component';
+import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-semence.component';
 
 
 
@@ -72,11 +75,15 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AjoutEmployeComponent,
     AjoutTacheComponent,
     AjoutSemenceComponent,
+    ListeSemenceComponent,
+
     // HeaderPaysanComponent,
     AjoutCultureComponent,
     HeaderCultureComponent,
     ListeCultureComponent,
     UpdateCultureComponent,
+    ListeSemenceComponent,
+    UpdateSemenceComponent,
   
 
   ],

@@ -16,6 +16,10 @@ import { ListeUtilisateursComponent } from './Admin/liste-utilisateurs/liste-uti
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component';
 import { ListeCultureComponent } from "./Paysan/Culture/liste-culture/liste-culture.component";
 import { UpdateCultureComponent } from "./Paysan/Culture/update-culture/update-culture.component";
+//Semence
+import { AjoutSemenceComponent } from "./Paysan/Semence/ajout-semence/ajout-semence.component";
+import { ListeSemenceComponent } from "./Paysan/Semence/liste-semence/liste-semence.component";
+import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-semence.component";
 import {AuthGuard} from "./shared/auth.guard";
 
 const routes: Routes = [
@@ -36,6 +40,9 @@ const routes: Routes = [
   { path:'ajoutUser', component:AjoutUtilisateurComponent, canActivate:[AuthGuard], data:{role:'admin'} },
   { path:'listeCulture', component:ListeCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateCulture/:id', component:UpdateCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'ajoutSemence', component:AjoutSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeSemence', component:ListeSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateSemence/:id', component:UpdateSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   
   
 

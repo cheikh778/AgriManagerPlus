@@ -18,7 +18,7 @@ export class ListeSemenceComponent {
   constructor(private semenceService: SemenceService,private _router: Router){}
   
   ngOnInit(): void {
-    this.semenceService.getSemences().subscribe(
+    this.semenceService.getSemencesParPaysan().subscribe(
     {next : (apps) => {
       this.semence = apps;
     },

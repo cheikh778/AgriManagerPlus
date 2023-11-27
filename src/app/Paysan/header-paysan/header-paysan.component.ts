@@ -3,7 +3,7 @@ import { LoginPageService } from 'src/app/login-page.service';
 
 
 @Component({
-  selector: 'headerPaysan',
+  selector: 'header-paysan',
   templateUrl: './header-paysan.component.html',
   styleUrls: ['./header-paysan.component.scss']
 })

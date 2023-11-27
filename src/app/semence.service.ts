@@ -28,8 +28,8 @@ export class SemenceService {
     return this.http.get<Semence[]>(this.apiUrl);
   }
 
-  getSemencesParAgriculteur(agriculteurId: number): Observable<Semence[]> {
-    const url = `${this.apiUrl}/agriculteur/${agriculteurId}`;
+  getSemencesParPaysan(): Observable<Semence[]> {
+    const url = `${this.apiUrl}/liste`;
     return this.http.get<Semence[]>(url);
   }
 

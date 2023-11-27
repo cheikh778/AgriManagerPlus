@@ -39,7 +39,7 @@ export class ListeCultureComponent {
   constructor(private cultureService : CultureService,private _router: Router){}
 
   ngOnInit(): void {
-    this.cultureService.getCultures().subscribe(
+    this.cultureService.getCulturesByPaysan().subscribe(
     {next : (apps: Culture[]) => {
       this.culture = apps;
     },

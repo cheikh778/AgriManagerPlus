@@ -20,6 +20,10 @@ import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utili
 import { AjoutSemenceComponent } from "./Paysan/Semence/ajout-semence/ajout-semence.component";
 import { ListeSemenceComponent } from "./Paysan/Semence/liste-semence/liste-semence.component";
 import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-semence.component";
+//Tache
+import { AjoutTacheComponent } from "./Paysan/Tache/ajout-tache/ajout-tache.component";
+import { UpdateTacheComponent } from "./Paysan/Tache/update-tache/update-tache.component";
+import { ListeTacheComponent } from "./Paysan/Tache/liste-tache/liste-tache.component";
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
 
@@ -40,9 +44,14 @@ const routes: Routes = [
   { path:'listeCulture', component:ListeCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'ajoutCulture', component:AjoutCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateCulture/:id', component:UpdateCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //Semence
   { path:'ajoutSemence', component:AjoutSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeSemence', component:ListeSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateSemence/:id', component:UpdateSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //Tache
+  { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   
 
 

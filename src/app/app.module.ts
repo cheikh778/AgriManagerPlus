@@ -39,6 +39,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AjoutSemenceComponent } from './Paysan/Semence/ajout-semence/ajout-semence.component';
 import { ListeSemenceComponent } from './Paysan/Semence/liste-semence/liste-semence.component';
 import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-semence.component';
+import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
+import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
+import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
 
 
 
@@ -77,6 +80,9 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
     UpdateCultureComponent,
     ListeSemenceComponent,
     UpdateSemenceComponent,
+    AjoutTacheComponent,
+    ListeTacheComponent,
+    UpdateTacheComponent,
 
 
   ],

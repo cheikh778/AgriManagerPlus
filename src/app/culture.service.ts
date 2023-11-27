@@ -19,6 +19,11 @@ export class CultureService {
     return this.httpClient.get<Culture[]>(this.apiUrl);
   }
 
+  getCulturesByPaysan(): Observable<Culture[]> {
+    const url = `${this.apiUrl}/liste`;
+    return this.httpClient.get<Culture[]>(url);
+  }
+
   createCulture(culture: any): Observable<any> {
     return this.httpClient.post(this.apiUrl, culture);
   }

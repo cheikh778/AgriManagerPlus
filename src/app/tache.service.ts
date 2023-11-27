@@ -10,12 +10,13 @@ import { Tache } from './modeles';
 })
 export class TacheService {
 
-  private apiUrl = 'http://localhost:8080/api/taches'; // Remplacez cela par l'URL de votre API Spring Boot
+  private apiUrl = 'http://localhost:8081/api/tache'; // Remplacez cela par l'URL de votre API Spring Boot
 
   constructor(private http: HttpClient) { }
 
   ajouterTache(tache: Tache): Observable<Tache> {
-    return this.http.post<Tache>(this.apiUrl, tache);
+    const url = `${this.apiUrl}/ajout`;
+    return this.http.post<Tache>(url, tache);
   }
 
   getTaches(): Observable<Tache[]> {
@@ -27,9 +28,9 @@ export class TacheService {
     const url = `${this.apiUrl}/user/${employeId}`;
     return this.http.get<Tache[]>(url);
   }
-  getTachesParPaysan(paysanId: number): Observable<Tache[]> {
-
-    const url = `${this.apiUrl}/user/${paysanId}`;
+  
+  getTachesParPaysan(): Observable<Tache[]> {
+    const url = `${this.apiUrl}/liste`;
     return this.http.get<Tache[]>(url);
   }
 
@@ -44,7 +45,7 @@ export class TacheService {
   }
 
   updateTache(id: number, nouvelleTache: Tache): Observable<Tache> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/update/${id}`;
     return this.http.put<Tache>(url, nouvelleTache);
   }
 }

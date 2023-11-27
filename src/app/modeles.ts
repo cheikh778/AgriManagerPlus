@@ -40,7 +40,6 @@ export interface Semence {
   description : string;
   typeSemence : string;
   quantite: number;
-//   paysan_id: number;
 }
 
 
@@ -66,7 +65,9 @@ export enum CultureStatus {
 
 export interface  Tache
 {
-
+    idTache : number,
+    nomTache : string;
+    description : string;
 }
 
 export interface  ParcelleAgricole

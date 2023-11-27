@@ -30,6 +30,7 @@ export class ListeProjetAgricolService {
 
   envoieEmail(mail: string,data: any) {
     // const numericId = parseInt(id.toString(), 10);
-    return this.__httpClient.post('http://localhost:8081/api/mail/send/'+mail, data);
+    const headers = new HttpHeaders({ 'Content-Type': 'text/html' });
+    return this.__httpClient.post('http://localhost:8081/api/mail/send/'+mail, data,{ headers });
   } 
 }

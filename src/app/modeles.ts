@@ -78,6 +78,11 @@ export interface  ParcelleAgricole
 export interface  Eau
 {
 
+    eauId:number;
+    source:string;
+    quantite:number;
+
+
 }
 
 export interface  IntratAgricole

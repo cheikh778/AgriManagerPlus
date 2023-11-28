@@ -24,8 +24,16 @@ import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from "./Paysan/Tache/ajout-tache/ajout-tache.component";
 import { UpdateTacheComponent } from "./Paysan/Tache/update-tache/update-tache.component";
 import { ListeTacheComponent } from "./Paysan/Tache/liste-tache/liste-tache.component";
+//eau
+import { AjoutEauComponent } from './paysan/eau/ajout-eau/ajout-eau.component';
+import { UpdateEauComponent } from './paysan/eau/update-eau/update-eau.component';
+import { ListEauComponent } from './paysan/eau/list-eau/list-eau.component';
+import { DetailsEauComponent } from './paysan/eau/details-eau/details-eau.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
+
+
+
 
 
 const routes: Routes = [
@@ -53,6 +61,11 @@ const routes: Routes = [
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   
+  //eau
+  { path:'ajoutEau', component:AjoutEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
 
 

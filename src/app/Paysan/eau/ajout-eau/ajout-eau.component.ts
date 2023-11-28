@@ -1,39 +1,37 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AjoutCultureService } from 'src/app/ajout-culture.service';
-import { LoginPageService } from 'src/app/login-page.service';
-import { Culture, User } from 'src/app/modeles';
-import { ChangeDetectorRef } from '@angular/core';
+import { EauService } from 'src/app/eau.service';
+import { Eau } from 'src/app/modeles';
 
-// import { HeaderPaysanComponent } from './Paysan/header-paysan/header-paysan.component';
 @Component({
-  selector: 'ajout-culture',
-  templateUrl: './ajout-culture.component.html',
-  styleUrls: ['./ajout-culture.component.scss']
+  selector: 'app-ajout-eau',
+  templateUrl: './ajout-eau.component.html',
+  styleUrls: ['./ajout-eau.component.scss']
 })
-export class AjoutCultureComponent {
-  
-  culture = {
-    nom:'',
-    dateDebut: new Date(),
-    dateFin: new Date(),
+export class AjoutEauComponent {
+  eau : Eau = {
+    eauId:0,
+    source:'',
+    quantite: 0,
   };
 
   successMessage: string | undefined;
   errorMessage: string | undefined;
 
-  constructor(private cultureService: AjoutCultureService, private _router: Router,
-    private authService : LoginPageService,private cdr: ChangeDetectorRef) {}
+  constructor(private eauService: EauService, private _router: Router) {}
 
-
+    
   submitForm() {
-    console.log('Formulaire soumis', this.culture);
+    console.log('Formulaire soumis', this.eau);
 
-  try {
-      this.cultureService.ajoutCulture(this.culture).subscribe(
+    // const userId = this.authService.getId();
+    // this.cdr.detectChanges();
+
+      this.eauService.ajouterEau(this.eau).subscribe(
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
+           this._router.navigate(['listeEau']);
         },
       error => {
         console.error('Erreur lors de l\'ajout', error);
@@ -41,10 +39,20 @@ export class AjoutCultureComponent {
       }
     );
 
-  } catch (error) {
-    console.error('Erreur lors de la récupération de l\'utilisateur connecté:', error);
   }
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   status = false;
   showNotificationDropdown = false;
@@ -65,9 +73,4 @@ export class AjoutCultureComponent {
     // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
     this.showNotificationDropdown = false;
   }
-  logout() {
-    this.authService.doLogout(); // Appel de la méthode doLogout() du service AuthService
-  }
-
-
 }

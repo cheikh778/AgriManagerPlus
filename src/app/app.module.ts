@@ -43,6 +43,7 @@ import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.comp
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
 import { StoreModule } from '@ngrx/store';
+import { userReducer } from './users/user.reducer';
 
 
 
@@ -95,7 +96,8 @@ import { StoreModule } from '@ngrx/store';
     HeaderPaysanModule,
     CommonModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ user: userReducer })
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

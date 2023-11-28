@@ -39,12 +39,28 @@ export class ListeUtilisateursComponent {
   )
 }
 
+private getEmployees() {
+  this.userSevice.getListeUser().subscribe({
+    next: (apps) => {
+      this.user = apps;
+    },  
+    error: (err) => {
+      this.errorMessage = "Erreur de la requête";
+    },
+    complete: () => {
+      this.sucessMessage = "Requête valide";
+    }
+  });
+}
+
 
 blockUser(userId: number): void {
   this.userSevice.bloquer(userId).subscribe({
-    next: () => {
+    next: (data) => {
       this.sucessMessage = "Utilisateur bloqué avec succès";
       this.updateUserStatus(userId, 'bloquer');
+      console.log(data);
+      this.getEmployees();
 
       // Attendre 2 secondes avant de recharger la page
       setTimeout(() => {
@@ -60,11 +76,11 @@ blockUser(userId: number): void {
 
 unblockUser(userId: number): void {
   this.userSevice.debloquer(userId).subscribe({
-    next: () => {
+    next: (data) => {
       this.sucessMessage = "Utilisateur débloqué avec succès";
       this.updateUserStatus(userId, 'debloquer');
-
-
+       console.log(data);
+       this.getEmployees();
       setTimeout(() => {
         location.reload();
       }, 0);

@@ -40,7 +40,7 @@ export class TacheService {
   }
 
   supprimerTache(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/delete/${id}`;
     return this.http.delete<void>(url);
   }
 

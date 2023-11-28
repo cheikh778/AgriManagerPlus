@@ -42,8 +42,10 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
-import { StoreModule } from '@ngrx/store';
-import { userReducer } from './users/user.reducer';
+import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
+import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
+import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
+import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 
 
 
@@ -85,6 +87,10 @@ import { userReducer } from './users/user.reducer';
     AjoutTacheComponent,
     ListeTacheComponent,
     UpdateTacheComponent,
+    AjoutEauComponent,
+    ListEauComponent,
+    UpdateEauComponent,
+    DetailsEauComponent,
 
 
   ],
@@ -95,9 +101,7 @@ import { userReducer } from './users/user.reducer';
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
-    StoreModule.forRoot({ user: userReducer })
+    ReactiveFormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

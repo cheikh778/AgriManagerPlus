@@ -6,8 +6,6 @@ import { Culture, User } from 'src/app/modeles';
 import { ChangeDetectorRef } from '@angular/core';
 
 // import { HeaderPaysanComponent } from './Paysan/header-paysan/header-paysan.component';
-
-
 @Component({
   selector: 'ajout-culture',
   templateUrl: './ajout-culture.component.html',
@@ -32,9 +30,6 @@ export class AjoutCultureComponent {
     console.log('Formulaire soumis', this.culture);
 
   try {
-
-
-
       this.cultureService.ajoutCulture(this.culture).subscribe(
         response => {
           console.log('Ajout réussi', response);

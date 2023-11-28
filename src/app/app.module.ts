@@ -42,10 +42,10 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
-import { AjoutEauComponent } from './paysan/eau/ajout-eau/ajout-eau.component';
-import { ListEauComponent } from './paysan/eau/list-eau/list-eau.component';
-import { UpdateEauComponent } from './paysan/eau/update-eau/update-eau.component';
-import { DetailsEauComponent } from './paysan/eau/details-eau/details-eau.component';
+import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
+import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
+import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
+import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 
 
 

@@ -42,6 +42,9 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
+import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
+import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
+import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
 
 
 
@@ -83,6 +86,9 @@ import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.c
     AjoutTacheComponent,
     ListeTacheComponent,
     UpdateTacheComponent,
+    AjoutEmployeComponent,
+    ListeEmployeComponent,
+    UpdateEmployeComponent,
 
 
   ],

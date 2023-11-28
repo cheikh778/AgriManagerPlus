@@ -70,9 +70,13 @@ export interface  Tache
     description : string;
 }
 
-export interface  ParcelleAgricole
+export interface  Employee
 {
-
+  id : number;
+  firstName : string;
+  lastName : string;
+  mail : string;
+  password : string;
 }
 
 export interface  Eau

@@ -42,6 +42,12 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
+import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
+import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
+import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
+import { StoreModule } from '@ngrx/store';
+import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
+//Eau
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
@@ -87,6 +93,12 @@ import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.compon
     AjoutTacheComponent,
     ListeTacheComponent,
     UpdateTacheComponent,
+
+    AjoutEmployeComponent,
+    ListeEmployeComponent,
+    UpdateEmployeComponent,
+    AssignerTacheComponent,
+    //Eau
     AjoutEauComponent,
     ListEauComponent,
     UpdateEauComponent,

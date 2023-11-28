@@ -107,7 +107,13 @@ export interface  Materiel
 
 export interface  AssignationTache
 {
-
+    assignationId : number;
+    employee : number;
+    tache : number;
+    paysan : number;
+    dateDebut : Date;
+    dateFine : Date;
+    status : string;
 }
 export interface  AssignationTache
 {

@@ -60,8 +60,8 @@ const routes: Routes = [
   { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  
-  
+
+
   //eau
   { path:'ajoutEau', component:AjoutEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },

@@ -46,6 +46,7 @@ import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-empl
 import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
 import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
 import { StoreModule } from '@ngrx/store';
+import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
 
 
 
@@ -90,6 +91,7 @@ import { StoreModule } from '@ngrx/store';
     AjoutEmployeComponent,
     ListeEmployeComponent,
     UpdateEmployeComponent,
+    AssignerTacheComponent,
 
 
   ],

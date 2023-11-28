@@ -30,6 +30,20 @@ export class ListeTacheComponent {
    } )
   }
 
+
+  private getEmployees() {
+    this.tacheService.getTaches().subscribe({
+      next: (apps) => {
+        this.taches = apps;
+      },  
+      error: (err) => {
+        this.errorMessage = "Erreur de la requête";
+      },
+      complete: () => {
+        this.sucessMessage = "Requête valide";
+      }
+    });
+  }
   modifierTache(tacheId: number) {
     // Rediriger vers la page de mise à jour avec l'ID de la semence
     console.log("id : ",tacheId)
@@ -40,7 +54,7 @@ export class ListeTacheComponent {
     this.tacheService.supprimerTache(tacheId).subscribe({
       next: (data) => {
         console.log(data);
-        this._router.navigate(['listeTache']);
+       this.getEmployees();
       },
       error: (e) => {
         console.log(e);

@@ -38,7 +38,7 @@ export class AjoutSemenceComponent {
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
-          // this.router.navigate(['listeSemence']);
+          this._router.navigate(['listeSemence']);
 
         },
       error => {

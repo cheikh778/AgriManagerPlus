@@ -52,6 +52,21 @@ export class ListeCultureComponent {
    } )
   }
 
+  private getEmployees() {
+    this.cultureService.getCultures().subscribe({
+      next: (apps) => {
+        this.culture = apps;
+      },  
+      error: (err) => {
+        this.errorMessage = "Erreur de la requête";
+      },
+      complete: () => {
+        this.sucessMessage = "Requête valide";
+      }
+    });
+  }
+
+
   modifierCulture(cultureId: number) {
 
     console.log("id : ",cultureId)
@@ -62,7 +77,7 @@ export class ListeCultureComponent {
     this.cultureService.supprimerCulture(cultureId).subscribe({
       next: (data) => {
         console.log(data);
-        this._router.navigate(['listeCulture']);
+        this.getEmployees();
       },
       error: (e) => {
         console.log(e);

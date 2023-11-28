@@ -42,6 +42,7 @@ import { UpdateSemenceComponent } from './Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from './Paysan/Tache/ajout-tache/ajout-tache.component';
 import { ListeTacheComponent } from './Paysan/Tache/liste-tache/liste-tache.component';
 import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.component';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -93,7 +94,8 @@ import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.c
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

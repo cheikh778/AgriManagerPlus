@@ -49,7 +49,7 @@ blockUser(userId: number): void {
       // Attendre 2 secondes avant de recharger la page
       setTimeout(() => {
         location.reload();
-      }, 2000);
+      }, 0);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du blocage de l'utilisateur";
@@ -67,7 +67,7 @@ unblockUser(userId: number): void {
 
       setTimeout(() => {
         location.reload();
-      }, 2000);
+      }, 0);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du déblocage de l'utilisateur";

@@ -1,83 +1,4 @@
-<!-- SIDEBAR -->
-<!-- [ngClass]="status ? 'hide' : ''" -->
- <!-- <section  id="sidebar">
-  <a class="brand" href="paysanDashboard">  -->
-    <!-- <i class='bx bxs-smile'></i>
-    <span class="text">AdminHub</span> -->
-     <!-- <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
-  </a>
-  <ul class="side-menu top">
-    <li class="active">
-      <a href="paysanDashboard">
-        <i class='bx bxs-dashboard' ></i>
-        <span class="text">Dashboard</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='fas fa-seedling'> &nbsp;</i>
-        <span class="text">Les Cultures</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bxs-group'></i>
-        <span class="text">Les employés</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-store-alt'></i>
-        <span class="text">Materiels</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bxs-basket'></i>
-        <span class="text">Semences</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bxs-layer-plus'></i>
-        <span class="text">Parcelles Agricoles</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-water'></i>
-        <span class="text">Gestion de l'eau</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-task'></i>
-        <span class="text">Tâches</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-repost'></i>
-        <span class="text">Publier une Culture</span>
-      </a>
-    </li>
-  </ul>
-  <ul class="side-menu">
-    <li>
-      <a href="#">
-        <i class='bx bxs-cog' ></i>
-        <span class="text">Settings</span>
-      </a>
-    </li>
-    <li>
-      <a class="logout" (click)="logout()">
-        <i class='bx bxs-log-out-circle' ></i>
-        <span class="text">Logout</span>
-      </a>
-    </li>
-  </ul>
-</section>  -->
-<!-- SIDEBAR -->
+
 <header-paysan></header-paysan>
 
 
@@ -143,75 +64,44 @@
 
     <div class="table-data">
       <div class="ajout-form">
-         
+
               </div>
-          
+
       </div>
       <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
       <div class="container ">
           <div class="row justify-content-center mt-4">
-              
+
                 <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()" >
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
-                  <!-- <div class="row mb-5">
-                    <div class="col">
-                      <div class="form-outline">
-                        <input type="text" id="form6Example1" class="form-control" />
-                        <label class="form-label" for="form6Example1">First name</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-outline">
-                        <input type="text" id="form6Example2" class="form-control" />
-                        <label class="form-label" for="form6Example2">Last name</label>
-                      </div>
-                    </div>
-                  </div> -->
-                
-                  <!-- Text input -->
+                  
+
+
                   <div class="form-outline mb-5">
-                    <input type="text" id="form6Example3" class="form-control" 
+                    <input type="text" id="form6Example3" class="form-control"
                     name="nom" [(ngModel)]="culture.nom"  required="true"/>
                     <label class="form-label" for="form6Example3">Nom</label>
                   </div>
-                  <!-- Text input -->
+
                   <div class="form-outline mb-5">
-                    <input type="date" id="form6Example4" class="form-control" 
+                    <input type="date" id="form6Example4" class="form-control"
                     name="dateDebut" [(ngModel)]="culture.dateDebut"/>
                     <label class="form-label" for="form6Example4">Date de Debut</label>
                   </div>
-                
-                  <!-- Email input -->
-                  <!-- <div class="form-outline mb-5">
-                    <input type="date" id="form6Example5" class="form-control" 
-                    name="dateFin" [(ngModel)]="culture.dateFin" />
-                    <label class="form-label" for="form6Example5">Date Fin</label>
-                  </div> -->
-                
-                  <!-- Number input -->
-                  <!-- <div class="form-outline mb-5">
-                    <input type="number" id="form6Example6" class="form-control" />
-                    <label class="form-label" for="form6Example6">Phone</label>
-                  </div>
-                 -->
-                  <!-- Message input -->
-                  <!-- <div class="form-outline mb-5">
-                    <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                    <label class="form-label" for="form6Example7">Additional information</label>
-                  </div> -->
-                
+
+
+
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
                     <label class="form-check-label" for="form6Example8"> Ajout une Culture </label>
                   </div>
-                
+
                   <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
                 </form>
               </div>
           </div>
-   
 
-  
+
+
   </main>
   <!-- MAIN -->
 </section>

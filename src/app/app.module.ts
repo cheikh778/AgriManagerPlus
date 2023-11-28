@@ -45,6 +45,7 @@ import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.c
 import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
 import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
 import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -99,7 +100,8 @@ import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-e
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -1,86 +1,7 @@
-<!-- SIDEBAR -->
-<!-- [ngClass]="status ? 'hide' : ''" -->
-<!-- <section  id="sidebar">
-    <a class="brand" href="paysanDashboard">  -->
-      <!-- <i class='bx bxs-smile'></i>
-      <span class="text">AdminHub</span> -->
-       <!-- <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
-    </a>
-    <ul class="side-menu top">
-      <li class="active">
-        <a href="paysanDashboard">
-          <i class='bx bxs-dashboard' ></i>
-          <span class="text">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='fas fa-seedling'> &nbsp;</i>
-          <span class="text">Les Cultures</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-group'></i>
-          <span class="text">Les employés</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-store-alt'></i>
-          <span class="text">Materiels</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-basket'></i>
-          <span class="text">Semences</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-layer-plus'></i>
-          <span class="text">Parcelles Agricoles</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-water'></i>
-          <span class="text">Gestion de l'eau</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-task'></i>
-          <span class="text">Tâches</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-repost'></i>
-          <span class="text">Publier une Culture</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="side-menu">
-      <li>
-        <a href="#">
-          <i class='bx bxs-cog' ></i>
-          <span class="text">Settings</span>
-        </a>
-      </li>
-      <li>
-        <a class="logout" href="#">
-          <i class='bx bxs-log-out-circle' ></i>
-          <span class="text">Logout</span>
-        </a>
-      </li>
-    </ul>
-  </section>  -->
-  <!-- SIDEBAR -->
+
   <header-paysan></header-paysan>
-  
-  
+
+
   <!-- CONTENT -->
   <section id="content">
     <!-- navbar.component.html -->
@@ -131,7 +52,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+              <a class="active" href="#" style="color: #28a745;">Ajout D'une Semence</a>
             </li>
           </ul>
         </div>
@@ -141,76 +62,56 @@
         </a>
       </div>
 
-      <div class="table-data">
-        <div class="ajout-form">
 
-                </div>
 
-        </div>
-        <h3 class="title">Ajouter un nouveau Projet Agricole</h3>
-        <div class="container ">
-            <div class="row justify-content-center mt-4">
-                
+            <div class="table-data">
+
+              <div class="order">
+                <h1>Ajouter une semence</h1>
+
+                <div class="head">
                   <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <!-- <div class="row mb-5">
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example1" class="form-control" />
-                          <label class="form-label" for="form6Example1">First name</label>
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Nom de la Semence</label>
+                            <input type="text" id="name" name="nom" [(ngModel)]="semence.nom" required="true" placeholder="Donner le nom de la semence">
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example2" class="form-control" />
-                          <label class="form-label" for="form6Example2">Last name</label>
+                        <div class="column">
+                            <label for="email">Type De Semence</label>
+                            <select name="" id="email"name="typeSemence" [(ngModel)]="semence.typeSemence" >
+                              <option value="">--choisissez votre type de semence</option>
+                              <option value="semences hybrides">semences hybrides. </option>
+                              <option value=" semences OGM">semences OGM</option>
+                              <option value="semences non hybrides (reproductibles)">semences non hybrides (reproductibles)</option>
+                              <option value="semences biologiques">semences biologiques</option>
+
+                            </select>
+
                         </div>
-                      </div>
-                    </div> -->
-                  
-                    <!-- Text input -->
-                    <div class="form-outline mb-5">
-                      <input type="text" id="form6Example3" class="form-control" 
-                      name="nom" [(ngModel)]="semence.nom"/>
-                      <label class="form-label" for="form6Example3">Nom</label>
                     </div>
-                    <!-- Text input -->
-                    <div class="form-outline mb-5">
-                      <input type="text" id="form6Example4" class="form-control" 
-                      name="typeSemence" [(ngModel)]="semence.typeSemence"/>
-                      <label class="form-label" for="form6Example4">Type De Semence</label>
+                     <div class="row">
+                        <div class="column">
+                            <label for="subject">Quantite</label>
+                            <input type="text" id="subject" name="quantite" [(ngModel)]="semence.quantite" placeholder="Quantite">
+                        </div>
+                        <!-- <div class="column">
+                            <label for="contact">Contact Number</label>
+                            <input type="tel" id="contact" placeholder="Your phone number here">
+                        </div> -->
                     </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="issue">Description de la semence</label>
+                            <textarea id="issue" name="description"
+                            [(ngModel)]="semence.description" placeholder="Description de la semence" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">Ajouter</button>
+                </form>
 
-                    <!-- Email input -->
-                    <div class="form-outline mb-5">
-                      <input type="email" id="form6Example5" class="form-control" 
-                      name="quantite" [(ngModel)]="semence.quantite"/>
-                      <label class="form-label" for="form6Example5">Quantité</label>
-                    </div>
 
-                    <!-- Number input -->
-                    <!-- <div class="form-outline mb-5">
-                      <input type="number" id="form6Example6" class="form-control" />
-                      <label class="form-label" for="form6Example6">Phone</label>
-                    </div> -->
-                  
-                    <!-- Message input -->
-                    <div class="form-outline mb-5">
-                      <textarea class="form-control" id="form6Example7" rows="4" name="description"
-                      [(ngModel)]="semence.description"></textarea>
-                      <label class="form-label" for="form6Example7">Description</label>
-                    </div>
-
-                    <!-- Checkbox -->
-                    <!-- <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                      <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                    </div> -->
-                  
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
-                  </form>
-                </div>
+                  </div>
+              </div>
             </div>
 
 

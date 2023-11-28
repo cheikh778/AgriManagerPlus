@@ -13,16 +13,16 @@ export class EauService {
   constructor(private http: HttpClient) { }
 
   ajouterEau(eau: Eau): Observable<Eau> {
-    return this.http.post<Eau>(this.apiUrl, eau);
+    const url = `${this.apiUrl}/ajout`;
+    return this.http.post<Eau>(url, eau);
   }
 
   getEaux(): Observable<Eau[]> {
     return this.http.get<Eau[]>(this.apiUrl);
   }
 
-  getEauxParPaysan(paysanId: number): Observable<Eau[]> {
-
-    const url = `${this.apiUrl}/paysan/${paysanId}`;
+  getTachesParPaysan(): Observable<Eau[]> {
+    const url = `${this.apiUrl}/liste`;
     return this.http.get<Eau[]>(url);
   }
 
@@ -31,13 +31,14 @@ export class EauService {
     return this.http.get<Eau>(url);
   }
 
-  supprimerEau(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+  supprimerEau(eauId: number): Observable<void> {
+    const url = `${this.apiUrl}/delete/${eauId}`;
     return this.http.delete<void>(url);
   }
+  
 
   updateEau(id: number, nouvelleEau: Eau): Observable<Eau> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}/update/${id}`;
     return this.http.put<Eau>(url, nouvelleEau);
   }
 }

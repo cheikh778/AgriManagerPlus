@@ -82,6 +82,11 @@ export interface  Employee
 export interface  Eau
 {
 
+    eauId:number;
+    source:string;
+    quantite:number;
+
+
 }
 
 export interface  IntratAgricole

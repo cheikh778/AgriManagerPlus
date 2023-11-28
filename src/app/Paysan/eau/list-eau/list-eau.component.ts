@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tache } from 'src/app/modeles';
-import { TacheService } from 'src/app/tache.service';
+import { EauService } from 'src/app/eau.service';
+import { Eau } from 'src/app/modeles';
 
 @Component({
-  selector: 'app-liste-tache',
-  templateUrl: './liste-tache.component.html',
-  styleUrls: ['./liste-tache.component.scss']
+  selector: 'app-list-eau',
+  templateUrl: './list-eau.component.html',
+  styleUrls: ['./list-eau.component.scss']
 })
-export class ListeTacheComponent {
-  taches : Tache[] = [];
+export class ListEauComponent {
+
+  eaux : Eau[] = [];
 
   errorMessage = "";
   sucessMessage= "";
 
-  constructor(private tacheService: TacheService,private _router: Router){}
+  constructor(private eauService: EauService,private _router: Router){}
   
   ngOnInit(): void {
-    this.tacheService.getTachesParPaysan().subscribe(
+    this.eauService.getTachesParPaysan().subscribe(
     {next : (apps) => {
-      this.taches = apps;
+      this.eaux = apps;
     },
     error:(err) =>{
       this.errorMessage="Erreur de requete"
@@ -30,11 +31,10 @@ export class ListeTacheComponent {
    } )
   }
 
-
   private getEmployees() {
-    this.tacheService.getTaches().subscribe({
+    this.eauService.getEaux().subscribe({
       next: (apps) => {
-        this.taches = apps;
+        this.eaux = apps;
       },  
       error: (err) => {
         this.errorMessage = "Erreur de la requête";
@@ -44,25 +44,26 @@ export class ListeTacheComponent {
       }
     });
   }
-  modifierTache(tacheId: number) {
+
+  modifierEau(eauId: number) {
     // Rediriger vers la page de mise à jour avec l'ID de la semence
-    console.log("id : ",tacheId)
-    this._router.navigate(['updateTache', tacheId]);
+    console.log("id : ",eauId)
+    this._router.navigate(['updateEau', eauId]);
   }
 
-  deleteTache(tacheId: number) {
-    this.tacheService.supprimerTache(tacheId).subscribe({
+  deleteEau(eauId: number) {
+    this.eauService.supprimerEau(eauId).subscribe({
       next: (data) => {
         console.log(data);
-       this.getEmployees();
+        this.getEmployees();
       },
       error: (e) => {
         console.log(e);
       }
     });
   }
-  redirectToTacheList() {
-    this._router.navigate(['listeTache']);
+  redirectToEauList() {
+    this._router.navigate(['listeEau']);
   }
 
   status = false;
@@ -70,4 +71,9 @@ export class ListeTacheComponent {
   {
     this.status = !this.status;
   }
+
+  detailsEau(id: number) {
+    this._router.navigate(['eau-datails', id]);
+  }
+
 }

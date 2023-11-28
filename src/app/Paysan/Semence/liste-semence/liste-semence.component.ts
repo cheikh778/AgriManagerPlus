@@ -31,6 +31,20 @@ export class ListeSemenceComponent {
    } )
   }
 
+  private getEmployees() {
+    this.semenceService.getSemences().subscribe({
+      next: (apps) => {
+        this.semence = apps;
+      },  
+      error: (err) => {
+        this.errorMessage = "Erreur de la requête";
+      },
+      complete: () => {
+        this.sucessMessage = "Requête valide";
+      }
+    });
+  }
+
   modifierSemence(semenceId: number) {
     // Rediriger vers la page de mise à jour avec l'ID de la semence
     console.log("id : ",semenceId)
@@ -41,7 +55,7 @@ export class ListeSemenceComponent {
     this.semenceService.supprimerSemence(semenceId).subscribe({
       next: (data) => {
         console.log(data);
-        this._router.navigate(['listeSemence']);
+       this.getEmployees();
       },
       error: (e) => {
         console.log(e);

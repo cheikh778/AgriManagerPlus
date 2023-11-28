@@ -24,12 +24,16 @@ import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from "./Paysan/Tache/ajout-tache/ajout-tache.component";
 import { UpdateTacheComponent } from "./Paysan/Tache/update-tache/update-tache.component";
 import { ListeTacheComponent } from "./Paysan/Tache/liste-tache/liste-tache.component";
-//Employee
-import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
-import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
-
+//eau
+import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
+import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
+import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
+import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
+
+
+
 
 
 const routes: Routes = [
@@ -56,10 +60,13 @@ const routes: Routes = [
   { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //Employee
-  { path:'listeEmployee', component:ListeEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'ajoutEmployee', component:AjoutEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   
+  
+  //eau
+  { path:'ajoutEau', component:AjoutEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
 
 

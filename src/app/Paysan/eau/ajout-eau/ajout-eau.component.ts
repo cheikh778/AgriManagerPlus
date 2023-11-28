@@ -1,45 +1,37 @@
 import { Component } from '@angular/core';
-import { SemenceService } from 'src/app/semence.service';
 import { Router } from '@angular/router';
-import { Semence } from 'src/app/modeles';
-
-
+import { EauService } from 'src/app/eau.service';
+import { Eau } from 'src/app/modeles';
 
 @Component({
-  selector: 'app-ajout-semence',
-  templateUrl: './ajout-semence.component.html',
-  styleUrls: ['./ajout-semence.component.scss']
+  selector: 'app-ajout-eau',
+  templateUrl: './ajout-eau.component.html',
+  styleUrls: ['./ajout-eau.component.scss']
 })
-export class AjoutSemenceComponent {
-
-
-
-  semence : Semence = {
-    id:0,
-    nom:'',
-    description: '',
-    typeSemence: '',
+export class AjoutEauComponent {
+  eau : Eau = {
+    eauId:0,
+    source:'',
     quantite: 0,
   };
 
   successMessage: string | undefined;
   errorMessage: string | undefined;
 
-  constructor(private semenceService: SemenceService, private _router: Router) {}
+  constructor(private eauService: EauService, private _router: Router) {}
 
     
   submitForm() {
-    console.log('Formulaire soumis', this.semence);
+    console.log('Formulaire soumis', this.eau);
 
     // const userId = this.authService.getId();
     // this.cdr.detectChanges();
 
-      this.semenceService.ajouterSemence(this.semence).subscribe(
+      this.eauService.ajouterEau(this.eau).subscribe(
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
-          this._router.navigate(['listeSemence']);
-
+           this._router.navigate(['listeEau']);
         },
       error => {
         console.error('Erreur lors de l\'ajout', error);
@@ -48,6 +40,18 @@ export class AjoutSemenceComponent {
     );
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   status = false;
@@ -69,6 +73,4 @@ export class AjoutSemenceComponent {
     // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
     this.showNotificationDropdown = false;
   }
-
- 
 }

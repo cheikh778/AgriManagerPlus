@@ -47,6 +47,11 @@ import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-empl
 import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
 import { StoreModule } from '@ngrx/store';
 import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
+//Eau
+import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
+import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
+import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
+import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 
 
 
@@ -88,10 +93,16 @@ import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/as
     AjoutTacheComponent,
     ListeTacheComponent,
     UpdateTacheComponent,
+
     AjoutEmployeComponent,
     ListeEmployeComponent,
     UpdateEmployeComponent,
     AssignerTacheComponent,
+    //Eau
+    AjoutEauComponent,
+    ListEauComponent,
+    UpdateEauComponent,
+    DetailsEauComponent,
 
 
   ],
@@ -102,8 +113,7 @@ import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/as
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule,
-    StoreModule.forRoot({}, {})
+    ReactiveFormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

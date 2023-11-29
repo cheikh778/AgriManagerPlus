@@ -81,6 +81,11 @@ export class ListeProjetEnAttenteComponent {
               cursor: pointer;
               text-align: center;
           }
+          a{
+            text-decoration: none;
+            color:#fff;
+
+          }
           footer {
               padding: 10px 0;
               background: #28a745;

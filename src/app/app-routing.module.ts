@@ -31,6 +31,10 @@ import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
+import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
+import { ProfilComponent } from './Paysan/profil/profil.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
 
 
 
@@ -67,6 +71,12 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+
+  //profil
+  { path:'profilAdmin', component:ProfilAdminComponent},
+  { path:'AdminChangePassword', component:PasswordAdminComponent},
+  { path:'profilPaysan', component:ProfilComponent},
+  { path:'changePassword', component:ChangePasswordComponent},
 
 
 

@@ -53,6 +53,9 @@ import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 import { ProfilComponent } from './Paysan/profil/profil.component';
+import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
 
 
 
@@ -105,6 +108,9 @@ import { ProfilComponent } from './Paysan/profil/profil.component';
     UpdateEauComponent,
     DetailsEauComponent,
     ProfilComponent,
+    ProfilAdminComponent,
+    ChangePasswordComponent,
+    PasswordAdminComponent,
 
 
   ],

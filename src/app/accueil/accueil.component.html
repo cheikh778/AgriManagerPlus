@@ -116,19 +116,19 @@
               </div>
               <div class="mb-3">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email"  placeholder="Email"
+                <input type="email" class="form-control" id="email" name="email"  placeholder="Email"
                 [(ngModel)]="demande.email">
               </div>
                <div class="mb-3">
                  <label for="projet">Projet Agricole</label>
-                 <input type="email" class="form-control" id="projet" name="nomProjet" placeholder="Nom du Projet" [(ngModel)]="demande.nomProjet">
+                 <input type="text" class="form-control" id="projet" name="nomProjet" placeholder="Nom du Projet" [(ngModel)]="demande.nomProjet">
                </div>
                <div class="mb-3">
                  <label for="description">Description de Votre projet agricole</label>
-                 <textarea class="form-control" name="description" [(ngModel)]="demande.description"></textarea>
+                 <textarea class="form-control" id="description" name="description" [(ngModel)]="demande.description"></textarea>
                </div>
                <div class="mb-3">
-                 <input type="email" class="form-control" id="projet" name="status" hidden [(ngModel)]="demande.status">
+                 <input type="text" class="form-control" id="status" name="status" hidden [(ngModel)]="demande.status">
                </div>
                <div class="modal-footer">
                 <button type="submit" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -252,13 +252,13 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="label" for="name">Nom Complet</label>
-                              <input class="form-control" id="name" name="name" placeholder="Nom Complet" type="text">
+                              <input class="form-control" id="name" name="name" placeholder="Nom Complet" type="text" autocomplete="additional-name">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="label" for="email">Email </label>
-                              <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                              <input class="form-control" id="email" name="email" placeholder="Email" type="email" autocomplete="additional-name">
                             </div>
                           </div>
                           <div class="col-md-12">
@@ -269,7 +269,7 @@
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label class="label" for="#">Message</label>
+                              <label class="label" for="message">Message</label>
                               <textarea class="form-control" cols="30" id="message" name="message" placeholder="Message" rows="4"></textarea>
                             </div>
                           </div>
@@ -296,9 +296,6 @@
       </section>
     </div>
 
-    <!-- <div class="loading-container">
-    <i class="fas fa-seedling"></i>
-    </div> -->
 
     <br>
 

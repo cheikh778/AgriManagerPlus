@@ -33,93 +33,15 @@
 
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Mettez à jour le temps immédiatement lors du chargement de la page
-      updateDateTime();
-
-      // Mettez à jour le temps toutes les secondes (1000 millisecondes)
-      setInterval(updateDateTime, 1000);
-    }, false);
-
-    function updateDateTime() {
-      var currentDate = new Date();
-      var day = currentDate.getDate();
-      var month = currentDate.getMonth() + 1;
-      var year = currentDate.getFullYear();
-      var hours = currentDate.getHours();
-      var minutes = currentDate.getMinutes();
-      var seconds = currentDate.getSeconds();
-
-      // Obtenez le nom du jour
-      var daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-      var dayOfWeek = daysOfWeek[currentDate.getDay()];
-
-      // Mettez à jour le contenu de l'élément avec l'ID "year"
-      document.getElementById("year").innerHTML =
-        dayOfWeek + ' ' + day + '/' + month + '/' + year + ' ' + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-    }
-
-  </script>
- 
 
 
 
 
 
 
-  <script>
-    const texts = ["Welcome to", "AgriManager+"];
-  let textIndex = 0;
-  let charIndex = 0;
-  let isAdding = true;
 
-  function animateText() {
-      const currentText = texts[textIndex];
-      const currentElement = document.getElementById(`animated-text${textIndex + 1}`);
 
-      if (isAdding) {
-          currentElement.textContent = currentText.slice(0, charIndex);
-          charIndex++;
 
-          if (charIndex > currentText.length) {
-              if (textIndex < texts.length - 1) {
-                  textIndex++;
-                  charIndex = 0;
-                  setTimeout(animateText, 1000); 
-                  return;
-              }
-
-              isAdding = false;
-              setTimeout(animateText, 2000); 
-              return;
-          }
-      } else {
-          currentElement.textContent = currentText.slice(0, charIndex);
-          charIndex--;
-
-          if (charIndex === 0) {
-              if (textIndex > 0) {
-                  textIndex--;
-                  charIndex = texts[textIndex].length;
-                  setTimeout(animateText, 1000); // Pause avant de retourner au texte précédent
-                  return;
-              }
-
-              isAdding = true;
-              setTimeout(animateText, 1000); // Pause avant de recommencer à taper le texte
-              return;
-          }
-      }
-
-      const randomSpeed = 100 + Math.random() * 100;
-      setTimeout(animateText, isAdding ? randomSpeed : 50);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-      animateText(); // Commencez l'animation une fois que le document est chargé
-  });
-  </script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DemandeValidationProjetService } from '../demande-validation-projet.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss']
 })
-export class AccueilComponent {
+export class AccueilComponent implements OnInit {
 
   demande = {
     nomComplet: '',
@@ -38,5 +38,67 @@ export class AccueilComponent {
 
       }
     );
+  }
+
+  texts: string[] = ["Welcome to", "AgriManager+"];
+  textIndex: number = 0;
+  charIndex: number = 0;
+  isAdding: boolean = true;
+  welcomeText: string = '';
+  agriManagerText: string = '';
+
+  ngOnInit() {
+    this.animateText();
+  }
+
+  animateText() {
+    const currentText = this.texts[this.textIndex];
+
+    if (this.isAdding) {
+      if (this.textIndex === 0) {
+        this.welcomeText = currentText.slice(0, this.charIndex);
+      } else {
+        this.agriManagerText = currentText.slice(0, this.charIndex);
+      }
+
+      this.charIndex++;
+
+      if (this.charIndex > currentText.length) {
+        if (this.textIndex < this.texts.length - 1) {
+          this.textIndex++;
+          this.charIndex = 0;
+          setTimeout(() => this.animateText(), 1000);
+          return;
+        }
+
+        this.isAdding = false;
+        setTimeout(() => this.animateText(), 2000);
+        return;
+      }
+    } else {
+      if (this.textIndex === 0) {
+        this.welcomeText = currentText.slice(0, this.charIndex);
+      } else {
+        this.agriManagerText = currentText.slice(0, this.charIndex);
+      }
+
+      this.charIndex--;
+
+      if (this.charIndex === 0) {
+        if (this.textIndex > 0) {
+          this.textIndex--;
+          this.charIndex = this.texts[this.textIndex].length;
+          setTimeout(() => this.animateText(), 1000);
+          return;
+        }
+
+        this.isAdding = true;
+        setTimeout(() => this.animateText(), 1000);
+        return;
+      }
+    }
+
+    const randomSpeed = 100 + Math.random() * 100;
+    setTimeout(() => this.animateText(), this.isAdding ? randomSpeed : 50);
   }
 }

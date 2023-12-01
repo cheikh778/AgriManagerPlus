@@ -52,6 +52,7 @@ import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
+import { ProfilComponent } from './Paysan/profil/profil.component';
 
 
 
@@ -103,6 +104,7 @@ import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.compon
     ListEauComponent,
     UpdateEauComponent,
     DetailsEauComponent,
+    ProfilComponent,
 
 
   ],

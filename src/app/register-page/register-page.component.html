@@ -16,19 +16,19 @@
       <div class="col-md-6">
           <h2>Inscription</h2>
 
-          <form action="/path_to_registration_logic" method="post" #etuForm="ngForm" (ngSubmit)="submitForm()">
+          <form action="" method="post" #etuForm="ngForm" (ngSubmit)="submitForm()">
               <div class="form-group">
                   <label for="name"><i class="fas fa-user"> </i> Nom</label>
                   <input type="text" class="form-control" id="name" name="nom" [(ngModel)]="user.nom" required>
               </div>
               <div class="form-group">
-                  <label for="name"><i class="fas fa-user"></i> Prenom</label>
-                  <input type="text" class="form-control" id="name" name="prenom" [(ngModel)]="user.prenom" required>
+                  <label for="prenom"><i class="fas fa-user"></i> Prenom</label>
+                  <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="user.prenom" required>
               </div>
               <div class="form-group">
-                  <label for="name"><i class="fas fa-user"></i> Contact</label>
-                  <label for="name"><i class="fas fa-phone"></i> Contact</label>
-                  <input type="text" class="form-control" id="name" name="contact" [(ngModel)]="user.contact" required>
+
+                  <label for="contact"><i class="fas fa-phone"></i> Contact</label>
+                  <input type="text" class="form-control" id="contact" name="contact" [(ngModel)]="user.contact" required>
               </div>
               <div class="form-group">
                   <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>

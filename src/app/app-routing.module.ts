@@ -73,8 +73,8 @@ const routes: Routes = [
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
   //profil
-  { path:'profilAdmin', component:ProfilAdminComponent},
-  { path:'AdminChangePassword', component:PasswordAdminComponent},
+  { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
+  { path:'AdminChangePassword', component:PasswordAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
   { path:'profilPaysan', component:ProfilComponent},
   { path:'changePassword', component:ChangePasswordComponent},
 

@@ -74,19 +74,19 @@
       <div class="table-data">
 
         <div class="order">
-          <div style="background-color:#dff0d8;">
+          <!-- <div style="background-color:#dff0d8;">
             <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
           </div>
           <div style="background-color: #f2dede;">
             <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-          </div>
+          </div> -->
 
           <div class="head">
             <h3>Listes Ulitisateurs</h3>
             <i class='bx bx-search' ></i>
             <i class='bx bx-filter'></i>
           </div>
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <table >
             <thead>
               <tr>
                 <th>Nom</th>
@@ -116,8 +116,9 @@
                   </button>
 
             </tbody>
-            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+            
           </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
         </div>
 
       </div>

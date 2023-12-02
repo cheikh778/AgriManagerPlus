@@ -34,16 +34,39 @@ export class AjoutCultureComponent {
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
+
+          setTimeout(() => {
+            this.redirectToCultureList();
+          }, 2000);
+          
+        
         },
       error => {
         console.error('Erreur lors de l\'ajout', error);
         this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
+
+        setTimeout(() => {
+          this.redirectToCultureList();
+        }, 2000);
+        
+      
       }
     );
 
   } catch (error) {
     console.error('Erreur lors de la récupération de l\'utilisateur connecté:', error);
+
+    this.errorMessage = 'Erreur lors de la récupération de l\'utilisateur connecté';
+
+        setTimeout(() => {
+          this.redirectToCultureList();
+        }, 2000);
+        
   }
+  }
+
+  redirectToCultureList() {
+    this._router.navigate(['listeCulture']);
   }
 
   status = false;

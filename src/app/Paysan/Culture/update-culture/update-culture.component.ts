@@ -11,6 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateCultureComponent {
 
+  message: string | undefined;
+  messageError: string |undefined;
+
   id!: number;
   culture: Culture = {
     id: 0, nom: '', dateDebut: new Date(), dateFin: new Date(), paysan: null
@@ -38,9 +41,20 @@ export class UpdateCultureComponent {
     this.cultureService.updateCulture(this.id, this.culture).subscribe({
       next: (data) => {
         console.log(data);
-        this.redirectToCultureList();
+        this.message = 'Le projet a été modifié avec succés';
+
+        setTimeout(() => {
+          this.redirectToCultureList();
+        }, 2000);
+        ;
       },
       error: (e) => {
+        this.messageError = 'Une erreur s\'est produite lors de la mofication de votre projet agricole. Veuillez réessayer plus tard';
+
+        setTimeout(() => {
+          this.redirectToCultureList();
+        }, 2000);
+        ;
         console.log(e);
       }
     });

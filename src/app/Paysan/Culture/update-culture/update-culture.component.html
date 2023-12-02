@@ -52,7 +52,7 @@
           </li>
           <li><i class='bx bx-chevron-right' ></i></li>
           <li>
-            <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+            <a class="active" href="#" style="color: #28a745;">Modification De la culture </a>
           </li>
         </ul>
       </div>
@@ -62,42 +62,47 @@
       </a>
     </div>
 
-    <div class="table-data">
-      <div class="ajout-form">
-
-              </div>
-
-      </div>
-      <h3 class="title">Modifier le  Projet Agricole</h3>
-      <div class="container ">
-          <div class="row justify-content-center mt-4">
-
-                <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()" >
+    <div style="background-color:#dff0d8;">
+      <p *ngIf="message" class="text-success">{{ message }}</p>
+    </div>
+    <div style="background-color: #f2dede;">
+      <p *ngIf="messageError" class="text-danger">{{ message }}</p>
+    </div>
 
 
 
-                  <div class="form-outline mb-5">
-                    <input type="text" id="form6Example3" class="form-control"
-                    name="nom" [(ngModel)]="culture.nom"  required="true"/>
-                    <label class="form-label" for="form6Example3">Nom</label>
+          <div class="table-data">
+            
+
+            <div class="order">
+              <h1>Modifier un projet Agricole</h1>
+
+              <div class="head">
+                <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                      <div class="column">
+                          <label for="name">Nom de la Culture</label>
+                          <input type="text" id="name" name="nom" [(ngModel)]="culture.nom" required="true" placeholder="Donner le nom de la culture">
+                      </div>
+                      <div class="column">
+                          <label for="email">Date de début</label>
+                          <input type="date" id="form6Example4" 
+                          name="dateDebut" [(ngModel)]="culture.dateDebut" id="email" placeholder="Your email here">
+                      </div>
                   </div>
-
-                  <div class="form-outline mb-5">
-                    <input type="date" id="form6Example4" class="form-control"
-                    name="dateDebut" [(ngModel)]="culture.dateDebut"/>
-                    <label class="form-label" for="form6Example4">Date de Debut</label>
+                  
+                  <div class="row">
+                      <div class="column">
+                          <label for="issue">Description du projet</label>
+                          <textarea id="issue" placeholder="Description du projet in detail here" rows="3"></textarea>
+                      </div>
                   </div>
+                  <button type="submit">Modifier</button>
+              </form>
 
 
-
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                    <label class="form-check-label" for="form6Example8"> Ajout une Culture </label>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
-                </form>
-              </div>
+                </div>
+            </div>
           </div>
 
 

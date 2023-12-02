@@ -21,17 +21,21 @@ export class ListeCultureComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+   
     this.showProfileDropdown = false;
   }
 
   toggleProfileDropdown() {
     this.showProfileDropdown = !this.showProfileDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+   
     this.showNotificationDropdown = false;
   }
 
   culture : Culture[] = [];
+
+  itemsPerPage: number = 10;
+  currentPage: number = 1;
+  totalItems: number = 0;
 
   errorMessage = "";
   sucessMessage= "";
@@ -39,6 +43,8 @@ export class ListeCultureComponent {
   constructor(private cultureService : CultureService,private _router: Router){}
 
   ngOnInit(): void {
+    this.loadCultures();
+    
     this.cultureService.getCulturesByPaysan().subscribe(
     {next : (apps: Culture[]) => {
       this.culture = apps;
@@ -86,6 +92,34 @@ export class ListeCultureComponent {
   }
   redirectToCultureList() {
     this._router.navigate(['listeCulture']);
+  }
+
+  loadCultures(): void {
+    this.cultureService.getCulturesByPaysan().subscribe({
+      next: (data: Culture[]) => {
+        this.totalItems = data.length;
+        this.culture = this.paginateData(data);
+      },
+      error: () => {
+        console.error("Erreur de requête");
+      }
+    });
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.loadCultures();
+  }
+
+  paginateData(data: Culture[]): Culture[] {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return data.slice(startIndex, endIndex);
+  }
+
+  get pages(): number[] {
+    const pageCount = Math.ceil(this.totalItems / this.itemsPerPage);
+    return Array.from({ length: pageCount }, (_, index) => index + 1);
   }
 }
 

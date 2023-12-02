@@ -628,8 +628,8 @@ label{
   color: #1c093c;
   font-size: 14px;
 }
-.column textarea,
-.column input,.column select{
+.row .column textarea,
+.row .column input,.row .column select{
   width: 100%;
   font-weight: 400;
   padding: 8px 10px;

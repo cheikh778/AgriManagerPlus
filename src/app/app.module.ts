@@ -2,6 +2,11 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+
+
+
 
 
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
@@ -56,6 +61,9 @@ import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
+import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
+import { PublicationComponent } from './Paysan/publication/publication.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -111,6 +119,8 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
     ProfilAdminComponent,
     ChangePasswordComponent,
     PasswordAdminComponent,
+    PasswordPaysanComponent,
+    PublicationComponent,
 
 
   ],
@@ -121,14 +131,17 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
     HeaderPaysanModule,
-    // ... autres composants à exporter si nécessaire
+    
   ],
   providers: [
     {

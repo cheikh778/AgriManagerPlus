@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ListeProjetAgricolService } from 'src/app/liste-projet-agricol.service';
 import { ListeUtilisateurService } from 'src/app/liste-utilisateur.service';
 import { User } from 'src/app/modeles';
 import { NgZone } from '@angular/core';import { ChangeDetectorRef } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -10,9 +13,11 @@ import { NgZone } from '@angular/core';import { ChangeDetectorRef } from '@angul
   templateUrl: './liste-utilisateurs.component.html',
   styleUrls: ['./liste-utilisateurs.component.scss']
 })
-export class ListeUtilisateursComponent {
+export class ListeUtilisateursComponent implements OnInit, AfterViewInit{
 
   status = false;
+
+  
   addToggle()
   {
     this.status = !this.status;
@@ -22,9 +27,17 @@ export class ListeUtilisateursComponent {
   errorMessage = "";
   sucessMessage= "";
 
+  dataSource = new MatTableDataSource<User>();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private userSevice : ListeUtilisateurService,private zone: NgZone,private cdr: ChangeDetectorRef){}
+  ngAfterViewInit(): void {
+    // this.dataSource.paginator = this.paginator;
+  }
 
   ngOnInit(): void {
+    // this.getEmployees();
     this.userSevice.getListeUser().subscribe(
     {next : (apps) => {
       this.user = apps;
@@ -99,4 +112,9 @@ private updateUserStatus(userId: number, newStatus: string): number {
   }
   return userIndex;
 }
+
+
+
+
+
 }

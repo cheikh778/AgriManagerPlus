@@ -59,59 +59,12 @@
       </a>
     </div>
 
-    <div style="background-color:#dff0d8;">
-      <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+        <h1 mat-dialog-title>Confirmation</h1>
+    <div mat-dialog-content>{{ data.message }}</div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Non</button>
+      <button mat-button (click)="onYesClick()">Oui</button>
     </div>
-    <div style="background-color: #f2dede;">
-      <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-    </div>
-
-
-    <a  class="btn btn-secondary" href="ajoutCulture" ><i class="fas fa-plus"></i> Ajouter une culture</a>
-    <div class="table-data">
-      <div class="order">
-        <div class="head">
-          <h3>Listes des projets agricoles</h3>
-          <i class='bx bx-search' ></i>
-          <i class='bx bx-filter'></i>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Date Debut</th>
-              <th>Date Fin</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let c of culture">
-            <tr>
-              <td>{{c.nom}}</td>
-              <td>{{c.dateDebut}}</td>
-              <td>{{c.dateFin}}</td>
-              <td><button class="status completed" (click)="modifierCulture(c.id)">Modifier</button></td>
-              <td><button class="status completed" (click)="deleteCulture(c.id)">Supprimer</button></td>
-             
-            </tr>
-
-          </tbody>
-          
-        </table>        
-      </div>
-    </div>
-    
-
-    
 
   </main>
-  
-  <!-- MAIN -->
 </section>
-<!-- CONTENT -->
-<!-- <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item" *ngFor="let page of pages" [class.active]="currentPage === page">
-      <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
-    </li>
-  </ul>
-</nav> -->

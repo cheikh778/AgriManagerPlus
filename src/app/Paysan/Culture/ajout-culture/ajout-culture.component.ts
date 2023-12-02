@@ -79,7 +79,7 @@ export class AjoutCultureComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+   
     this.showProfileDropdown = false;
   }
 

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -64,6 +65,7 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 import { PublicationComponent } from './Paysan/publication/publication.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 
 
 
@@ -121,6 +123,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PasswordAdminComponent,
     PasswordPaysanComponent,
     PublicationComponent,
+    ConfirmationDialogComponent,
 
 
   ],
@@ -135,6 +138,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,
+    ModalModule.forRoot(),
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

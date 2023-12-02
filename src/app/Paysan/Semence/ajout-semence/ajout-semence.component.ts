@@ -27,18 +27,21 @@ export class AjoutSemenceComponent {
 
   constructor(private semenceService: SemenceService, private _router: Router) {}
 
-    
+
   submitForm() {
     console.log('Formulaire soumis', this.semence);
 
-    // const userId = this.authService.getId();
-    // this.cdr.detectChanges();
+
 
       this.semenceService.ajouterSemence(this.semence).subscribe(
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
-          this._router.navigate(['listeSemence']);
+
+          setTimeout(() => {
+            this._router.navigate(['listeSemence']);
+          }, 2000);
+
 
         },
       error => {
@@ -60,15 +63,15 @@ export class AjoutSemenceComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+
     this.showProfileDropdown = false;
   }
 
   toggleProfileDropdown() {
     this.showProfileDropdown = !this.showProfileDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+
     this.showNotificationDropdown = false;
   }
 
- 
+
 }

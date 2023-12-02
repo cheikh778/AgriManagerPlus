@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Culture } from 'src/app/modeles';
 import { Router } from '@angular/router';
 import { CultureService } from 'src/app/culture.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
+
 
 @Component({
   selector: 'liste-culture',
@@ -10,10 +14,12 @@ import { CultureService } from 'src/app/culture.service';
   styleUrls: ['./liste-culture.component.scss']
 })
 export class ListeCultureComponent {
+  bsModalRef!: BsModalRef;
 
   status = false;
   showNotificationDropdown = false;
   showProfileDropdown = false;
+  dialog: any;
 
   addToggle() {
     this.status = !this.status;
@@ -38,22 +44,25 @@ export class ListeCultureComponent {
   totalItems: number = 0;
 
   errorMessage = "";
-  sucessMessage= "";
+  successMessage= "";
 
-  constructor(private cultureService : CultureService,private _router: Router){}
+  constructor(private cultureService : CultureService,private _router: Router, private modalService: BsModalService){}
 
   ngOnInit(): void {
     this.loadCultures();
-    
+
     this.cultureService.getCulturesByPaysan().subscribe(
     {next : (apps: Culture[]) => {
       this.culture = apps;
     },
     error:() =>{
-      this.errorMessage="Erreur de requete"
+      console.log("Erreur de requete");
+      
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+      console.log("Requete valider");
+      
+      
     }
    } )
   }
@@ -64,10 +73,11 @@ export class ListeCultureComponent {
         this.culture = apps;
       },  
       error: (err) => {
-        this.errorMessage = "Erreur de la requête";
+
+        this.errorMessage = "Nouvelle liste";
       },
       complete: () => {
-        this.sucessMessage = "Requête valide";
+        this.successMessage = "Invalide";
       }
     });
   }
@@ -82,14 +92,21 @@ export class ListeCultureComponent {
   deleteCulture(cultureId: number) {
     this.cultureService.supprimerCulture(cultureId).subscribe({
       next: (data) => {
-        console.log(data);
+        
+        this.successMessage = "Suppression reussie";
+        
         this.getEmployees();
       },
       error: (e) => {
-        console.log(e);
+        
+        this.errorMessage="Erreur  lors de la suppression";
       }
     });
   }
+  
+
+ 
+  
   redirectToCultureList() {
     this._router.navigate(['listeCulture']);
   }

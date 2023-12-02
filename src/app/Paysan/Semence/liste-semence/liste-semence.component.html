@@ -45,6 +45,12 @@
         </a>
       </div>
 
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>  
      
       <a  class="btn btn-success" href="ajoutSemence" >Ajout Semence</a>
 

@@ -35,6 +35,7 @@ import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.componen
 import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
+import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 
 
 
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},

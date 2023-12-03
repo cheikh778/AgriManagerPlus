@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ListeProjetAgricolService } from 'src/app/liste-projet-agricol.service';
 import { ListeUtilisateurService } from 'src/app/liste-utilisateur.service';
@@ -17,7 +18,7 @@ export class ListeUtilisateursComponent implements OnInit, AfterViewInit{
 
   status = false;
 
-  
+
   addToggle()
   {
     this.status = !this.status;
@@ -31,22 +32,22 @@ export class ListeUtilisateursComponent implements OnInit, AfterViewInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private userSevice : ListeUtilisateurService,private zone: NgZone,private cdr: ChangeDetectorRef){}
+  constructor(private userSevice : ListeUtilisateurService,private zone: NgZone,private cdr: ChangeDetectorRef, private __router:Router){}
   ngAfterViewInit(): void {
-    // this.dataSource.paginator = this.paginator;
+     this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit(): void {
-    // this.getEmployees();
+    this.getEmployees();
     this.userSevice.getListeUser().subscribe(
     {next : (apps) => {
       this.user = apps;
     },
     error:(err) =>{
-      this.errorMessage="Erreur de requete"
+      console.log("Erreur de la requête");
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+      console.log("Requête valide");
     }
   }
   )
@@ -56,16 +57,59 @@ private getEmployees() {
   this.userSevice.getListeUser().subscribe({
     next: (apps) => {
       this.user = apps;
-    },  
+    },
     error: (err) => {
-      this.errorMessage = "Erreur de la requête";
+      console.log("Erreur de la requête");
     },
     complete: () => {
-      this.sucessMessage = "Requête valide";
+      console.log("Requête valide");
     }
   });
 }
 
+
+// blockUser(userId: number): void {
+//   this.userSevice.bloquer(userId).subscribe({
+//     next: (data) => {
+//       this.sucessMessage = "Utilisateur bloqué avec succès";
+//       this.updateUserStatus(userId, 'bloquer');
+//       console.log(data);
+//       this.getEmployees()
+//       setTimeout(() => {
+//         this.__router.navigate(['listeUser']);
+//       }, 2000);
+//     },
+//     error: (err) => {
+//       this.errorMessage = "Erreur lors du blocage de l'utilisateur";
+//     }
+//   });
+// }
+
+
+// unblockUser(userId: number): void {
+//   this.userSevice.debloquer(userId).subscribe({
+//     next: (data) => {
+//       this.sucessMessage = "Utilisateur débloqué avec succès";
+//       this.updateUserStatus(userId, 'debloquer');
+//        console.log(data);
+//        this.getEmployees();
+//       setTimeout(() => {
+//         this.__router.navigate(['listeUser']);
+//       }, 2000);
+//     },
+//     error: (err) => {
+//       this.errorMessage = "Erreur lors du déblocage de l'utilisateur";
+//     }
+//   });
+// }
+
+toggleUserStatus(user: User): void {
+  if (user.status === 'bloquer') {
+    this.unblockUser(user.id);
+  } else {
+    this.blockUser(user.id);
+  }
+}
 
 blockUser(userId: number): void {
   this.userSevice.bloquer(userId).subscribe({
@@ -74,11 +118,9 @@ blockUser(userId: number): void {
       this.updateUserStatus(userId, 'bloquer');
       console.log(data);
       this.getEmployees();
-
-      // Attendre 2 secondes avant de recharger la page
       setTimeout(() => {
-        location.reload();
-      }, 0);
+        this.__router.navigate(['listeUser']);
+      }, 2000);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du blocage de l'utilisateur";
@@ -86,23 +128,23 @@ blockUser(userId: number): void {
   });
 }
 
-
 unblockUser(userId: number): void {
   this.userSevice.debloquer(userId).subscribe({
     next: (data) => {
       this.sucessMessage = "Utilisateur débloqué avec succès";
       this.updateUserStatus(userId, 'debloquer');
-       console.log(data);
-       this.getEmployees();
+      console.log(data);
+      this.getEmployees();
       setTimeout(() => {
-        location.reload();
-      }, 0);
+        this.__router.navigate(['listeUser']);
+      }, 2000);
     },
     error: (err) => {
       this.errorMessage = "Erreur lors du déblocage de l'utilisateur";
     }
   });
 }
+
 
 
 private updateUserStatus(userId: number, newStatus: string): number {

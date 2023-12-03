@@ -45,18 +45,18 @@
         </a>
       </div>
 
-
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>
       <a  class="btn btn-secondary"  href="ajoutUser" >Ajouter un Utilisateur</a>
 
       <div class="table-data">
 
         <div class="order">
-          <!-- <div style="background-color:#dff0d8;">
-            <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
-          </div>
-          <div style="background-color: #f2dede;">
-            <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-          </div> -->
+
 
 
           <div class="head">
@@ -86,15 +86,20 @@
                 <td>{{v.role}}</td>
 
 
-                  <td>
+                  <!-- <td>
                     <button type="button" class="status completed btn btn-warning" (click)="v.status === 'bloquer' ? unblockUser(v.id) : blockUser(v.id)">
                       {{ v.status === 'bloquer' ? 'Débloquer' : 'Bloquer' }}
-
-
                   </button>
+                  </td> -->
+
+                  <td>
+                    <button type="button" class="status completed btn btn-warning" (click)="toggleUserStatus(v)">
+                      {{ v.status === 'bloquer' ? 'Débloquer' : 'Bloquer' }}
+                    </button>
+                  </td>
 
             </tbody>
-            
+
           </table>
           <mat-paginator style="background-color: #28a745; color:#fff;" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
         </div>

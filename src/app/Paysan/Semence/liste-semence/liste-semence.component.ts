@@ -16,7 +16,7 @@ export class ListeSemenceComponent {
   successMessage= "";
 
   constructor(private semenceService: SemenceService,private _router: Router){}
-  
+
   ngOnInit(): void {
     this.semenceService.getSemencesParPaysan().subscribe(
     {next : (apps) => {
@@ -24,11 +24,11 @@ export class ListeSemenceComponent {
     },
     error:(err) =>{
       console.log("Erreur de requete");
-      
+
     },
     complete:() =>{
       console.log("Requete valider")
-      
+
     }
    } )
   }
@@ -37,20 +37,20 @@ export class ListeSemenceComponent {
     this.semenceService.getSemences().subscribe({
       next: (apps) => {
         this.semence = apps;
-      },  
+      },
       error: (err) => {
         console.log("Erreur de requete");
-       
+
       },
       complete: () => {
         console.log("Requete valider")
-        
+
       }
     });
   }
 
   modifierSemence(semenceId: number) {
-    
+
     console.log("id : ",semenceId)
     this._router.navigate(['updateSemence', semenceId]);
   }
@@ -60,7 +60,7 @@ export class ListeSemenceComponent {
       next: (data) => {
         console.log(data);
         this.successMessage = "Suppression réussie";
-       this.getEmployees();
+        this.getEmployees();
       },
       error: (e) => {
         this.errorMessage = "Erreur lors de la suppression";

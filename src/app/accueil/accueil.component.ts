@@ -40,7 +40,7 @@ export class AccueilComponent implements OnInit {
     );
   }
 
-  texts: string[] = ["Welcome to", "AgriManager+"];
+  texts: string[] = ["Bienvenue Sur Notre Plateforme", "AgriManager+"];
   textIndex: number = 0;
   charIndex: number = 0;
   isAdding: boolean = true;

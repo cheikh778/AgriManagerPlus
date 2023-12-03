@@ -45,13 +45,20 @@ import { UpdateTacheComponent } from './Paysan/Tache/update-tache/update-tache.c
 import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
 import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
 import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
-import { StoreModule } from '@ngrx/store';
 import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
 //Eau
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
+import { AjoutParcelleAgricoleComponent } from './Paysan/parcellagricole/ajout-parcelle-agricole/ajout-parcelle-agricole.component';
+import { ListParcelleAgricoleComponent } from './Paysan/parcellagricole/list-parcelle-agricole/list-parcelle-agricole.component';
+import { UpdateParcelleAgricoleComponent } from './Paysan/parcellagricole/update-parcelle-agricole/update-parcelle-agricole.component';
+import { DetailsParcelleAgricoleComponent } from './Paysan/parcellagricole/details-parcelle-agricole/details-parcelle-agricole.component';
+import { AjoutMaterielComponent } from './Paysan/materiels/ajout-materiel/ajout-materiel.component';
+import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-materiel.component';
+import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
+import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/details-materiel.component';
 
 
 
@@ -103,6 +110,14 @@ import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.compon
     ListEauComponent,
     UpdateEauComponent,
     DetailsEauComponent,
+    AjoutParcelleAgricoleComponent,
+    ListParcelleAgricoleComponent,
+    UpdateParcelleAgricoleComponent,
+    DetailsParcelleAgricoleComponent,
+    AjoutMaterielComponent,
+    ListMaterielComponent,
+    UpdateMaterielComponent,
+    DetailsMaterielComponent,
 
 
   ],

@@ -1,0 +1,122 @@
+
+  <header-paysan></header-paysan>
+
+
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- navbar.component.html -->
+    <nav>
+      <i (click)="addToggle()" class='bx bx-menu'></i>
+      <a class="nav-link" href="#">Categories</a>
+      <form action="#">
+        <div class="form-input">
+          <input placeholder="Search..." type="search">
+          <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
+        </div>
+      </form>
+      <div class="dropdown">
+        <a (click)="toggleNotificationDropdown()" class="notification" href="">
+          <i class='bx bxs-bell'></i>
+          <span class="num">8</span>
+        </a>
+        <div *ngIf="showNotificationDropdown" class="dropdown-content">
+          <!-- Contenu du dropdown Notification -->
+          <a href="#">Notification 1</a>
+          <a href="#">Notification 2</a>
+          <!-- Ajoutez d'autres éléments selon vos besoins -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <a (click)="toggleProfileDropdown()" class="profile" href="">
+          <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+        </a>
+        <div *ngIf="showProfileDropdown" class="dropdown-content">
+          <!-- Contenu du dropdown Profile -->
+          <a href="#">Mon Profil</a>
+          <a href="#">Paramètres</a>
+          <a href="#">Déconnexion</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- NAVBAR -->
+
+    <!-- MAIN -->
+    <main>
+      <div class="head-title">
+        <div class="left">
+          <h1>Dashboard</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Dashboard</a>
+            </li>
+            <li><i class='bx bx-chevron-right' ></i></li>
+            <li>
+              <a class="active" href="#" style="color: #28a745;">Modifier Materiel</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn-download" href="#">
+          <i class='bx bxs-cloud-download' ></i>
+          <span class="text">Download PDF</span>
+        </a>
+      </div>
+
+
+
+            <div class="table-data">
+
+              <div class="order">
+                <h1>Modifier une Materiel</h1>
+
+                <div class="head">
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Nom du Materiel</label>
+                            <input type="text" id="name" name="nom" [(ngModel)]="materiel.nom" required="true" placeholder="Donner le nom du material">
+                        </div>
+                   
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Type de  Materiel</label>
+                            <input type="text" id="name" name="type" [(ngModel)]="materiel.type" required="true" placeholder="Donner le type de Materiel">
+                        </div>
+                   
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Description </label>
+                            <input type="text" id="name" name="description" [(ngModel)]="materiel.description" required="true" placeholder="Descriptione ">
+                        </div>
+                   
+                    </div>
+                     <div class="row">
+                        <div class="column">
+                            <label for="subject">Qauntite</label>
+                            <input type="number" id="subject" name="quantite" [(ngModel)]="materiel.quantite" placeholder="quantite">
+                        </div>
+                       
+                    </div>
+                   
+                    <button type="submit">Ajouter</button>
+                </form>
+
+
+                  </div>
+              </div>
+            </div>
+
+
+
+    </main>
+    <!-- MAIN -->
+  </section>
+  <!-- CONTENT -->
+
+
+
+

@@ -10,21 +10,21 @@ import { ParcelleAgricole } from './modeles'; // Assurez-vous d'importer le mod√
 })
 export class ParcelleAgricoleService {
 
-  private apiUrl = 'http://localhost:8081/api/parcelles-agricoles'; // Remplacez cela par l'URL de votre API Spring Boot
+  private apiUrl = 'http://localhost:8081/api/parcelles'; // Remplacez cela par l'URL de votre API Spring Boot
 
   constructor(private http: HttpClient) { }
 
-  ajouterParcelleAgricole(parcelleAgricole: ParcelleAgricole): Observable<ParcelleAgricole> {
-    return this.http.post<ParcelleAgricole>(this.apiUrl, parcelleAgricole);
+  ajouterParcelleAgricole(parcelle: ParcelleAgricole): Observable<ParcelleAgricole> {
+    const url = `${this.apiUrl}/ajout`;
+    return this.http.post<ParcelleAgricole>(url, parcelle);
   }
 
-  getParcellesAgricoles(): Observable<ParcelleAgricole[]> {
+  getParcelleAgricole(): Observable<ParcelleAgricole[]> {
     return this.http.get<ParcelleAgricole[]>(this.apiUrl);
   }
 
-  getParcellesAgricolesParAgriculteur(agriculteurId: number): Observable<ParcelleAgricole[]> {
-    
-    const url = `${this.apiUrl}/user/${agriculteurId}`;
+  getParcelleAgricoleParPaysan(): Observable<ParcelleAgricole[]> {
+    const url = `${this.apiUrl}/liste`;
     return this.http.get<ParcelleAgricole[]>(url);
   }
 
@@ -33,13 +33,14 @@ export class ParcelleAgricoleService {
     return this.http.get<ParcelleAgricole>(url);
   }
 
-  supprimerParcelleAgricole(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
+  supprimerParcelleAgricole(eauId: number): Observable<void> {
+    const url = `${this.apiUrl}/delete/${eauId}`;
     return this.http.delete<void>(url);
   }
+  
 
-  updateParcelleAgricole(id: number, nouvelleParcelleAgricole: ParcelleAgricole): Observable<ParcelleAgricole> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<ParcelleAgricole>(url, nouvelleParcelleAgricole);
+  updateParcelleAgricole(id: number, nouvelleEau: ParcelleAgricole): Observable<ParcelleAgricole> {
+    const url = `${this.apiUrl}/update/${id}`;
+    return this.http.put<ParcelleAgricole>(url, nouvelleEau);
   }
 }

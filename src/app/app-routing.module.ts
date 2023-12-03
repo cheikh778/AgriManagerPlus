@@ -31,6 +31,14 @@ import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
+import { AjoutParcelleAgricoleComponent } from './Paysan/parcellagricole/ajout-parcelle-agricole/ajout-parcelle-agricole.component';
+import { UpdateParcelleAgricoleComponent } from './Paysan/parcellagricole/update-parcelle-agricole/update-parcelle-agricole.component';
+import { DetailsParcelleAgricoleComponent } from './Paysan/parcellagricole/details-parcelle-agricole/details-parcelle-agricole.component';
+import { ListParcelleAgricoleComponent } from './Paysan/parcellagricole/list-parcelle-agricole/list-parcelle-agricole.component';
+import { AjoutMaterielComponent } from './Paysan/materiels/ajout-materiel/ajout-materiel.component';
+import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/details-materiel.component';
+import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
+import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-materiel.component';
 
 
 
@@ -68,10 +76,17 @@ const routes: Routes = [
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
+  //parcelle agriccole
+  { path:'ajoutParcelle', component:AjoutParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'parcelle-datails/:id', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
-
-
-
+  //materiel
+  { path:'ajoutMateriel', component:AjoutMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateMateriel/:id', component:UpdateMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'materiel-datails/:id', component:DetailsMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeMateriel', component:ListMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
 
   /*ne touche plus cette partie*/

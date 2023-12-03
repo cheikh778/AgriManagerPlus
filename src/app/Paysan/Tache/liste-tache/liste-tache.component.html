@@ -34,7 +34,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Listes des Taches</a>
+              <a class="active" href="listeTache" style="color: #28a745;">Listes des Taches</a>
             </li>
           </ul>
         </div>
@@ -44,8 +44,14 @@
         </a>
       </div>
 
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>
 
-      <a  class="btn btn-success" href="ajoutTache" >Ajout Tache</a>
+      <a  class="btn btn-success" style="background: #28a745;" href="ajoutTache" >Ajout Tache</a>
 
       <div class="table-data">
         <div class="order">

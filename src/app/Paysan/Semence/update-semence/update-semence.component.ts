@@ -11,6 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./update-semence.component.scss']
 })
 export class UpdateSemenceComponent {
+
+  successMessage: string | undefined;
+  errorMessage: string | undefined;
+
   id!: number;
   semence : Semence = {
     id:0,
@@ -42,10 +46,22 @@ export class UpdateSemenceComponent {
     this.semenceService.updateSemence(this.id, this.semence).subscribe({
       next: (data) => {
         console.log(data);
-        this.redirectToSemenceList();
+
+        this.successMessage = 'Modification réussie. ';
+
+          setTimeout(() => {
+            this.redirectToSemenceList();
+          }, 2000);
+
       },
       error: (e) => {
         console.log(e);
+
+        this.errorMessage = 'une erreur s\'est produite lors de la modification. Veuillez réessayer plus tard';
+
+          setTimeout(() => {
+            this.redirectToSemenceList();
+          }, 2000);
       }
     });
   }

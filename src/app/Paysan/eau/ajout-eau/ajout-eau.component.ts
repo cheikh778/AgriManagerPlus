@@ -20,18 +20,22 @@ export class AjoutEauComponent {
 
   constructor(private eauService: EauService, private _router: Router) {}
 
-    
+
   submitForm() {
     console.log('Formulaire soumis', this.eau);
 
-    // const userId = this.authService.getId();
-    // this.cdr.detectChanges();
+    
 
       this.eauService.ajouterEau(this.eau).subscribe(
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
-           this._router.navigate(['listeEau']);
+          setTimeout(() => {
+
+            this._router.navigate(['listeEau']);
+
+          }, 2000);
+
         },
       error => {
         console.error('Erreur lors de l\'ajout', error);

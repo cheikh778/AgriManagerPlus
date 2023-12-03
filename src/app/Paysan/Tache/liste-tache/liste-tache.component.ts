@@ -12,20 +12,22 @@ export class ListeTacheComponent {
   taches : Tache[] = [];
 
   errorMessage = "";
-  sucessMessage= "";
+  successMessage= "";
 
   constructor(private tacheService: TacheService,private _router: Router){}
-  
+
   ngOnInit(): void {
     this.tacheService.getTachesParPaysan().subscribe(
     {next : (apps) => {
       this.taches = apps;
     },
     error:(err) =>{
-      this.errorMessage="Erreur de requete"
+
+      console.log("Erreur de requete")
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+
+      console.log("Requete valider")
     }
    } )
   }
@@ -35,17 +37,19 @@ export class ListeTacheComponent {
     this.tacheService.getTaches().subscribe({
       next: (apps) => {
         this.taches = apps;
-      },  
+      },
       error: (err) => {
-        this.errorMessage = "Erreur de la requête";
+
+        console.log("Erreur de la requête");
       },
       complete: () => {
-        this.sucessMessage = "Requête valide";
+
+        console.log("Requete valider")
       }
     });
   }
   modifierTache(tacheId: number) {
-    // Rediriger vers la page de mise à jour avec l'ID de la semence
+    
     console.log("id : ",tacheId)
     this._router.navigate(['updateTache', tacheId]);
   }
@@ -54,10 +58,12 @@ export class ListeTacheComponent {
     this.tacheService.supprimerTache(tacheId).subscribe({
       next: (data) => {
         console.log(data);
+        this.successMessage="Suppression réussie";
        this.getEmployees();
       },
       error: (e) => {
         console.log(e);
+        this.errorMessage="Erreur lors de la suppression. Veuillez réessayer plus tard!"
       }
     });
   }

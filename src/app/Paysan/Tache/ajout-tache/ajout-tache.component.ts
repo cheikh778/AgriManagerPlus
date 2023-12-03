@@ -21,18 +21,19 @@ export class AjoutTacheComponent {
 
   constructor(private tacheService: TacheService, private _router: Router) {}
 
-    
+
   submitForm() {
     console.log('Formulaire soumis', this.tache);
-
-    // const userId = this.authService.getId();
-    // this.cdr.detectChanges();
 
       this.tacheService.ajouterTache(this.tache).subscribe(
         response => {
           console.log('Ajout réussi', response);
           this.successMessage = 'Ajout réussie. ';
-           this._router.navigate(['listeTache']);
+          setTimeout(() => {
+            this._router.navigate(['listeTache']);
+
+          }, 2000);
+
         },
       error => {
         console.error('Erreur lors de l\'ajout', error);

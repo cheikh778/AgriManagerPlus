@@ -5,18 +5,27 @@
   <title>AgriManagerPlus</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/images/A2.jpeg">
+  <link rel="icon" type="image/x-icon" href="assets/images/Am2.jpg">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link href="assets/css/style.css">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<style>
+  .loader-wrapper .loader-image{
+    width: 2000px;
+    height: auto;
+  }
+</style>
 <body>
   <app-root>
-    <div class="loader-wrapper fa-5x">
-      <img src="assets/images/A2-removebg-preview.png" alt="Loading..." class="loader-image fa-3x">
+    <div class="loader-wrapper ">
+      <img src="assets/images/Am2.jpg"  alt="Loading..." class="loader-image">
     </div>
   </app-root>
 
@@ -33,93 +42,15 @@
 
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Mettez à jour le temps immédiatement lors du chargement de la page
-      updateDateTime();
-
-      // Mettez à jour le temps toutes les secondes (1000 millisecondes)
-      setInterval(updateDateTime, 1000);
-    }, false);
-
-    function updateDateTime() {
-      var currentDate = new Date();
-      var day = currentDate.getDate();
-      var month = currentDate.getMonth() + 1;
-      var year = currentDate.getFullYear();
-      var hours = currentDate.getHours();
-      var minutes = currentDate.getMinutes();
-      var seconds = currentDate.getSeconds();
-
-      // Obtenez le nom du jour
-      var daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-      var dayOfWeek = daysOfWeek[currentDate.getDay()];
-
-      // Mettez à jour le contenu de l'élément avec l'ID "year"
-      document.getElementById("year").innerHTML =
-        dayOfWeek + ' ' + day + '/' + month + '/' + year + ' ' + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-    }
-
-  </script>
- 
 
 
 
 
 
 
-  <script>
-    const texts = ["Welcome to", "AgriManager+"];
-  let textIndex = 0;
-  let charIndex = 0;
-  let isAdding = true;
 
-  function animateText() {
-      const currentText = texts[textIndex];
-      const currentElement = document.getElementById(`animated-text${textIndex + 1}`);
 
-      if (isAdding) {
-          currentElement.textContent = currentText.slice(0, charIndex);
-          charIndex++;
 
-          if (charIndex > currentText.length) {
-              if (textIndex < texts.length - 1) {
-                  textIndex++;
-                  charIndex = 0;
-                  setTimeout(animateText, 1000); 
-                  return;
-              }
-
-              isAdding = false;
-              setTimeout(animateText, 2000); 
-              return;
-          }
-      } else {
-          currentElement.textContent = currentText.slice(0, charIndex);
-          charIndex--;
-
-          if (charIndex === 0) {
-              if (textIndex > 0) {
-                  textIndex--;
-                  charIndex = texts[textIndex].length;
-                  setTimeout(animateText, 1000); // Pause avant de retourner au texte précédent
-                  return;
-              }
-
-              isAdding = true;
-              setTimeout(animateText, 1000); // Pause avant de recommencer à taper le texte
-              return;
-          }
-      }
-
-      const randomSpeed = 100 + Math.random() * 100;
-      setTimeout(animateText, isAdding ? randomSpeed : 50);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-      animateText(); // Commencez l'animation une fois que le document est chargé
-  });
-  </script>
 
 </body>
 </html>

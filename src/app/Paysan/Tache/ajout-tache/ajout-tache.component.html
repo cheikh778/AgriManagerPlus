@@ -52,7 +52,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Ajout D'une Tâche</a>
+              <a class="active" href="ajoutTache" style="color: #28a745;">Ajout D'une Tâche</a>
             </li>
           </ul>
         </div>
@@ -60,6 +60,13 @@
           <i class='bx bxs-cloud-download' ></i>
           <span class="text">Download PDF</span>
         </a>
+      </div>
+
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
       </div>
 
 
@@ -70,34 +77,13 @@
                 <h1>Ajouter une Tâche</h1>
 
                 <div class="head">
-                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="ajout-form">
                     <div class="row">
                         <div class="column">
                             <label for="name">Nom de la Tâche</label>
                             <input type="text" id="name"  name="nomTache" [(ngModel)]="tache.nomTache" required="true" placeholder="Donner le nom de la tâche">
                         </div>
-                        <!-- <div class="column">
-                            <label for="email">Type De Semence</label>
-                            <select name="" id="email"name="typeSemence" [(ngModel)]="semence.typeSemence" >
-                              <option value="">--choisissez votre type de semence</option>
-                              <option value="semences hybrides">semences hybrides. </option>
-                              <option value=" semences OGM">semences OGM</option>
-                              <option value="semences non hybrides (reproductibles)">semences non hybrides (reproductibles)</option>
-                              <option value="semences biologiques">semences biologiques</option>
 
-                            </select>
-
-                        </div>
-                    </div>
-                     <div class="row">
-                        <div class="column">
-                            <label for="subject">Quantite</label>
-                            <input type="text" id="subject" name="quantite" [(ngModel)]="semence.quantite" placeholder="Quantite">
-                        </div> -->
-                        <!-- <div class="column">
-                            <label for="contact">Contact Number</label>
-                            <input type="tel" id="contact" placeholder="Your phone number here">
-                        </div> -->
                     </div>
                     <div class="row">
                         <div class="column">

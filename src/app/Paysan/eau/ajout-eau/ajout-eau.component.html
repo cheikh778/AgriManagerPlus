@@ -1,86 +1,7 @@
-<!-- SIDEBAR -->
-<!-- [ngClass]="status ? 'hide' : ''" -->
-<!-- <section  id="sidebar">
-    <a class="brand" href="paysanDashboard">  -->
-      <!-- <i class='bx bxs-smile'></i>
-      <span class="text">AdminHub</span> -->
-       <!-- <img alt="" src="../../../assets/images/A2-removebg-preview.png" style="width: 210px; left: 90px;">
-    </a>
-    <ul class="side-menu top">
-      <li class="active">
-        <a href="paysanDashboard">
-          <i class='bx bxs-dashboard' ></i>
-          <span class="text">Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='fas fa-seedling'> &nbsp;</i>
-          <span class="text">Les Cultures</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-group'></i>
-          <span class="text">Les employés</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-store-alt'></i>
-          <span class="text">Materiels</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-basket'></i>
-          <span class="text">Semences</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bxs-layer-plus'></i>
-          <span class="text">Parcelles Agricoles</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-water'></i>
-          <span class="text">Gestion de l'eau</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-task'></i>
-          <span class="text">Tâches</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-repost'></i>
-          <span class="text">Publier une Culture</span>
-        </a>
-      </li>
-    </ul>
-    <ul class="side-menu">
-      <li>
-        <a href="#">
-          <i class='bx bxs-cog' ></i>
-          <span class="text">Settings</span>
-        </a>
-      </li>
-      <li>
-        <a class="logout" href="#">
-          <i class='bx bxs-log-out-circle' ></i>
-          <span class="text">Logout</span>
-        </a>
-      </li>
-    </ul>
-  </section>  -->
-  <!-- SIDEBAR -->
+
   <header-paysan></header-paysan>
-  
-  
+
+
   <!-- CONTENT -->
   <section id="content">
     <!-- navbar.component.html -->
@@ -131,7 +52,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+              <a class="active" href="ajoutEau" style="color: #28a745;">Ajout D'une Source d'eaux</a>
             </li>
           </ul>
         </div>
@@ -140,59 +61,41 @@
           <span class="text">Download PDF</span>
         </a>
       </div>
+      
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>
 
-      <div class="table-data">
-        <div class="ajout-form">
 
-                </div>
+            <div class="table-data">
 
-        </div>
-        <h3 class="title">Ajouter d'eau</h3>
-        <div class="container ">
-            <div class="row justify-content-center mt-4">
-                
-                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <!-- <div class="row mb-5">
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example1" class="form-control" />
-                          <label class="form-label" for="form6Example1">First name</label>
+              <div class="order">
+                <h1>Ajouter une source d'eaux</h1>
+
+                <div class="head">
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="form-ajout">
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Source d'eaux</label>
+                            <input type="text" id="name" name="source" [(ngModel)]="eau.source" required="true" placeholder="Donner la source d'eaux">
                         </div>
+
+                        <div class="column">
+                          <label for="subject">Quantité en Litre(L)</label>
+                          <input type="text" id="subject" name="quantite" [(ngModel)]="eau.quantite" placeholder="Quantite">
                       </div>
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example2" class="form-control" />
-                          <label class="form-label" for="form6Example2">Last name</label>
-                        </div>
-                      </div>
-                    </div> -->
-                  
-                    <!-- Text input -->
-                    <div class="form-outline mb-5">
-                      <input type="text" id="form6Example3" class="form-control" 
-                      name="nomTache" [(ngModel)]="eau.source"/>
-                      <label class="form-label" for="form6Example3">Source</label>
-                    </div>
-        
-                  
-                    <!-- Message input -->
-                    <div class="form-outline mb-5">
-                      <textarea class="form-control" id="form6Example7" rows="4" name="description"
-                      [(ngModel)]="eau.quantite"></textarea>
-                      <label class="form-label" for="form6Example7">quantite</label>
+
                     </div>
 
-                    <!-- Checkbox -->
-                    <!-- <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                      <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                    </div> -->
-                  
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
-                  </form>
-                </div>
+                    <button type="submit">Ajouter</button>
+                </form>
+
+
+                  </div>
+              </div>
             </div>
 
 

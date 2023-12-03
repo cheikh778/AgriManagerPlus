@@ -119,18 +119,10 @@ export class ListeProjetEnAttenteComponent {
     }
     this.validerSevice.validerProjet(id).subscribe(
       response => {
-        // Gérer la réponse de la requête
+        
 
         console.log('Projet validé avec succès', response);
-          // this.validerSevice.envoieEmail(mail,this.envoie).subscribe(
-          //   response => {
-          //     console.log('Envoie mail reussi', response);
-          //   },
-          //   error => {
-          //     // Gérer les erreurs éventuelles
-          //     console.error('Erreur lors de lenvoie de mail', error);
-          //   }
-          // )
+         
       },
       error => {
         // Gérer les erreurs éventuelles
@@ -148,21 +140,7 @@ export class ListeProjetEnAttenteComponent {
         }
       )
   }
-  // valider(id: number, mail: string) {
-  //   this.validerSevice.validerProjet(id)
-  //     .pipe(
-  //       switchMap(() => this.validerSevice.envoieEmail(mail, this.envoie))
-  //     )
-  //     .subscribe(
-  //       response => {
-  //         console.log('Projet validé avec succès', response);
-  //         console.log('Envoie mail réussi', response);
-  //       },
-  //       error => {
-  //         console.error('Erreur lors de la validation du projet ou de l\'envoi de mail', error);
-  //       }
-  //     );
-  // }
+  
 
   ngOnInit(): void {
     this.validerSevice.getListeProjet().subscribe(

@@ -612,12 +612,12 @@ p{
   font-size: 14px;
   font-weight: 400;
 }
-form{
+.ajout-form{
   width: 100%;
   position: relative;
   margin: 30px auto 0 auto;
 }
-.row{
+.ajout-form .row{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -628,8 +628,8 @@ label{
   color: #1c093c;
   font-size: 14px;
 }
-textarea,
-input,select{
+.ajout-form .column textarea,
+.ajout-form .column input,.ajout-form .column select{
   width: 100%;
   font-weight: 400;
   padding: 8px 10px;
@@ -640,8 +640,8 @@ input,select{
 textarea{
   resize: none;
 }
-textarea:focus,
-input:focus,select:focus{
+.ajout-form .column textarea:focus,
+.ajout-form .column input:focus,.ajout-form .column select:focus{
   outline: none;
   border-color: #28a745;
 }

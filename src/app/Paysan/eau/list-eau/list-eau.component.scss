@@ -1,4 +1,5 @@
 
+
 a {
   text-decoration: none;
 }
@@ -329,7 +330,7 @@ body {
   color: var(--dark);
 }
 #content main .head-title .left .breadcrumb li a {
-  color: var(--dark-grey);
+  color: var(--blue);
   pointer-events: none;
 }
 #content main .head-title .left .breadcrumb li a.active {
@@ -583,3 +584,4 @@ body {
     min-width: 420px;
   }
 }
+

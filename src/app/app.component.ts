@@ -21,9 +21,21 @@ export class AppComponent {
     }, 2000);
   }
 
+  // hideLoader() {
+  //   const loader = this.el.nativeElement.querySelector('.loader-wrapper');
+  //   this.renderer.setStyle(loader, 'display', 'none');
+  // }
+
   hideLoader() {
-    const loader = this.el.nativeElement.querySelector('.loader-wrapper');
-    this.renderer.setStyle(loader, 'display', 'none');
+    const loader = document.getElementById('loader');
+    if (loader) {
+      loader.style.display = 'none';
+    }
   }
+  ngAfterViewInit() {
+    this.hideLoader();
+  }
+
+
 
 }

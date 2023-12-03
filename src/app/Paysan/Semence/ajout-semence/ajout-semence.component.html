@@ -52,7 +52,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Ajout D'une Semence</a>
+              <a class="active" href="ajoutSemence" style="color: #28a745;">Ajout D'une Semence</a>
             </li>
           </ul>
         </div>
@@ -67,7 +67,7 @@
       </div>
       <div style="background-color: #f2dede;">
         <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-      </div>  
+      </div>
 
 
 
@@ -77,7 +77,7 @@
                 <h1>Ajouter une semence</h1>
 
                 <div class="head">
-                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()">
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="form-ajout">
                     <div class="row">
                         <div class="column">
                             <label for="name">Nom de la Semence</label>
@@ -98,7 +98,7 @@
                     </div>
                      <div class="row">
                         <div class="column">
-                            <label for="subject">Quantite</label>
+                            <label for="subject">Quantité en Kilogramme(Kg)</label>
                             <input type="text" id="subject" name="quantite" [(ngModel)]="semence.quantite" placeholder="Quantite">
                         </div>
                         <!-- <div class="column">

@@ -1,7 +1,7 @@
 
-  
+
   <header-paysan></header-paysan>
-  
+
   <!-- CONTENT -->
   <section id="content">
     <!-- NAVBAR -->
@@ -23,7 +23,7 @@
       </a>
     </nav>
     <!-- NAVBAR -->
-  
+
     <!-- MAIN -->
     <main>
       <div class="head-title">
@@ -35,7 +35,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Source d'eaux</a>
+              <a class="active" href="listeEau" style="color: #28a745;">Source d'eaux</a>
             </li>
           </ul>
         </div>
@@ -44,10 +44,16 @@
           <span class="text">Download PDF</span>
         </a>
       </div>
-  
 
-      <a  class="btn btn-secondary" href="ajoutEau" >Ajout Eau</a>
-  
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="sucessMessage" class="text-success">{{ sucessMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>
+
+      <a  class="btn btn-secondary" href="ajoutEau" style="background-color: #28a745; border-color: #28a745;" >Ajout Eau</a>
+
       <div class="table-data">
         <div class="order">
           <div class="head">
@@ -77,12 +83,12 @@
             </tbody>
           </table>
         </div>
-  
+
       </div>
-        
-      
+
+
     </main>
     <!-- MAIN -->
   </section>
   <!-- CONTENT -->
-  
+

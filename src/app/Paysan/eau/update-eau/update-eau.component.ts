@@ -9,6 +9,10 @@ import { Eau } from 'src/app/modeles';
   styleUrls: ['./update-eau.component.scss']
 })
 export class UpdateEauComponent {
+
+  successMessage: string | undefined;
+  errorMessage: string | undefined;
+
   id!: number;
   eau : Eau = {
     eauId:0,
@@ -39,10 +43,17 @@ export class UpdateEauComponent {
     this.eauService.updateEau(this.id, this.eau).subscribe({
       next: (data) => {
         console.log(data);
-        this.redirectToEauList();
+        this.successMessage="Modification réussie";
+
+        setTimeout(() => {
+          this.redirectToEauList();
+
+        }, 2000);
+
       },
       error: (e) => {
         console.log(e);
+        this.errorMessage="Une Erreur s'est produite lors de la modification"
       }
     });
   }

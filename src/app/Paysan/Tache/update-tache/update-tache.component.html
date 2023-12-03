@@ -52,7 +52,7 @@
             </li>
             <li><i class='bx bx-chevron-right' ></i></li>
             <li>
-              <a class="active" href="#" style="color: #28a745;">Modification d'une Tâche</a>
+              <a class="active" href="updateTache" style="color: #28a745;">Modification d'une Tâche</a>
             </li>
           </ul>
         </div>
@@ -62,60 +62,43 @@
         </a>
       </div>
 
-      <div class="table-data">
-        <div class="ajout-form">
+      <div style="background-color:#dff0d8;">
+        <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+      </div>
+      <div style="background-color: #f2dede;">
+        <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+      </div>
 
-                </div>
 
-        </div>
-        <h3 class="title">Modifier une tâche</h3>
-        <div class="container ">
-            <div class="row justify-content-center mt-4">
 
-                  <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()">
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <!-- <div class="row mb-5">
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example1" class="form-control" />
-                          <label class="form-label" for="form6Example1">First name</label>
+            <div class="table-data">
+
+              <div class="order">
+                <h1>Modifier une Tâche</h1>
+
+                <div class="head">
+                  <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()" class="ajout-form">
+                    <div class="row">
+                        <div class="column">
+                            <label for="name">Nom de la Tâche</label>
+                            <input type="text" id="name"  name="nomTache" [(ngModel)]="tache.nomTache" required="true" placeholder="Donner le nom de la tâche">
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-outline">
-                          <input type="text" id="form6Example2" class="form-control" />
-                          <label class="form-label" for="form6Example2">Last name</label>
+
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="issue">Description de la Tâche</label>
+                            <textarea id="issue" name="description"
+                            [(ngModel)]="tache.description" placeholder="Description de la tâche" rows="3"></textarea>
                         </div>
-                      </div>
-                    </div> -->
-
-                    <!-- Text input -->
-                    <div class="form-outline mb-5">
-                      <input type="text" id="form6Example3" class="form-control"
-                      name="nomTache" [(ngModel)]="tache.nomTache"/>
-                      <label class="form-label" for="form6Example3">Nom</label>
                     </div>
+                    <button type="submit">Modifier</button>
+                </form>
 
 
-                    <!-- Message input -->
-                    <div class="form-outline mb-5">
-                      <textarea class="form-control" id="form6Example7" rows="4" name="description"
-                      [(ngModel)]="tache.description"></textarea>
-                      <label class="form-label" for="form6Example7">Description</label>
-                    </div>
-
-                    <!-- Checkbox -->
-                    <!-- <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                      <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                    </div> -->
-
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-5">Ajouter</button>
-                  </form>
-                </div>
+                  </div>
+              </div>
             </div>
-
 
 
     </main>

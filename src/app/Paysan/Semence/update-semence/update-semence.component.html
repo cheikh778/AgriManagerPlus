@@ -81,7 +81,7 @@
                       <h1>Modifier une semence</h1>
 
                       <div class="head">
-                        <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()">
+                        <form method="POST" #etuForm="ngForm" (ngSubmit)="onSubmit()" class="form-ajout">
                           <div class="row">
                               <div class="column">
                                   <label for="name">Nom de la Semence</label>
@@ -102,7 +102,7 @@
                           </div>
                            <div class="row">
                               <div class="column">
-                                  <label for="subject">Quantite</label>
+                                  <label for="subject">Quantite en Kilogramme(Kg)</label>
                                   <input type="text" id="subject" name="quantite" [(ngModel)]="semence.quantite" placeholder="Quantite">
                               </div>
 

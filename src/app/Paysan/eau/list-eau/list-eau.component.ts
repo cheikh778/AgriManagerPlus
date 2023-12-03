@@ -14,19 +14,22 @@ export class ListEauComponent {
 
   errorMessage = "";
   sucessMessage= "";
+  message="";
 
   constructor(private eauService: EauService,private _router: Router){}
-  
+
   ngOnInit(): void {
     this.eauService.getTachesParPaysan().subscribe(
     {next : (apps) => {
       this.eaux = apps;
     },
     error:(err) =>{
-      this.errorMessage="Erreur de requete"
+      //this.errorMessage="Erreur de requete"
+      console.log("Erreur de requete");
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+      //this.sucessMessage="Requete valider"
+      console.log("Requete valider");
     }
    } )
   }
@@ -35,18 +38,20 @@ export class ListEauComponent {
     this.eauService.getEaux().subscribe({
       next: (apps) => {
         this.eaux = apps;
-      },  
+      },
       error: (err) => {
-        this.errorMessage = "Erreur de la requête";
+        //this.errorMessage = "Erreur de la requête";
+        console.log("Erreur de la requête");
       },
       complete: () => {
-        this.sucessMessage = "Requête valide";
+        //this.sucessMessage = "Requête valide";
+        console.log("Requête valide");
       }
     });
   }
 
   modifierEau(eauId: number) {
-    // Rediriger vers la page de mise à jour avec l'ID de la semence
+
     console.log("id : ",eauId)
     this._router.navigate(['updateEau', eauId]);
   }
@@ -56,9 +61,13 @@ export class ListEauComponent {
       next: (data) => {
         console.log(data);
         this.getEmployees();
+        this.sucessMessage="Suppression réussie";
+       // this.message=this.sucessMessage;
       },
       error: (e) => {
         console.log(e);
+        this.errorMessage="Erreur lors de la suppression, Veuillez réessayer plus tard."
+        //this.message=this.errorMessage;
       }
     });
   }

@@ -9,6 +9,10 @@ import { TacheService } from 'src/app/tache.service';
   styleUrls: ['./update-tache.component.scss']
 })
 export class UpdateTacheComponent {
+
+  errorMessage: string | undefined;
+  successMessage:string | undefined;
+
   id!: number;
   tache : Tache = {
     idTache:0,
@@ -39,10 +43,21 @@ export class UpdateTacheComponent {
     this.tacheService.updateTache(this.id, this.tache).subscribe({
       next: (data) => {
         console.log(data);
-        this.redirectToTacheList();
+        this.successMessage="Mise à jour réussie!"
+        setTimeout(() => {
+          this.redirectToTacheList();
+
+        }, 2000);
+
       },
       error: (e) => {
+
         console.log(e);
+        this.errorMessage="Une erreur s'est produite lors de la modification. Veuillez réessayer plus tard!"
+        setTimeout(() => {
+          this.redirectToTacheList();
+
+        }, 2000);
       }
     });
   }
@@ -69,13 +84,13 @@ export class UpdateTacheComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+    
     this.showProfileDropdown = false;
   }
 
   toggleProfileDropdown() {
     this.showProfileDropdown = !this.showProfileDropdown;
-    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+    
     this.showNotificationDropdown = false;
   }
 }

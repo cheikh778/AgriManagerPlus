@@ -36,6 +36,7 @@ import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 
 
@@ -44,6 +45,7 @@ import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confir
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
+  { path: 'publications', component: PublicationsComponent},
   { path: 'conditions', component:ConditionsComponent},
   { path: 'termes', component:TermesComponent},
   { path: 'login', component:LoginPageComponent },

@@ -327,14 +327,14 @@ body {
   grid-gap: 16px;
 }
 #content main .head-title .left .breadcrumb li {
-  color: var(--dark);
+  color: #28a745;
 }
 #content main .head-title .left .breadcrumb li a {
-  color: var(--blue);
+  color: #28a745;
   pointer-events: none;
 }
 #content main .head-title .left .breadcrumb li a.active {
-  color: var(--blue);
+  color: #28a745;
   pointer-events: unset;
 }
 #content main .head-title .btn-download {

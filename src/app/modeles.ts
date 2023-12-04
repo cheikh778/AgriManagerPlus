@@ -90,8 +90,14 @@ export interface  Eau
 
 }
 
-export interface  IntratAgricole
+export interface  ParcelleAgricole
 {
+
+     parcelle_id:number;
+     parcelle_nom:string;
+    parcelle_description:string;
+     parcelle_type:string;
+     parcelle_location:string;
 
 }
 
@@ -102,7 +108,11 @@ export interface  Publication
 
 export interface  Materiel
 {
-
+    materielId:number;
+    nom:string;
+    type:string;
+    description:string;
+    quantite:number;
 }
 
 
@@ -116,7 +126,4 @@ export interface  AssignationTache
     dateFine : Date;
     status : string;
 }
-export interface  AssignationTache
-{
 
-}

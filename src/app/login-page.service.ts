@@ -45,23 +45,44 @@ export class LoginPageService {
         console.log('Type de id de l\'utilisateur connecté :', typeof  res.id);
         this.setToken(res.access_token);
         this.setRole(res.role)
-        this.successMessage = "Connexion réussie";
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
-          this.router.navigate(['adminDashboard']);
+          this.successMessage = "Bienvenue Mr l'administrateur,  vous allez être redirigé vers votre page!";
+          setTimeout(() => {
+            this.router.navigate(['adminDashboard']);
+
+          }, 2000);
           console.log("Bienvenue Admin");
-        } else if (roles === 'paysan') {
-           this.router.navigate(['paysanDashboard']);
-          // this.router.navigate(['ajoutCulture']);
+        }
+         else if (roles === 'paysan') {
+          this.successMessage = "Bienvenue Mr le paysan,  vous allez être redirigé vers votre page!";
+          setTimeout(() => {
+            this.router.navigate(['paysanDashboard']);
+
+          }, 2000);
           console.log("Bienvenue Paysan");
-        } else if (roles === 'employe') {
+        }
+        else if (roles === 'employe') {
+
+          this.successMessage = "Bienvenue l'employé,  vous allez être redirigé vers votre page!";
+
+         setTimeout(() => {
           this.router.navigate(['employeeDashboard']);
+
+         }, 2000);
           console.log("Bienvenue Employe")
-        } else {
-          this.router.navigate(['clientDashboard']);
+        }
+        else {
+          this.successMessage = "Bienvenue le client, vous allez être redirigé vers votre page!";
+
+            setTimeout(() => {
+              this.router.navigate(['clientDashboard']);
+            }, 2000);
+
           console.log("Bienvenue Client");
 
         }
+
 
         this.utilisateurConnecte = res.user;
 
@@ -72,7 +93,7 @@ export class LoginPageService {
       },
        (error) => {
         console.error('Erreur lors de la connexion :', error);
-        this.errorMessage = "Erreur lors de la connexion";
+        this.errorMessage = "Erreur lors de la connexion, Verifier les inormations que vous avez entrées";
 
       }
       );
@@ -155,5 +176,5 @@ catchError((error) => {
   }
 
 
-  
+
 }

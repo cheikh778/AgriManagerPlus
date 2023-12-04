@@ -13,15 +13,19 @@ export class LoginPageComponent {
     role : '',
     token:''
   };
-
+  // errorMessage = '';
+  // successMessage = '';
 
 
   constructor(private authService: LoginPageService,
     private _router: Router) {}
 
   submitForm() {
-    console.log('Formulaire soumis', this.user); // Vérifiez si les données sont correctes
+    console.log('Formulaire soumis', this.user); 
     this.authService.signIn(this.user)
+
+   
+
     //.subscribe(
     // .subscribe(
     //   response => {
@@ -55,4 +59,19 @@ export class LoginPageComponent {
 //   }
 // );
   }
+
+  get errorMessage(): string {
+    return this.authService.errorMessage;
+  }
+
+  get successMessage(): string {
+    return this.authService.successMessage;
+  }
+
+  clearMessages() {
+    this.authService.errorMessage = '';
+    this.authService.successMessage = '';
+  }
+
+  
 }

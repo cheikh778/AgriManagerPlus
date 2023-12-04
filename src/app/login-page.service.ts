@@ -14,6 +14,10 @@ export class LoginPageService {
   currentUser = {};
   semenceService: any;
   private utilisateurConnecte: any;
+
+  errorMessage: string = '';
+  successMessage: string = '';
+
   constructor(private http: HttpClient, public router: Router) {}
 
   signUp(user: Authentification): Observable<any> {
@@ -28,6 +32,8 @@ export class LoginPageService {
   getRole(): string | null {
     return localStorage.getItem("role");
   }
+
+
   // Sign-in
   signIn(user: Authentification) {
     return this.http
@@ -39,6 +45,7 @@ export class LoginPageService {
         console.log('Type de id de l\'utilisateur connecté :', typeof  res.id);
         this.setToken(res.access_token);
         this.setRole(res.role)
+        this.successMessage = "Connexion réussie";
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
           this.router.navigate(['adminDashboard']);
@@ -52,7 +59,8 @@ export class LoginPageService {
           console.log("Bienvenue Employe")
         } else {
           this.router.navigate(['clientDashboard']);
-          console.log("Bienvenue Client")
+          console.log("Bienvenue Client");
+
         }
 
         this.utilisateurConnecte = res.user;
@@ -64,29 +72,12 @@ export class LoginPageService {
       },
        (error) => {
         console.error('Erreur lors de la connexion :', error);
+        this.errorMessage = "Erreur lors de la connexion";
 
       }
       );
   }
 
-  // private getId(paysan : number){
-  //    this.http
-  //   .post<any>(`${this.endpoint}`, user)
-  //   .subscribe((res: any) => {
-  //   paysan = res.id
-  //     return paysan
-  //   })
-
-  // }
-  // getId(): Observable<number> {
-  //   return this.http.post<any>(`${this.endpoint}`, user).pipe(
-  //     map(res => res.id),
-  //     catchError(error => {
-  //       console.error('Erreur lors de la récupération de l\'ID de l\'utilisateur :', error);
-  //       return throwError(error);
-  //     })
-  //   );
-  // }
 
   getToken() {
     return localStorage.getItem('access_token');
@@ -140,19 +131,7 @@ catchError((error) => {
 
 
 
-  // doLogout() {
-  //   let removeToken = localStorage.removeItem('access_token');
-  //   if (removeToken == null) {
-  //     this.router.navigate(['log-in']);
-  //   }
-  // }
-  // doLogout() {
-  //   let removeToken = localStorage.removeItem('access_token');
-  //   if (removeToken == null) {
-  //     this.router.navigate(['log-in']);
-  //   }
-  // }
-  // User profile
+
   getUserProfile(id: any): Observable<any> {
     let api = `${this.endpoint}/user-profile/${id}`;
     return this.http.get(api, { headers: this.headers }).pipe(
@@ -176,37 +155,5 @@ catchError((error) => {
   }
 
 
-  // getCurrentUser(): number | null {
-  //   const token = localStorage.getItem('access_token');
-  //   console.log(localStorage.getItem('access_token'))
-
-  //   if (token) {
-  //     // Décodez le jeton JWT pour obtenir les informations de l'utilisateur
-  //     const decodedToken = this.decodeToken(token);
-  //     if (decodedToken && decodedToken.id) {
-  //       return decodedToken.id;
-  //     }
-  //     console.log('Decoded Token:', decodedToken);
-  //     return decodedToken;
-  //   }
-
-  //   return null;
-  // }
-
-  // private decodeToken(token: string): any {
-  //   try {
-
-  // const decodedToken = jwtDecode(token);
-
-
-  // return decodedToken;
-  //   } catch (error) {
-  //     console.error('Erreur lors du décodage du jeton JWT :', error);
-  //     return null;
-  //   }
-
-  // }
-  // public deconnecter(){
-  //   localStorage.removeItem('access_token');
-  // }
+  
 }

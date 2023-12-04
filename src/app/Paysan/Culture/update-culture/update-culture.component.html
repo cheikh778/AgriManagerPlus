@@ -62,12 +62,8 @@
       </a>
     </div>
 
-    <div style="background-color:#dff0d8;">
-      <p *ngIf="message" class="text-success">{{ message }}</p>
-    </div>
-    <div style="background-color: #f2dede;">
-      <p *ngIf="messageError" class="text-danger">{{ message }}</p>
-    </div>
+    <div *ngIf="messageError" class="alert alert-danger">{{ messageError }}</div>
+    <div *ngIf="message" class="alert alert-success">{{ message }}</div>
 
 
 

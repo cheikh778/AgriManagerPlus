@@ -59,12 +59,8 @@
       </a>
     </div>
 
-    <div style="background-color:#dff0d8;">
-      <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
-    </div>
-    <div style="background-color: #f2dede;">
-      <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
 
     <a  class="btn btn-secondary" href="ajoutCulture" ><i class="fas fa-plus"></i> Ajouter une culture</a>

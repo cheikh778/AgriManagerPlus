@@ -37,11 +37,20 @@ import { ListEauComponent } from './Paysan/eau/list-eau/list-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AuthGuard } from "./shared/auth.guard";
+import { AjoutParcelleAgricoleComponent } from './Paysan/parcellagricole/ajout-parcelle-agricole/ajout-parcelle-agricole.component';
+import { UpdateParcelleAgricoleComponent } from './Paysan/parcellagricole/update-parcelle-agricole/update-parcelle-agricole.component';
+import { DetailsParcelleAgricoleComponent } from './Paysan/parcellagricole/details-parcelle-agricole/details-parcelle-agricole.component';
+import { ListParcelleAgricoleComponent } from './Paysan/parcellagricole/list-parcelle-agricole/list-parcelle-agricole.component';
+import { AjoutMaterielComponent } from './Paysan/materiels/ajout-materiel/ajout-materiel.component';
+import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/details-materiel.component';
+import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
+import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-materiel.component';
+import { PublicationsComponent } from './publications/publications.component';
 import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
-import { ProfilComponent } from './Paysan/profil/profil.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
+import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -50,6 +59,7 @@ import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confir
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
+  { path: 'publications', component: PublicationsComponent},
   { path: 'conditions', component:ConditionsComponent},
   { path: 'termes', component:TermesComponent},
   { path: 'login', component:LoginPageComponent },
@@ -82,7 +92,6 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-
   { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil

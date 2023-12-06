@@ -103,12 +103,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <div style="background-color:#dff0d8;">
-          <p *ngIf="message" class="text-success">{{ message }}</p>
-        </div>
-        <div style="background-color: #f2dede;">
-          <p *ngIf="messageError" class="text-danger">{{ message }}</p>
-        </div>
+        <div *ngIf="messageError" class="alert alert-danger">{{ messageError }}</div>
+        <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+
         <form action="" method="POST" #etuForm="ngForm" (ngSubmit)="demandeValidation()">
             <div class="mb-3">
                 <label for="name">Nom Complet</label>
@@ -142,37 +139,36 @@
 </div>
 
 
-
 <div class="container mt-5" id="equipe">
-        <h2 class="text-center mb-4">Notre Équipe de Développeurs</h2>
+        <h2 class="text-center mb-4">Notre Dévise</h2>
 
         <div id="teamCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="card">
-                        <img src="assets/images/dev.jpg" alt="Developer 1" class="card-img-top">
+                        <img src="assets/images/sec.png" alt="Developer 1" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title text-success">Serigne Cheikh NDAO</h5>
-                            <p class="card-text">Développeur Back-end</p>
+                            <h5 class="card-title text-success text-center">Sécurité</h5>
+                            <p class="card-text text-center">Nous nous occupons de la securité de vos données.</p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="card">
-                        <img src="assets/images/dev1.jpg" alt="Developer 2" class="card-img-top">
+                        <img src="assets/images/ben.png" alt="Developer 2" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title text-success">Seynabou THIANDOUM</h5>
-                            <p class="card-text">Développeuse Back-end</p>
+                            <h5 class="card-title text-success text-center">Bénéfice</h5>
+                            <p class="card-text text-center">Pensez aux Revenus que vous allez vous faire.</p>
                         </div>
                     </div>
 
                 </div>
                 <div class="carousel-item">
                   <div class="card">
-                      <img src="./assets/images/dev2.jpg" alt="Developer 2" class="card-img-top">
+                      <img src="./assets/images/prio.png" alt="Developer 2" class="card-img-top">
                       <div class="card-body">
-                          <h5 class="card-title text-success">Aissatou NIASS</h5>
-                          <p class="card-text">Développeuse Back-end</p>
+                          <h5 class="card-title text-success text-center">Priorité</h5>
+                          <p class="card-text text-center">Occupez vous des priorités pour faire évoluer vos affaires.</p>
                       </div>
                   </div>
               </div>

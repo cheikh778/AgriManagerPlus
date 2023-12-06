@@ -4,17 +4,14 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class=" message-container" style="background-color:#dff0d8;">
-      <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
-    </div>
-    <div class="error-container" style="background-color: #f2dede;">
-      <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
 
       <!-- Formulaire d'inscription -->
       <div class="col-md-6">
-          <h2>Inscription</h2>
+        <div class="card p-4 shadow">
+          <h2 class="text-center mb-4">Inscription</h2>
 
           <form action="" method="post" [formGroup]="user" (ngSubmit)="submitForm()">
             <div class="form-group">
@@ -48,13 +45,44 @@
             <button type="submit" class="btn btn-success" ><i class="fas fa-user-plus"></i> S'inscrire</button>
         </form>
           <p class="mt-3">
+          <!-- <form action="" method="post" #etuForm="ngForm" (ngSubmit)="submitForm()">
+              <div class="form-group">
+                  <label for="name"><i class="fas fa-user"> </i> Nom</label>
+                  <input type="text" class="form-control" id="name" name="nom" [(ngModel)]="user.nom" required>
+              </div>
+              <div class="form-group">
+                  <label for="prenom"><i class="fas fa-user"></i> Prenom</label>
+                  <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="user.prenom" required>
+              </div>
+              <div class="form-group">
+
+                  <label for="contact"><i class="fas fa-phone"></i> Contact</label>
+                  <input type="text" class="form-control" id="contact" name="contact" [(ngModel)]="user.contact" required>
+              </div>
+              <div class="form-group">
+                  <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>
+                  <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required>
+              </div>
+              <div class="form-group">
+                  <label for="password"><i class="fas fa-lock"></i> Mot de passe</label>
+                  <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
+              </div>
+              
+              <br>
+              <button type="submit" class="btn btn-success"><i class="fas fa-user-plus"></i> S'inscrire</button>
+          </form> -->
+
+          <p class="mt-3 text-center">
               Avez-vous déjà un compte? <a href="/login">Se connecter</a>
           </p>
+      </div>
       </div>
 
       <!-- Image -->
       <div class="col-md-6">
+        <div class="card">
           <img src="assets/images/9372018.jpg" alt="Image descriptive" class="img-fluid">
+      </div>
       </div>
 
   </div>

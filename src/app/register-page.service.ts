@@ -10,4 +10,5 @@ export class RegisterPageService {
   inscription(data: any) {
     return this.http.post('http://localhost:8081/api/v1/auth/register', data);
   } 
+ 
 }

@@ -21,6 +21,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ListeProjetEnAttenteComponent } from './liste-projet-agricole/liste-projet-en-attente.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MenuComponent } from './menu/menu.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
+import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
 import { Page403Component } from './page403/page403.component';
 import { Page404Component } from './page404/page404.component';
 import { PublicationsComponent } from './publications/publications.component';
@@ -101,6 +104,10 @@ import { HeaderEmployeComponent } from './Employee/header-employe/header-employe
     AjoutTacheComponent,
     ListeTacheComponent,
     UpdateTacheComponent,
+
+    ChangePasswordComponent,
+    PasswordAdminComponent,
+    ProfilAdminComponent,
 
     AjoutEmployeComponent,
     ListeEmployeComponent,

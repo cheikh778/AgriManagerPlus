@@ -24,6 +24,12 @@ import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from "./Paysan/Tache/ajout-tache/ajout-tache.component";
 import { UpdateTacheComponent } from "./Paysan/Tache/update-tache/update-tache.component";
 import { ListeTacheComponent } from "./Paysan/Tache/liste-tache/liste-tache.component";
+//Employe
+import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
+import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
+import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
+
+
 //eau
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
@@ -40,6 +46,11 @@ import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/de
 import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
 import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-materiel.component';
 import { PublicationsComponent } from './publications/publications.component';
+import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
+import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
+import { ProfilComponent } from './Paysan/profil/profil.component';
+import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -70,6 +81,10 @@ const routes: Routes = [
   { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //Employee
+  { path:'listeEmployee', component:ListeEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'ajoutEmployee', component:AjoutEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateEmployee/:id', component:UpdateEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
 
   //eau
@@ -77,18 +92,18 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'confirmation', component:ConfirmationDialogComponent},
 
-  //parcelle agriccole
-  { path:'ajoutParcelle', component:AjoutParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'parcelle-datails/:id', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //profil
+  { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
+  { path:'AdminChangePassword', component:PasswordAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
+  { path:'profilPaysan', component:ProfilComponent},
+  { path:'changePassword', component:ChangePasswordComponent},
 
-  //materiel
-  { path:'ajoutMateriel', component:AjoutMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'updateMateriel/:id', component:UpdateMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'materiel-datails/:id', component:DetailsMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'listeMateriel', component:ListMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+
+
+
+
 
 
   /*ne touche plus cette partie*/

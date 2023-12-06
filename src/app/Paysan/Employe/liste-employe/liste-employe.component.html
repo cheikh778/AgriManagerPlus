@@ -70,7 +70,7 @@
 
     </ul>
 
-    <a  class="btn btn-secondary" href="ajoutEmploye" >Ajout Employe</a>
+    <a  class="btn btn-secondary" href="ajoutEmployee" >Ajout Employe</a>
 
     <div class="table-data">
 
@@ -95,7 +95,7 @@
               <th>Email</th>
               <th>Contact</th>
               <th>Profil</th>
-              <th>Status</th>
+              <th colspan="2">Action</th>
             </tr>
           </thead>
           <tbody *ngFor="let v of employe">
@@ -107,6 +107,8 @@
               <td>{{v.email}}</td>
               <td>{{v.contact}}</td>
               <td>{{v.role}}</td>
+              <td><button class="btn btn-warning" (click)="modifierUser(v.id)">Update</button></td>
+              <td><button class="btn btn-danger" (click)="deleteEmployee(v.id)">Supprimer</button></td>
 
 
                 <!-- <td>

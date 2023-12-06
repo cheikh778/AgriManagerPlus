@@ -36,11 +36,11 @@ export class ListeUtilisateurService {
     return this.__httpClient.put(`http://localhost:8081/api/v1/users/utilisateur`, utilisateur);
   }
 
-  uploadPhotoUtilisateur(photo: File): Observable<any> {
-    const formData = new FormData();
-    formData.append('photo', photo);
+  uploadPhotoUtilisateur(photo: any): Observable<any> {
+    // const formData = new FormData();
+    // formData.append('photo', photo);
 
     // Envoyez la demande POST pour télécharger la photo de profil
-    return this.__httpClient.put(`http://localhost:8081/api/v1/users/utilisateur/photo`, formData);
+    return this.__httpClient.put(`http://localhost:8081/api/v1/auth/upload`, photo);
   }
 }

@@ -53,10 +53,13 @@ export class ProfilAdminComponent {
   onFileSelected(event: any): void {
     this.photoFile = event.target.files[0] as File;
   }
-
+photos = {
+  file : File,
+  photo : '',
+}
   onUploadPhoto(): void {
     if (this.photoFile) {
-      this.utilisateurService.uploadPhotoUtilisateur(this.photoFile).subscribe(
+      this.utilisateurService.uploadPhotoUtilisateur(this.photos).subscribe(
         (photoUrl) => {
           console.log('Photo uploaded successfully:', photoUrl);
           this.utilisateurForm.patchValue({ photoUrl });
@@ -67,6 +70,21 @@ export class ProfilAdminComponent {
       );
     }
   }
+
+  // onUploadPhoto(): void {
+  //   const formData = new FormData();
+  //   formData.append('file', this.photos.file);
+  
+  //   this.utilisateurService.uploadPhotoUtilisateur(formData).subscribe(
+  //     (photoUrl) => {
+  //       console.log('Photo uploaded successfully:', photoUrl);
+  //       this.utilisateurForm.patchValue({ photoUrl });
+  //     },
+  //     (error) => {
+  //       console.error('Erreur lors du téléchargement de la photo de profil', error);
+  //     }
+  //   );
+  // }  
 
   onSaveChanges(): void {
     const updatedUtilisateur = { ...this.utilisateurForm.value };

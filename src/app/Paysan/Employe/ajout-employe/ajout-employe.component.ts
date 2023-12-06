@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterPageService } from 'src/app/register-page.service';
+import { EmployeeService } from 'src/app/employee.service';
 
 @Component({
   selector: 'app-ajout-employe',
@@ -21,23 +21,32 @@ export class AjoutEmployeComponent {
   successMessage: string | undefined;
   errorMessage: string | undefined;
 
-  constructor(private registerService: RegisterPageService, private _router: Router) {}
+  constructor(private employeeService: EmployeeService, private _router: Router) {}
 
   submitForm() {
     console.log('Formulaire soumis', this.user);
-    this.registerService.inscription(this.user).subscribe(
+    this.employeeService.inscrireEmployee(this.user).subscribe(
       response => {
+        console.log("douguoul")
         console.log('Ajout réussi', response);
+        console.log("douguouna")
+
         this.successMessage = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
 
         setTimeout(() => {
-          this._router.navigate(['/login']);
+          this._router.navigate(['/listeEmployee']);
         }, 2000);
       },
       error => {
-        console.error('Erreur lors de l\'ajout', error);
-        this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
-        console.log(this.user);
+        if(error.status === 409){
+          console.error('Erreur lors de l\'ajout', error);
+          this.errorMessage = 'Cette email existe déja';
+        }else{
+          console.error('Erreur lors de l\'ajout', error);
+          this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
+          console.log(this.user);
+        }
+     
       }
     );
   }

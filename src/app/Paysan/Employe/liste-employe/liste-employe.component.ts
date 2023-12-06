@@ -23,7 +23,7 @@ export class ListeEmployeComponent {
   constructor(private employeeService: EmployeeService,private _router: Router){}
   
   ngOnInit(): void {
-    this.employeeService.getEmployee().subscribe(
+    this.employeeService.getEmployeeByPaysan().subscribe(
     {next : (apps) => {
       this.employe = apps;
     },
@@ -34,6 +34,26 @@ export class ListeEmployeComponent {
       this.sucessMessage="Requete valider"
     }
    } )
+  }
+
+  modifierUser(userId: number) {
+
+    console.log("id : ",userId)
+    this._router.navigate(['updateEmployee', userId]);
+  }
+
+  deleteEmployee(employeId: number) {
+    this.employeeService.supprimerUser(employeId).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.sucessMessage = "Suppression réussie";
+        
+      },
+      error: (e) => {
+        this.errorMessage = "Erreur lors de la suppression";
+        console.log(e);
+      }
+    });
   }
 
   // modifierSemence(semenceId: number) {

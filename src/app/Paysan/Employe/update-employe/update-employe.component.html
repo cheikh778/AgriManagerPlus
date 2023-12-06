@@ -1,1 +1,122 @@
-<p>update-employe works!</p>
+
+
+<!-- <header-dashboard></header-dashboard> -->
+<header-paysan></header-paysan>
+
+
+
+    <!-- CONTENT -->
+<section id="content">
+  <!-- navbar.component.html -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+    <div class="dropdown">
+      <a (click)="toggleNotificationDropdown()" class="notification" href="">
+        <i class='bx bxs-bell'></i>
+        <span class="num">8</span>
+      </a>
+      <div *ngIf="showNotificationDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Notification -->
+        <a href="#">Notification 1</a>
+        <a href="#">Notification 2</a>
+        <!-- Ajoutez d'autres éléments selon vos besoins -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <a (click)="toggleProfileDropdown()" class="profile" href="">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+      <div *ngIf="showProfileDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Profile -->
+        <a href="#">Mon Profil</a>
+        <a href="#">Paramètres</a>
+        <a href="#">Déconnexion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="#" style="color: #28a745;">Ajout d'un Utilisateur</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
+
+
+    <div class="table-data">
+
+      <div class="order">
+        <h1>Modifier Un Employe</h1>
+
+        <div class="head">
+          <form method="post" #etuForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="column">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="nom" [(ngModel)]="user.nom" required="true" placeholder="Entrer le nom de l'utilisateur">
+                </div>
+                <div class="column">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" id="form6Example4" 
+                    name="prenom" [(ngModel)]="user.prenom" id="prenom" placeholder="Entrer le prenom de l'utilisateur">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="subject">Email</label>
+                    <input type="text" id="subject" name="email" required type="email" [(ngModel)]="user.email" placeholder="Email de l'utilisateur">
+                </div>
+                <div class="column">
+                    <label for="contact">Contact</label>
+                    <input type="tel" name="contact" [(ngModel)]="user.contact" required id="contact" placeholder="Numero de téléphone de l'utilisateur">
+                </div>
+            </div>
+            <!-- <div class="row">
+              <div class="column">
+                  <label for="password">Password</label>
+                  <input type="text" id="password" name="password" required type="Password" [(ngModel)]="user.password" placeholder="Password de l'utilisateur">
+              </div>
+              <div class="column">
+                  <label for="role">Rôle de l'utilisateur</label>
+                  <Select class="form-group" [(ngModel)]="user.role" id="role">
+                    <option value="">Choisir un profil</option>
+                    <option value="paysan">Paysan</option>
+                    <option value="admin">Admin</option>
+                    <option value="client">Client</option>
+        
+                  </Select>
+              </div>
+          </div> -->
+            
+            <button type="submit">Ajouter</button>
+        </form>
+
+
+          </div>
+      </div>
+    </div>
+
+  </main>
+</section>
+   

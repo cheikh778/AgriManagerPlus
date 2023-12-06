@@ -24,6 +24,12 @@ import { UpdateSemenceComponent } from "./Paysan/Semence/update-semence/update-s
 import { AjoutTacheComponent } from "./Paysan/Tache/ajout-tache/ajout-tache.component";
 import { UpdateTacheComponent } from "./Paysan/Tache/update-tache/update-tache.component";
 import { ListeTacheComponent } from "./Paysan/Tache/liste-tache/liste-tache.component";
+//Employe
+import { AjoutEmployeComponent } from './Paysan/Employe/ajout-employe/ajout-employe.component';
+import { ListeEmployeComponent } from './Paysan/Employe/liste-employe/liste-employe.component';
+import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-employe.component';
+
+
 //eau
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { UpdateEauComponent } from './Paysan/eau/update-eau/update-eau.component';
@@ -65,6 +71,10 @@ const routes: Routes = [
   { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //Employee
+  { path:'listeEmployee', component:ListeEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'ajoutEmployee', component:AjoutEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'updateEmployee/:id', component:UpdateEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
 
   //eau
@@ -72,6 +82,7 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+
   { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil

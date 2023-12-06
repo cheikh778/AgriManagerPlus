@@ -31,7 +31,7 @@ export interface User{
     password : string;
     role : string;
     status : string;
-    photoUrl: string;
+    photo: string;
 }
 
 

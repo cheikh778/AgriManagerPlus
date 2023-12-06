@@ -58,9 +58,12 @@
           <div class="card-header">Profile Picture</div>
           <div class="card-body text-center">
             <img class="img-account-profile rounded-circle mb-2" [src]="utilisateurForm.value.photoUrl" alt="profil">
+            <form (ngSubmit)="onUploadPhoto()" enctype="multipart/form-data" method="post">
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-            <input type="file" (change)="onFileSelected($event)" accept="image/*">
-            <button class="btn btn-primary" type="button" (click)="onUploadPhoto()">Upload new image</button>
+            <input type="file" name="file" (change)="onFileSelected($event)" accept="image/*">
+            <input type="text" name="photo" value="admin" hidden="false">
+            <button class="btn btn-primary" type="submit" >Upload new image</button>
+          </form>
           </div>
         </div>
       </div>

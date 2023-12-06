@@ -59,6 +59,7 @@ import { AjoutMaterielComponent } from './Paysan/materiels/ajout-materiel/ajout-
 import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-materiel.component';
 import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
 import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/details-materiel.component';
+import { HeaderEmployeComponent } from './Employee/header-employe/header-employe.component';
 
 
 
@@ -118,6 +119,7 @@ import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/de
     ListMaterielComponent,
     UpdateMaterielComponent,
     DetailsMaterielComponent,
+    HeaderEmployeComponent,
 
 
   ],

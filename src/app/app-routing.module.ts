@@ -51,6 +51,7 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
 import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
 
 
 
@@ -67,6 +68,7 @@ const routes: Routes = [
   { path: 'blog', component:BlogComponent},
   { path: 'paysanDashboard', component:DashboardPComponent, canActivate:[AuthGuard], data:{role:'paysan'}},
   { path: 'adminDashboard', component:DashboardAComponent, canActivate:[AuthGuard], data:{role:'admin'} },
+  { path: 'employeeDashboard',  component:DashboardEComponent,canActivate:[AuthGuard], data:{role:'employe'}},
   { path:'listeProjet', component:ListeProjetEnAttenteComponent, canActivate:[AuthGuard], data:{role:'admin'} },
   { path:'listeUser', component:ListeUtilisateursComponent, canActivate:[AuthGuard], data:{role:'admin'} },
   { path:'ajoutUser', component:AjoutUtilisateurComponent, canActivate:[AuthGuard], data:{role:'admin'} },

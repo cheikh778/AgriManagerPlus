@@ -32,7 +32,9 @@ export class LoginPageService {
   getRole(): string | null {
     return localStorage.getItem("role");
   }
-
+  clearErrorMessage() {
+    this.errorMessage = '';
+  }
 
   // Sign-in
   signIn(user: Authentification) {

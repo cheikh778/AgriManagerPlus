@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./password-paysan.component.scss']
 })
 export class PasswordPaysanComponent {
+  status = false;
+
+  addToggle() {
+    this.status = !this.status;
+  }
 
 }

@@ -50,4 +50,22 @@ export class AjoutEmployeComponent {
       }
     );
   }
+  status = false;
+  showNotificationDropdown = false;
+  showProfileDropdown = false;
+  addToggle() {
+    this.status = !this.status;
+  }
+
+  toggleNotificationDropdown() {
+    this.showNotificationDropdown = !this.showNotificationDropdown;
+   
+    this.showProfileDropdown = false;
+  }
+
+  toggleProfileDropdown() {
+    this.showProfileDropdown = !this.showProfileDropdown;
+    // Si vous souhaitez masquer l'autre dropdown lorsque celui-ci est ouvert
+    this.showNotificationDropdown = false;
+  }
 }

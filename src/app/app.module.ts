@@ -63,6 +63,12 @@ import { ListMaterielComponent } from './Paysan/materiels/list-materiel/list-mat
 import { UpdateMaterielComponent } from './Paysan/materiels/update-materiel/update-materiel.component';
 import { DetailsMaterielComponent } from './Paysan/materiels/details-materiel/details-materiel.component';
 import { HeaderEmployeComponent } from './Employee/header-employe/header-employe.component';
+import { ProfilEmployeComponent } from './Employee/profil-employe/profil-employe.component';
+import { PasswordEmployeComponent } from './Employee/password-employe/password-employe.component';
+import { BarChartComponent } from './Employee/bar-chart/bar-chart.component';
+import { LineChartComponent } from './Employee/line-chart/line-chart.component';
+import { BarChart1Component } from './Paysan/bar-chart1/bar-chart1.component';
+import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
 
 
 
@@ -127,6 +133,12 @@ import { HeaderEmployeComponent } from './Employee/header-employe/header-employe
     UpdateMaterielComponent,
     DetailsMaterielComponent,
     HeaderEmployeComponent,
+    ProfilEmployeComponent,
+    PasswordEmployeComponent,
+    BarChartComponent,
+    LineChartComponent,
+    BarChart1Component,
+    BarChart2Component,
 
 
   ],

@@ -52,6 +52,9 @@ import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
+import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
+import { ProfilEmployeComponent } from './Employee/profil-employe/profil-employe.component';
+import { PasswordEmployeComponent } from './Employee/password-employe/password-employe.component';
 
 
 const routes: Routes = [
@@ -92,10 +95,17 @@ const routes: Routes = [
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'confirmation', component:ConfirmationDialogComponent},
 
-  //profil
+  //profils
+  //profil Admin
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
   { path:'AdminChangePassword', component:PasswordAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
-  { path:'profilPaysan', component:ProfilComponent},
+  //profil Paysan
+  { path:'profilPaysan', component:ProfilComponent, canActivate:[AuthGuard], data:{role:'paysan'}},
+  { path: 'paysanChangePassword', component:PasswordPaysanComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //profil Employe
+  { path:'profilEmploye', component:ProfilEmployeComponent},
+  { path:'employeChangePassword', component:PasswordEmployeComponent},
+//tout public
   { path:'changePassword', component:ChangePasswordComponent},
 
 

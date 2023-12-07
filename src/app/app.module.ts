@@ -35,6 +35,7 @@ import { CorsInterceptor } from './shared/cors.interceptor';
 
 import { HeaderCultureComponent } from './Culture/header-culture/header-culture.component';
 import { HeaderPaysanModule } from './Paysan/header-paysan/header-paysan.module';
+import { ProfilComponent} from './Paysan/profil/profil.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 //Semence
@@ -69,6 +70,7 @@ import { BarChartComponent } from './Employee/bar-chart/bar-chart.component';
 import { LineChartComponent } from './Employee/line-chart/line-chart.component';
 import { BarChart1Component } from './Paysan/bar-chart1/bar-chart1.component';
 import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
+import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 
 
 
@@ -139,6 +141,8 @@ import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
     LineChartComponent,
     BarChart1Component,
     BarChart2Component,
+    ProfilComponent,
+    PasswordPaysanComponent
 
 
   ],

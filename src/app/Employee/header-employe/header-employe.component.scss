@@ -13,11 +13,11 @@ li {
   --lato: 'Lato', sans-serif;
 
   --light: #F9F9F9;
-  --blue: #3C91E6;
+  --blue: #28a745;
   --light-blue: #CFE8FF;
   --grey: #eee;
   --dark-grey: #AAAAAA;
-  --dark: #342E37;
+  --dark: #28a745;
   --red: #DB504A;
   --yellow: #FFCE26;
   --light-yellow: #FFF2C6;
@@ -72,12 +72,15 @@ body {
   align-items: center;
   color: var(--blue);
   position: sticky;
-  top: 0;
-  left: 0;
   background: var(--light);
   z-index: 500;
   padding-bottom: 20px;
   box-sizing: content-box;
+}
+#sidebar .brand img{
+  margin-top: 98px;
+  
+  width: 120px;
 }
 #sidebar .brand .bx {
   min-width: 60px;
@@ -584,7 +587,8 @@ body {
     min-width: 420px;
   }
 }
-.btn-secondary{
+
+.btn-secondary {
   background-color: #28a745;
-  border-color:#28a745;
+  border-color: #28a745;
 }

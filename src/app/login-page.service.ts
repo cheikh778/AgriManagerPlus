@@ -176,5 +176,8 @@ catchError((error) => {
   }
 
 
+  changePassword(data: any): Observable<any> {
+    return this.http.patch('http://localhost:8081/api/v1/users', data);
+  }
 
 }

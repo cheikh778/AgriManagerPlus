@@ -51,6 +51,7 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
 import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { PasswordOublierComponent } from './password-oublier/password-oublier.component';
 
 
 
@@ -98,7 +99,8 @@ const routes: Routes = [
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
   { path:'AdminChangePassword', component:PasswordAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},
   { path:'profilPaysan', component:ProfilComponent},
-  { path:'changePassword', component:ChangePasswordComponent},
+  { path:'changePassword/:cle', component:ChangePasswordComponent},
+  { path:'changePassword', component:PasswordOublierComponent},
 
 
 

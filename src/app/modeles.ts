@@ -123,9 +123,9 @@ export interface  AssignationTache
     assignationId : number;
     employee? : number;
     tache?: number;
-    paysan : number | null;
     dateDebut : Date;
     dateFin : Date;
+  // Add this line
     status : 'en_attente';
 }
 export enum AssignationTacheStatus {

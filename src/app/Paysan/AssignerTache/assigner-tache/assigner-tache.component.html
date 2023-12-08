@@ -77,16 +77,16 @@
                   
                   <div class="column">
                     <label for="employee">Employee:</label>
-                    <select>
-                      <option *ngFor="let employee of employe" [value]="employee.id">{{ employee.prenom }}</option>
+                    <select name="employee" [(ngModel)]="assigner.employee">
+                      <option *ngFor="let employee of employe" [ngValue]="employee">{{ employee.prenom }}</option>
                     </select>
                 </div>
                 
 
                   <div class="column">
                     <label for="tache">Tache:</label>
-                  <select>
-                    <option *ngFor="let tache of taches" [value]="tache.idTache">{{ tache.nomTache }}</option>
+                  <select name="tache" [(ngModel)]="assigner.tache">
+                    <option *ngFor="let tache of taches" [ngValue]="tache">{{ tache.nomTache }}</option>
                   </select>
                 </div>
                  
@@ -101,10 +101,10 @@
                   <input type="date" id="name" name="dateFin" [(ngModel)]="assigner.dateFin" required="true" >
               </div>
                 
-              <div class="column">
+              <!-- <div class="column">
                 <label for="name">statu</label>
                 <input type="text" id="name" name="status" [(ngModel)]="assigner.status" required="true" >
-            </div>
+            </div> -->
                 
                   <button type="submit" >Create Assignation</button>
                 </form>

@@ -20,8 +20,9 @@ export class AssignerTacheComponent implements OnInit {
     assignationId: 0,
     dateDebut: new Date(),
     dateFin: new Date(),
-    status: "en_attente",
-    paysan: null,
+    employee: 0, // Add this line
+    tache: 0, // Add this line
+    status: 'en_attente',
     
   };
   errorMessage = "";
@@ -51,7 +52,7 @@ export class AssignerTacheComponent implements OnInit {
     }
    } )
   
-    this.tacheService.getTaches().subscribe((taches: Tache[]) => this.taches = taches);
+    this.tacheService.getTachesParPaysan().subscribe((taches: Tache[]) => this.taches = taches);
 
     // this.assignationForm = this.formBuilder.group({
     //   employee: [null, Validators.required],

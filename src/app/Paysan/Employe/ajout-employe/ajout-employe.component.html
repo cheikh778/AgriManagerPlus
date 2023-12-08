@@ -1,62 +1,122 @@
-<!-- <header-paysan></header-paysan> -->
-
-<br><br><br>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class=" message-container" style="background-color:#dff0d8;">
-      <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
-    </div>
-    <div class="error-container" style="background-color: #f2dede;">
-      <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-    </div>
+<header-paysan></header-paysan>
 
 
-      <!-- Formulaire d'inscription -->
-      <div class="col-md-6">
-          <h2>Inscription</h2>
+<header-paysan></header-paysan>
 
-          <form action="/path_to_registration_logic" method="post" #etuForm="ngForm" (ngSubmit)="submitForm()">
-              <div class="form-group">
-                  <label for="name"><i class="fas fa-user"></i> Nom</label>
-                  <input type="text" class="form-control" id="name" name="nom" [(ngModel)]="user.nom" required>
-              </div>
-              <div class="form-group">
-                  <label for="name"><i class="fas fa-user"></i> Prenom</label>
-                  <input type="text" class="form-control" id="name" name="prenom" [(ngModel)]="user.prenom" required>
-              </div>
-              <div class="form-group">
-                  <label for="name"><i class="fas fa-user"></i> Contact</label>
-                  <label for="name"><i class="fas fa-phone"></i> Contact</label>
-                  <input type="text" class="form-control" id="name" name="contact" [(ngModel)]="user.contact" required>
-              </div>
-              <div class="form-group">
-                  <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>
-                  <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required>
-              </div>
-              <div class="form-group">
-                  <label for="password"><i class="fas fa-lock"></i> Mot de passe</label>
-                  <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" required>
-              </div>
-              <!-- <div class="form-group">
-                  <label for="confirm-password"><i class="fas fa-lock"></i> Confirmer le mot de passe</label>
-                  <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
-              </div> -->
-              <br>
-              <button type="submit" class="btn btn-success"><i class="fas fa-user-plus"></i> S'inscrire</button>
-          </form>
 
-          <p class="mt-3">
-              Avez-vous déjà un compte? <a href="/login">Se connecter</a>
-          </p>
+<!-- CONTENT -->
+<section id="content">
+  <!-- navbar.component.html -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
       </div>
-
-      <!-- Image -->
-      <div class="col-md-6">
-          <img src="assets/images/9372018.jpg" alt="Image descriptive" class="img-fluid">
+    </form>
+    <div class="dropdown">
+      <a (click)="toggleNotificationDropdown()" class="notification" href="">
+        <i class='bx bxs-bell'></i>
+        <span class="num">8</span>
+      </a>
+      <div *ngIf="showNotificationDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Notification -->
+        <a href="#">Notification 1</a>
+        <a href="#">Notification 2</a>
+        <!-- Ajoutez d'autres éléments selon vos besoins -->
       </div>
+    </div>
+    <div class="dropdown">
+      <a (click)="toggleProfileDropdown()" class="profile" href="">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+      <div *ngIf="showProfileDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Profile -->
+        <a href="#">Mon Profil</a>
+        <a href="#">Paramètres</a>
+        <a href="#">Déconnexion</a>
+      </div>
+    </div>
+  </nav>
 
-  </div>
-</div>
+  <!-- NAVBAR -->
 
-<app-footer></app-footer>
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="#" style="color: #28a745;">Ajout D'un employé</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+
+
+          <div class="table-data">
+
+            <div class="order">
+              <h1>Ajouter un employé</h1>
+
+              <div class="head">
+                <form method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="ajout-form">
+                  <div class="row">
+                      <div class="column">
+                          <label for="name">Nom de l'employé</label>
+                          <input type="text" id="name" name="nom" [(ngModel)]="user.nom"  required="true" placeholder="Donner le nom de votre employé">
+                      </div>
+                      <div class="column">
+                          <label for="email">Prenom de l'employé</label>
+                          <input type="text" id="form6Example4"
+                          name="prenom" [(ngModel)]="user.prenom" id="email" placeholder="Donner le prénom de l'employé">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="column">
+                          <label for="contact">Contact</label>
+                          <input type="tel" id="contact" placeholder="Numéro de téléphone de l'employé" name="contact" [(ngModel)]="user.contact" required>
+                      </div>
+                      <div class="column">
+                          <label for="email">Adresse Email</label>
+                          <input type="email" id="email" placeholder="Email de l'employé" [(ngModel)]="user.email" required>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="column">
+                          <label for="issue">Mot de Passe</label>
+                          <input type="password" id="issue" placeholder="Mot de passe par défaut" [(ngModel)]="user.password">
+                          
+                      </div>
+                  </div>
+                  <button type="submit">Ajouter</button>
+              </form>
+
+
+                </div>
+            </div>
+          </div>
+
+
+
+  </main>
+  <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+
+

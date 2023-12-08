@@ -1,4 +1,5 @@
 
+
 a {
   text-decoration: none;
 }
@@ -329,7 +330,7 @@ body {
   color: var(--dark);
 }
 #content main .head-title .left .breadcrumb li a {
-  color: var(--dark-grey);
+  color: var(--blue);
   pointer-events: none;
 }
 #content main .head-title .left .breadcrumb li a.active {
@@ -388,11 +389,7 @@ body {
   background: var(--light-blue);
   color: var(--blue);
 }
-#content main .box-info li:nth-child(1) .fas {
-  background: var(--light-blue);
-  color: var(--blue);
-}
-#content main .box-info li:nth-child(3) .fas {
+#content main .box-info .fa-seedling,.fa-tractor {
   background: var(--light-blue);
   color: var(--blue);
 }
@@ -405,24 +402,24 @@ body {
   color: var(--orange);
 }
 #content main .box-info li:nth-child(4) .bx {
-  background: var(--light-orange);
-  color: var(--orange);
+  background: var(--light-blue);
+  color: var(--blue);
 }
 #content main .box-info li:nth-child(5) .bx {
-  background: var(--light-orange);
-  color: var(--orange);
+  background: var(--light-blue);
+  color: var(--blue);
 }
 #content main .box-info li:nth-child(6) .bx {
-  background: var(--light-orange);
-  color: var(--orange);
+  background: var(--light-blue);
+  color: var(--blue);
 }
 #content main .box-info li:nth-child(7) .bx {
-  background: var(--light-orange);
-  color: var(--orange);
+  background: var(--light-blue);
+  color: var(--blue);
 }
 #content main .box-info li:nth-child(8) .bx {
-  background: var(--light-orange);
-  color: var(--orange);
+  background: var(--light-blue);
+  color: var(--blue);
 }
 #content main .box-info li .text h3 {
   font-size: 24px;
@@ -619,4 +616,8 @@ body {
   #content main .table-data .todo .todo-list {
     min-width: 420px;
   }
+}
+.btn-secondary{
+  background-color: #28a745;
+  border-color:#28a745;
 }

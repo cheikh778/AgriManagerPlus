@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardEComponent {
 
+  status = false;
+  addToggle()
+  {
+    this.status = !this.status;
+  }
+
 }

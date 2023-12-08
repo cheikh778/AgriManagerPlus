@@ -28,10 +28,12 @@ export class ListeEmployeComponent {
       this.employe = apps;
     },
     error:(err) =>{
-      this.errorMessage="Erreur de requete"
+      console.log("Erreur de requete")
+      
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+      
+      console.log("Requete valider")
     }
    } )
   }
@@ -56,30 +58,5 @@ export class ListeEmployeComponent {
     });
   }
 
-  // modifierSemence(semenceId: number) {
-  //   // Rediriger vers la page de mise à jour avec l'ID de la semence
-  //   console.log("id : ",semenceId)
-  //   this._router.navigate(['updateSemence', semenceId]);
-  // }
 
-  // deleteSemence(semenceId: number) {
-  //   this.semenceService.supprimerSemence(semenceId).subscribe({
-  //     next: (data) => {
-  //       console.log(data);
-  //       this._router.navigate(['listeSemence']);
-  //     },
-  //     error: (e) => {
-  //       console.log(e);
-  //     }
-  //   });
-  // }
-  // redirectToSemenceList() {
-  //   this._router.navigate(['listeSemence']);
-  // }
-
-  // status = false;
-  // addToggle()
-  // {
-  //   this.status = !this.status;
-  // }
 }

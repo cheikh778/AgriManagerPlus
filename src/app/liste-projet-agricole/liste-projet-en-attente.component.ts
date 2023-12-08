@@ -48,12 +48,12 @@ export class ListeProjetEnAttenteComponent {
               border: 1px solid #ccc;
           }
           header {
-              background: #fff;
+              background: #28a745;
               border-bottom: 1px solid #ccc;
               text-align: center;
           }
           header img {
-              max-width: 100%;
+              max-width: 150px;
               margin: 20px 0;
               border-radius: 50%;
               object-fit: cover;
@@ -97,7 +97,7 @@ export class ListeProjetEnAttenteComponent {
   <body>
       <div id="container">
           <header>
-              <img src="https://github.com/cheikh778/AgriManagerPlus/blob/master/src/assets/images/A1-removebg-preview.png" alt="Logo AgriManager+">
+              <img src="https://i.postimg.cc/7Z73Hwq1/Am1.jpg" alt="Logo AgriManager+">
           </header>
           <main>
               <h1>Bienvenue dans AgriManager+ !</h1>

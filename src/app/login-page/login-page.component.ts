@@ -15,6 +15,7 @@ export class LoginPageComponent {
   };
   // errorMessage = '';
   // successMessage = '';
+  
 
 
   constructor(private authService: LoginPageService,
@@ -26,42 +27,21 @@ export class LoginPageComponent {
 
    
 
-    //.subscribe(
-    // .subscribe(
-    //   response => {
-    //     console.log('Ajout réussi', response);
-    //     // this.authService.setAuthToken(response.accessToken);
-
-    //     // this._router.navigate(['/inscription'])
-    //     // Faire quelque chose avec la réponse
-    //   },
-    //   error => {
-    //     console.error('Erreur lors de l\'ajout', error);
-    //     console.log(this.user)
-    //     // Gérer l'erreur
-    //   }
-   // );
-  //  (response: any) => {
-  //   console.log('Connexion réussie', response);
-  //   const role = response.role; // Récupérez le rôle de la réponse
-    // Faites quelque chose avec le rôle, par exemple, redirigez en fonction du rôle.
-//     if (role === 'admin') {
-//       this._router.navigate(['/admin']);
-//     } else if (role === 'client') {
-//       this._router.navigate(['/client']);
-//     } else {
-//       this._router.navigate(['/paysan']);
-//     }
-//   },
-//   error => {
-//     console.error('Erreur lors de la connexion', error);
-//     // Gérez l'erreur
-//   }
-// );
   }
 
   get errorMessage(): string {
-    return this.authService.errorMessage;
+    const message = this.authService.errorMessage;
+
+
+    if (message) {
+      
+      setTimeout(() => {
+        this.authService.clearErrorMessage(); 
+      }, 2000);
+    }
+  
+    return message;
+    
   }
 
   get successMessage(): string {

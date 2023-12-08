@@ -32,7 +32,9 @@ export class LoginPageService {
   getRole(): string | null {
     return localStorage.getItem("role");
   }
-
+  clearErrorMessage() {
+    this.errorMessage = '';
+  }
 
   // Sign-in
   signIn(user: Authentification) {
@@ -176,5 +178,8 @@ catchError((error) => {
   }
 
 
+  changePassword(data: any): Observable<any> {
+    return this.http.patch('http://localhost:8081/api/v1/users', data);
+  }
 
 }

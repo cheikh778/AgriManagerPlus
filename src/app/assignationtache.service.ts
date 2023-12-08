@@ -5,41 +5,37 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AssignationTache } from './modeles';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AssignationTacheService {
 
-  private apiUrl = 'http://localhost:8080/api/assignations-tache'; // Remplacez cela par l'URL de votre API Spring Boot
+  private baseUrl = 'http://localhost:8081/api/assignations-tache'; // Remplacez cela par l'URL de votre API Spring Boot
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  assignerTache(assignationTache: AssignationTache): Observable<AssignationTache> {
-    return this.http.post<AssignationTache>(this.apiUrl, assignationTache);
+  getAllAssignations(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}`);
   }
 
-  getAssignationsTache(): Observable<AssignationTache[]> {
-    return this.http.get<AssignationTache[]>(this.apiUrl);
+  getAssignationById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
 
-  getAssignationsTacheParEmploye(employeId: number): Observable<AssignationTache[]> {
-    // Remplacez cet ID fictif par l'ID de l'employé réel
-    const url = `${this.apiUrl}/employe/${employeId}`;
-    return this.http.get<AssignationTache[]>(url);
+  getAssignationsByPaysan(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/liste`);
   }
 
-  getAssignationTacheParId(id: number): Observable<AssignationTache> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<AssignationTache>(url);
+  createAssignation(assignation: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/ajout`, assignation);
   }
 
-  supprimerAssignationTache(id: number): Observable<void> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<void>(url);
+  updateAssignation(id: number, assignation: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/update/${id}`, assignation);
   }
 
-  updateAssignationTache(id: number, nouvelleAssignationTache: AssignationTache): Observable<AssignationTache> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<AssignationTache>(url, nouvelleAssignationTache);
+  deleteAssignation(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 }

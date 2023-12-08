@@ -51,6 +51,7 @@ import { PasswordAdminComponent } from './Admin/password-admin/password-admin.co
 import { ProfilComponent } from './Paysan/profil/profil.component';
 import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
 
 
 
@@ -93,6 +94,28 @@ const routes: Routes = [
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'confirmation', component:ConfirmationDialogComponent},
+
+   //materiel
+   { path:'ajoutMateriel', component:AjoutMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'updateMateriel/:id', component:UpdateMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'materiel-datails/:eauId', component:DetailsMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'listeMateriel', component:ListMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'confirmation', component:ConfirmationDialogComponent},
+
+   //parcell
+   { path:'ajoutParcelle', component:AjoutParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'parcelle-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+   { path:'confirmation', component:ConfirmationDialogComponent},
+
+
+   //assignation tache
+   { path:'assignerTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //  { path:'updateAssignation/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //  { path:'assignation-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //  { path:'listeTacheAssigner', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  //  { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},

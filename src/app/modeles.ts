@@ -119,11 +119,15 @@ export interface  Materiel
 export interface  AssignationTache
 {
     assignationId : number;
-    employee : number;
-    tache : number;
-    paysan : number;
+    employee? : number;
+    tache?: number;
+    paysan : number | null;
     dateDebut : Date;
-    dateFine : Date;
-    status : string;
+    dateFin : Date;
+    status : 'en_attente';
 }
+export enum AssignationTacheStatus {
+    en_attente = 'en_attente',
+    valider = 'valider'
+  }
 

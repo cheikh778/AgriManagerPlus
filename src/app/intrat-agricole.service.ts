@@ -10,7 +10,7 @@ import { IntratAgricole } from './modeles';
 })
 export class IntratAgricoleService {
 
-  private apiUrl = 'http://localhost:8080/api/intrats-agricoles';
+  private apiUrl = 'http://localhost:8081/api/intrats-agricoles';
 
   constructor(private http: HttpClient) { }
 

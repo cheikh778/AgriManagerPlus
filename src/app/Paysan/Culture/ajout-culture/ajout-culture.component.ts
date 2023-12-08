@@ -4,6 +4,8 @@ import { AjoutCultureService } from 'src/app/ajout-culture.service';
 import { LoginPageService } from 'src/app/login-page.service';
 import { Culture, User } from 'src/app/modeles';
 import { ChangeDetectorRef } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 // import { HeaderPaysanComponent } from './Paysan/header-paysan/header-paysan.component';
 @Component({

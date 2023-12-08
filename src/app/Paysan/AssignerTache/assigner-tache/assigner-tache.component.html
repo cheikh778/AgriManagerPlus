@@ -1,1 +1,167 @@
-<p>assigner-tache works!</p>
+
+<header-paysan></header-paysan>
+
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- navbar.component.html -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+    <div class="dropdown">
+      <a (click)="toggleNotificationDropdown()" class="notification" href="">
+        <i class='bx bxs-bell'></i>
+        <span class="num">8</span>
+      </a>
+      <div *ngIf="showNotificationDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Notification -->
+        <a href="#">Notification 1</a>
+        <a href="#">Notification 2</a>
+        <!-- Ajoutez d'autres éléments selon vos besoins -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <a (click)="toggleProfileDropdown()" class="profile" href="">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+      <div *ngIf="showProfileDropdown" class="dropdown-content">
+        <!-- Contenu du dropdown Profile -->
+        <a href="#">Mon Profil</a>
+        <a href="#">Paramètres</a>
+        <a href="#">Déconnexion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
+
+    <!-- <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div> -->
+   
+
+          <div class="table-data">
+
+            <div class="order">
+              <h1>Ajouter un projet Agricole</h1>
+
+              <div class="head">
+                <form  method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="form-ajout">
+                  
+                  
+                  <div class="column">
+                    <label for="employee">Employee:</label>
+                    <select>
+                      <option *ngFor="let employee of employe" [value]="employee.id">{{ employee.prenom }}</option>
+                    </select>
+                </div>
+                
+
+                  <div class="column">
+                    <label for="tache">Tache:</label>
+                  <select>
+                    <option *ngFor="let tache of taches" [value]="tache.idTache">{{ tache.nomTache }}</option>
+                  </select>
+                </div>
+                 
+                
+                  <div class="column">
+                    <label for="name">Date debut</label>
+                    <input type="date" id="name" name="dateDebut" [(ngModel)]="assigner.dateDebut" required="true" >
+                </div>
+                
+                <div class="column">
+                  <label for="name">Date Fin</label>
+                  <input type="date" id="name" name="dateFin" [(ngModel)]="assigner.dateFin" required="true" >
+              </div>
+                
+              <div class="column">
+                <label for="name">statu</label>
+                <input type="text" id="name" name="status" [(ngModel)]="assigner.status" required="true" >
+            </div>
+                
+                  <button type="submit" >Create Assignation</button>
+                </form>
+
+
+                </div>
+            </div>
+          </div>
+
+
+
+  </main>
+  <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

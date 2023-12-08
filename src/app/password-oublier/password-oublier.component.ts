@@ -29,8 +29,8 @@ constructor(private service: UserServiceService, private _router: Router,
     this.service.getCleRestoration(this.emailUser.value.email).subscribe(
       response => {
         console.log(this.emailUser.value);
-        console.log('Ajout réussi', response);
-        this.successMessage = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
+        console.log('Demande envoyé', response);
+        this.successMessage = 'Demande de reinitialisation de mot de passe envoyée avec succés. Verifier votre boite dee messagerie et clqurz sur le lien.';
 
         setTimeout(() => {
           this._router.navigate(['/login']);
@@ -38,7 +38,7 @@ constructor(private service: UserServiceService, private _router: Router,
       },
         error => {
        
-            this.errorMessage = 'Une erreur s\'est produite lors de l\'ajout. Veuillez réessayer plus tard';
+            this.errorMessage = 'Une erreur s\'est produite lors de l\'envois de la demande. Veuillez réessayer plus tard'; 
             console.log(this.emailUser.value, error);
           
         }

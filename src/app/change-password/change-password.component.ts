@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  resetPassword: FormGroup; // Declare resetPassword as FormGroup
+  resetPassword: FormGroup; 
   cle: string | undefined;
 
   successMessage: string | undefined;
@@ -25,16 +25,11 @@ export class ChangePasswordComponent implements OnInit {
     this.resetPassword = this.builder.group({
       newPassword: ['', Validators.required],
       confirmationPassword: ['', Validators.required],
-      cleRestore: [''], // Initialize with cle or an empty string
+      cleRestore: [''], 
     });
   }
 
-  // ngOnInit() {
-  //   this.route.params.subscribe(params => {
-  //     this.cle = params['cle'];
-  //     console.log('cle de restoration', this.cle);
-  //   });
-  // }
+ 
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -54,7 +49,7 @@ export class ChangePasswordComponent implements OnInit {
       response => {
         console.log(this.resetPassword.value);
         console.log('Ajout réussi', response);
-        this.successMessage = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
+        this.successMessage = 'Votre mot de âsse a été reinitialiser.';
 
         setTimeout(() => {
           this._router.navigate(['/login']);

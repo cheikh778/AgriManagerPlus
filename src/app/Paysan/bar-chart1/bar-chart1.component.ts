@@ -12,7 +12,7 @@ export class BarChart1Component implements OnInit{
   createChart(){
   
     this.chart = new Chart("MyChart", {
-      type: 'bar', //this denotes tha type of chart
+     type: 'bar',
 
       data: {// values on X-Axis
         labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
@@ -50,7 +50,7 @@ export class BarChart1Component implements OnInit{
           },
           {
             label: "Eaux",
-            data: ['542', '542', '536', '327', '17',
+            data: ['542', '500', '600', '300', '17',
 									 '0.00', '538', '541'],
             backgroundColor: '#2ECC71'
           },

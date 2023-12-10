@@ -61,6 +61,10 @@ import { UpdateParcelleAgricoleComponent } from './Paysan/parcellagricole/update
 import { DetailsParcelleAgricoleComponent } from './Paysan/parcellagricole/details-parcelle-agricole/details-parcelle-agricole.component';
 import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/assigner-tache.component';
 
+import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
+import { DetailsAssignationTacheComponent } from './Paysan/AssignerTache/details-assignation-tache/details-assignation-tache.component';
+import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -116,11 +120,11 @@ const routes: Routes = [
 
 
    //assignation tache
-   { path:'assignerTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'updateAssignation/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'assignation-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'listeTacheAssigner', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'confirmation', component:ConfirmationDialogComponent},
+   { path:'assignationTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+    { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+    { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+    { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},

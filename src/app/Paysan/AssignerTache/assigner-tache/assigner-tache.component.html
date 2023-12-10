@@ -69,7 +69,7 @@
           <div class="table-data">
 
             <div class="order">
-              <h1>Ajouter un projet Agricole</h1>
+              <h1>Assignation Tache</h1>
 
               <div class="head">
                 <form  method="POST" #etuForm="ngForm" (ngSubmit)="submitForm()" class="form-ajout">
@@ -92,14 +92,22 @@
                  
                 
                   <div class="column">
-                    <label for="name">Date debut</label>
-                    <input type="date" id="name" name="dateDebut" [(ngModel)]="assigner.dateDebut" required="true" >
+                    <label for="dateDebut">Date de début :</label>
+ 
+                  <input type="date" class="form-control" id="dateDebut" [(ngModel)]="assigner.dateDebut" name="dateDebut" required>
+
+                 
                 </div>
-                
+
                 <div class="column">
-                  <label for="name">Date Fin</label>
-                  <input type="date" id="name" name="dateFin" [(ngModel)]="assigner.dateFin" required="true" >
+                  <label for="dateFin">Date de Fin :</label>
+
+                <input type="date" class="form-control" id="dateFin" [(ngModel)]="assigner.dateFin" name="dateFin" required>
+
+               
               </div>
+                
+                
                 
               <!-- <div class="column">
                 <label for="name">statu</label>

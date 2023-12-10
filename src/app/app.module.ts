@@ -73,6 +73,9 @@ import { UpdateParcelleAgricoleComponent } from './Paysan/parcellagricole/update
 import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 import { PasswordOublierComponent } from './password-oublier/password-oublier.component';
+import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+
+
 
 
 
@@ -145,7 +148,9 @@ import { PasswordOublierComponent } from './password-oublier/password-oublier.co
     BarChart1Component,
     BarChart2Component,
     ProfilComponent,
-    PasswordPaysanComponent
+    PasswordPaysanComponent,
+    AssignationtacheListComponent,
+    
 
 
   ],

@@ -57,8 +57,8 @@
         <div class="card mb-4 mb-xl-0">
           <div class="card-header">Profile Picture</div>
           <div class="card-body text-center">
-            <img class="img-account-profile rounded-circle mb-2" [src]="utilisateurForm.value.photoUrl" alt="profil">
-            <form (ngSubmit)="onUploadPhoto()" enctype="multipart/form-data" method="post">
+            <img class="img-account-profile rounded-circle mb-2" [src]="getPhotoProfil()" alt="profil">
+            <form  (ngSubmit)="onUploadPhoto()" method="post">
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
             <input type="file" name="file" (change)="onFileSelected($event)" accept="image/*">
             <input type="text" name="photo" value="admin" hidden="false">
@@ -73,43 +73,46 @@
       <div class="card mb-4">
       <div class="card-header">Details </div>
       <div class="card-body">
-      <form>
+        <form method="post" #etuForm="ngForm" (ngSubmit)="onSubmit()">
 
 
-      <div class="row gx-3 mb-3">
-
-      <div class="col-md-6">
-      <label class="small mb-1" for="inputFirstName">Prenom</label>
-      <input class="form-control" id="inputFirstName" type="text" placeholder="Entrer Votre Prenom" value="Valerie">
-      </div>
-
-      <div class="col-md-6">
-      <label class="small mb-1" for="inputLastName">Nom</label>
-      <input class="form-control" id="inputLastName" type="text" placeholder="Entrer votre Nom" value="Luna">
-      </div>
-      </div>
-
-
-      <div class="mb-3">
-      <label class="small mb-1" for="inputEmailAddress">Email address</label>
-      <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
-      </div>
-
-      <div class="row gx-3 mb-3">
-
-      <div class="col-md-6">
-      <label class="small mb-1" for="inputPhone">Numéro de téléphone</label>
-      <input class="form-control" id="inputPhone" type="tel" placeholder="Enter votre numéro de téléphone" value="555-123-4567">
-      </div>
-
-      <div class="col-md-6">
-      <label class="small mb-1" for="inputBirthday">Birthday</label>
-      <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-      </div>
-      </div>
-
-      <button class="btn btn-primary" type="button">Enregistrer les changements</button>
-      </form>
+          <div class="row gx-3 mb-3">
+    
+          <div class="col-md-6">
+          <label class="small mb-1" for="inputFirstName">Prenom</label>
+          <input class="form-control" id="inputFirstName" type="text" name="prenom" placeholder="Entrer Votre Prenom" [(ngModel)]="user.prenom">
+          </div>
+    
+          <div class="col-md-6">
+          <label class="small mb-1" for="inputLastName">Nom</label>
+          <input class="form-control" id="inputLastName" type="text" placeholder="Entrer votre Nom" name="nom" [(ngModel)]="user.nom">
+          </div>
+          </div>
+    
+    
+          <div class="mb-3">
+          <label class="small mb-1" for="inputEmailAddress">Email address</label>
+          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" 
+          name="email" [(ngModel)]="user.email">
+          </div>
+    
+          <div class="row gx-3 mb-3">
+    
+          <div class="col-md-6">
+          <label class="small mb-1" for="inputPhone">Numéro de téléphone</label>
+          <input class="form-control" id="inputPhone" type="tel" placeholder="Enter votre numéro de téléphone" 
+          name="contact" [(ngModel)]="user.contact">
+          </div>
+    
+          <!-- <div class="col-md-6">
+          <label class="small mb-1" for="inputBirthday">Profil</label>
+          <input class="form-control" id="inputBirthday" type="text" name="role" placeholder="Enter your birthday" 
+          [(ngModel)]="user.role">
+          </div> -->
+          </div>
+    
+          <button class="btn btn-primary" type="submit">Enregistrer les changements</button>
+          </form>
       </div>
       </div>
       </div>

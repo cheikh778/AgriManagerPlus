@@ -121,12 +121,12 @@ export interface  Materiel
 export interface  AssignationTache
 {
     assignationId : number;
-    employee? : number;
-    tache?: number;
+    employee : number;
+    tache: number;
     dateDebut : Date;
     dateFin : Date;
   // Add this line
-    status : 'en_attente';
+  status: 'en_attente' | 'validé'; // Mettez à jour ici
 }
 export enum AssignationTacheStatus {
     en_attente = 'en_attente',

@@ -27,15 +27,20 @@ export class AssignationTacheService {
     return this.http.get<any[]>(`${this.baseUrl}/liste`);
   }
 
-  createAssignation(assignation: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/ajout`, assignation);
+  createAssignation(assigner: AssignationTache): Observable<AssignationTache> {
+    const url = `${this.baseUrl}/ajout`;
+    return this.http.post<AssignationTache>(url, assigner);
   }
-
   updateAssignation(id: number, assignation: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/update/${id}`, assignation);
   }
 
   deleteAssignation(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
+  }
+
+  validerTache(assignationId: number): Observable<AssignationTache> {
+    const url = `${this.baseUrl}/api/assignations-tache/valider/${assignationId}`;
+    return this.http.put<AssignationTache>(url, {});
   }
 }

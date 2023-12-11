@@ -68,7 +68,7 @@ export class AssignerTacheComponent implements OnInit {
     this.assignationService.createAssignation(this.assigner)
     .subscribe(
       (response) => {
-        console.log('Réponse du serveur :', response);
+        this._router.navigate(['listAssignation']);
       },
       (error) => {
         console.error('Erreur lors de l\'ajout', error);

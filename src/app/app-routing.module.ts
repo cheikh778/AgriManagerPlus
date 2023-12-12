@@ -122,7 +122,7 @@ const routes: Routes = [
    { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'parcelle-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-   { path:'confirmation', component:ConfirmationDialogComponent},
+  //  { path:'confirmation', component:ConfirmationDialogComponent},
 
 
    //assignation tache

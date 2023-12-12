@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
 // import { User } from '../types/user';
 import { Authentification } from './modeles';
+import { ListeUtilisateurService } from './liste-utilisateur.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,9 @@ export class LoginPageService {
   errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private http: HttpClient, public router: Router) {}
+  constructor(private http: HttpClient, public router: Router, 
+    private photoService :ListeUtilisateurService
+    ) {}
 
   signUp(user: Authentification): Observable<any> {
     let api = `${this.endpoint}/register-user`;
@@ -46,7 +49,9 @@ export class LoginPageService {
         console.log('id', res.id);
         console.log('Type de id de l\'utilisateur connecté :', typeof  res.id);
         this.setToken(res.access_token);
-        this.setRole(res.role)
+        this.setRole(res.role);
+        this.photoService.setPhoto(res.photo)
+        console.log("photo : ",res.photo)
         const roles = res.role; // Obtenez les rôles de la réponse
         if (roles === 'admin') {
           this.successMessage = "Bienvenue Mr l'administrateur,  vous allez être redirigé vers votre page!";

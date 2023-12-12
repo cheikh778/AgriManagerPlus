@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ListeUtilisateurService } from 'src/app/liste-utilisateur.service';
+import { User } from 'src/app/modeles';
 
 @Component({
   selector: 'app-profil',
@@ -8,14 +10,13 @@ import { ListeUtilisateurService } from 'src/app/liste-utilisateur.service';
   styleUrls: ['./profil.component.scss']
 })
 export class ProfilComponent {
+  imageFile : File | undefined;
 
   status = false;
-  addToggle()
-  {
-    this.status = !this.status;
-  }
+
   messageSuccess:'' | undefined;
 
+  
   userId = 1; 
   selectedFile: File | null = null;
 
@@ -33,11 +34,12 @@ export class ProfilComponent {
       nom: [''],
       email: [''],
       numeroTelephone: [''],
-      dateNaissance: [''],
-      photoUrl: ['']
+      contact: [''],
+      photo: ['']
     });
 
-    this.loadUtilisateur();
+    // this.loadUtilisateur();
+    this.getUserById();
   }
 
   loadUtilisateur(): void {
@@ -51,26 +53,138 @@ export class ProfilComponent {
     );
   }
 
-  onFileSelected(event: any): void {
-    this.photoFile = event.target.files[0] as File;
+
+
+  user : User = {
+    id : 0,
+    nom : '',
+    prenom : '',
+    contact : '',
+    email : '',
+    password : '',
+    role : '',
+    status : '',
+    photo: '',
+  };
+
+  private getUserById() {
+    this.utilisateurService.getUtilisateur().subscribe({
+      next: (data) => {
+        this.user = data;
+        console.log("user : ",this.user )
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    });
   }
-photos = {
-  file : File,
-  photo : '',
-}
-  onUploadPhoto(): void {
-    if (this.photoFile) {
-      this.utilisateurService.uploadPhotoUtilisateur(this.photos).subscribe(
-        (photoUrl) => {
-          console.log('Photo uploaded successfully:', photoUrl);
-          this.utilisateurForm.patchValue({ photoUrl });
-        },
-        (error) => {
-          console.error('Erreur lors du téléchargement de la photo de profil', error);
-        }
-      );
+  successMessage: string | undefined;
+  errorMessage: string | undefined;
+  updateUser() {
+    this.utilisateurService.updateUtilisateur( this.user).subscribe({
+      next: (data) => {
+        console.log(data);
+
+        this.successMessage = 'Modification réussie. ';
+
+          setTimeout(() => {
+            this.redirectToSemenceList();
+          }, 2000);
+
+      },
+      error: (e) => {
+        console.log(e);
+
+        this.errorMessage = 'une erreur s\'est produite lors de la modification. Veuillez réessayer plus tard';
+
+          setTimeout(() => {
+            this.redirectToSemenceList();
+          }, 2000);
+      }
+    });
+  }
+
+  redirectToSemenceList() {
+    // this.router.navigate(['listeEmployee']);
+  }
+
+  onSubmit() {
+    console.log(this.user);
+    this.updateUser();
+  }
+
+
+  onImageSelected(event: any): void {
+    this.imageFile = event.target.files[0] as File;
+  }
+
+  
+  // onUploadPhoto(): void {
+  //   if(this.imageFile){
+  //     let obs : Observable<string> | void = this.utilisateurService.uploadPhotoUtilisateur(this.imageFile);
+  //     if(obs){
+        
+  //     obs.subscribe(
+  //       {
+  //         next:(res:string)=>{
+  //           console.log("Enregistrement Ok, reponse Serveur : ",res);
+  //         },
+  //         error:(err:any)=>{
+  //           console.log("Erreur envoie fichier",err)
+  //         },
+  //         complete:()=>{
+  //           console.log("Success Traitement")
+  //         }
+  //       }
+  //     )}
+  //   }else{
+  //     alert("Charger une image d'abord")
+  //   }
+  // }
+
+    addToggle()
+    {
+      this.status = !this.status;
     }
-  }
+
+
+
+    onFileSelected(event: any): void {
+      this.photoFile = event.target.files[0] as File;
+    }
+  
+    onUploadPhoto(): void {
+      
+      if(this.photoFile){
+        const formData = new FormData();
+        formData.append('file', this.photoFile);
+        let obs : Observable<string> | void = this.utilisateurService.uploadPhotoUtilisateur1(formData);
+        if(obs){
+          
+        obs.subscribe(
+          {
+            next:(res:any)=>{
+              console.log("Enregistrement Ok, reponse Serveur : ",res);
+              this.utilisateurService.setPhoto(res.photoProfil)
+            },
+            error:(err:any)=>{
+              console.log("Erreur envoie fichier",err)
+            },
+            complete:()=>{
+              console.log("Success Traitement")
+            }
+          }
+        )}
+      }else{
+        alert("Charger une image d'abord")
+      }
+    }
+  
+    getPhotoProfil():string | null{
+      return this.utilisateurService.getPhoto()
+    }
+
+  // }
 
   // onUploadPhoto(): void {
   //   const formData = new FormData();

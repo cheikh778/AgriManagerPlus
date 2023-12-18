@@ -16,7 +16,7 @@ export class UpdateAssignationTacheComponent {
     assignationId: 0,
     dateDebut: new Date(),
     dateFin: new Date(),
-    employee: 0,
+    employee: this.employe[0],
     tache: 0,
     status: 'en_attente',
   };
@@ -54,6 +54,7 @@ export class UpdateAssignationTacheComponent {
     this.assignationService.getAssignationById(assignationId).subscribe(
       (assignation) => {
         this.assigner = assignation;
+        console.log("assigner",this.assigner)
       },
       (error) => {
         console.error('Erreur lors de la récupération de l\'assignation', error);

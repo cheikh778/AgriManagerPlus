@@ -121,7 +121,7 @@ export interface  Materiel
 export interface  AssignationTache
 {
     assignationId : number;
-    employee : number;
+    employee : User;
     tache: number;
     dateDebut : Date;
     dateFin : Date;

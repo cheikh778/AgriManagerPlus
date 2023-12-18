@@ -75,9 +75,11 @@
                 </td>
                 <td> {{t.dateFin | date: 'yyyy-MM-dd' }}</td>
                 <td >{{t.status}}</td>
+                <td >{{ getEmployeeName(t.employee.id) }}</td>
+                <td >{{ getTaskName(t.tache) }}</td>
                 
-                <td *ngFor="let e of employee">{{ e.prenom}}</td>
-                <td *ngFor="let ta of tache">{{ ta.nomTache}}</td>
+                <!-- <td *ngFor="let e of employee">{{ e.prenom}}</td>
+                <td *ngFor="let ta of tache">{{ ta.nomTache}}</td> -->
              
                 <td><button class="btn btn-warning" (click)="modifierAssignation(t.assignationId)">Update</button></td>
                 <td><button class="btn btn-danger" (click)="deleteAssignationTache(t.assignationId)">Supprimer</button></td>

@@ -16,6 +16,8 @@ export class AjoutEmployeComponent {
     email: '',
     password: '',
     role: 'employe',
+    status:'debloquer',
+    photo: 'indefini',
   };
 
   successMessage: string | undefined;

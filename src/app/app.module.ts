@@ -74,6 +74,8 @@ import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 import { PasswordOublierComponent } from './password-oublier/password-oublier.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
+import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
 
 
 
@@ -125,7 +127,9 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
     AjoutEmployeComponent,
     ListeEmployeComponent,
     UpdateEmployeComponent,
+    //AssigneTache
     AssignerTacheComponent,
+    UpdateAssignationTacheComponent,
     //Eau
     AjoutEauComponent,
     ListEauComponent,
@@ -150,6 +154,7 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
     ProfilComponent,
     PasswordPaysanComponent,
     AssignationtacheListComponent,
+    ListeTacheEnAttenteComponent,
     
 
 

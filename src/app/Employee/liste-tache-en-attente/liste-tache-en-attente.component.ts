@@ -6,11 +6,12 @@ import { AssignationTache, Tache, User } from 'src/app/modeles';
 import { TacheService } from 'src/app/tache.service';
 
 @Component({
-  selector: 'app-assignationtache-list',
-  templateUrl: './assignationtache-list.component.html',
-  styleUrls: ['./assignationtache-list.component.scss']
+  selector: 'app-liste-tache-en-attente',
+  templateUrl: './liste-tache-en-attente.component.html',
+  styleUrls: ['./liste-tache-en-attente.component.scss']
 })
-export class AssignationtacheListComponent {
+export class ListeTacheEnAttenteComponent {
+
   assignation : AssignationTache[] = [];
   employee:User[]=[]
   tache:Tache[]=[]
@@ -21,7 +22,7 @@ export class AssignationtacheListComponent {
   constructor(private assignerService: AssignationTacheService,private _router: Router,private employeService:EmployeeService,private tacheService:TacheService){}
 
   ngOnInit(): void {
-    this.assignerService.getAllAssignations().subscribe(
+    this.assignerService.getTacheEnAttente().subscribe(
     {next : (apps) => {
       this.assignation = apps;
     },

@@ -46,8 +46,9 @@ import { PublicationsComponent } from './publications/publications.component';
 import { AuthGuard } from "./shared/auth.guard";
 
 
-
+//Employee
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
+import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
 import { PasswordEmployeComponent } from './Employee/password-employe/password-employe.component';
 import { ProfilEmployeComponent } from './Employee/profil-employe/profil-employe.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
@@ -140,6 +141,8 @@ const routes: Routes = [
   { path:'employeChangePassword', component:PasswordEmployeComponent},
 //tout public
   { path:'changePassword', component:ChangePasswordComponent},
+  //Employee
+  { path:'tacheEnAttente', component:ListeProjetEnAttenteComponent,canActivate:[AuthGuard], data:{role:'employe'} },
 
 
 

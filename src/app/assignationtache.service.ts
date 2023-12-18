@@ -26,6 +26,9 @@ export class AssignationTacheService {
   getAssignationsByPaysan(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/liste`);
   }
+  getTacheEnAttente(): Observable<AssignationTache[]> {
+    return this.http.get<AssignationTache[]>(`${this.baseUrl}/tacheEnAttente`);
+  }
 
   createAssignation(assigner: AssignationTache): Observable<AssignationTache> {
     const url = `${this.baseUrl}/ajout`;

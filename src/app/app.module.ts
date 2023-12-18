@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
@@ -74,6 +75,7 @@ import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 import { PasswordOublierComponent } from './password-oublier/password-oublier.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+
 
 
 
@@ -153,6 +155,7 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
     
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -168,7 +171,7 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
   ],
   exports: [
     HeaderPaysanModule,
-    // ... autres composants à exporter si nécessaire
+
   ],
   providers: [
     {

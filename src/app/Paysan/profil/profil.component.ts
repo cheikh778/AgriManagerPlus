@@ -16,8 +16,8 @@ export class ProfilComponent {
 
   messageSuccess:'' | undefined;
 
-  
-  userId = 1; 
+
+  userId = 1;
   selectedFile: File | null = null;
 
   utilisateurForm!: FormGroup;
@@ -118,29 +118,6 @@ export class ProfilComponent {
     this.imageFile = event.target.files[0] as File;
   }
 
-  
-  // onUploadPhoto(): void {
-  //   if(this.imageFile){
-  //     let obs : Observable<string> | void = this.utilisateurService.uploadPhotoUtilisateur(this.imageFile);
-  //     if(obs){
-        
-  //     obs.subscribe(
-  //       {
-  //         next:(res:string)=>{
-  //           console.log("Enregistrement Ok, reponse Serveur : ",res);
-  //         },
-  //         error:(err:any)=>{
-  //           console.log("Erreur envoie fichier",err)
-  //         },
-  //         complete:()=>{
-  //           console.log("Success Traitement")
-  //         }
-  //       }
-  //     )}
-  //   }else{
-  //     alert("Charger une image d'abord")
-  //   }
-  // }
 
     addToggle()
     {
@@ -152,15 +129,15 @@ export class ProfilComponent {
     onFileSelected(event: any): void {
       this.photoFile = event.target.files[0] as File;
     }
-  
+
     onUploadPhoto(): void {
-      
+
       if(this.photoFile){
         const formData = new FormData();
         formData.append('file', this.photoFile);
         let obs : Observable<string> | void = this.utilisateurService.uploadPhotoUtilisateur1(formData);
         if(obs){
-          
+
         obs.subscribe(
           {
             next:(res:any)=>{
@@ -179,7 +156,7 @@ export class ProfilComponent {
         alert("Charger une image d'abord")
       }
     }
-  
+
     getPhotoProfil():string | null{
       return this.utilisateurService.getPhoto()
     }
@@ -189,7 +166,7 @@ export class ProfilComponent {
   // onUploadPhoto(): void {
   //   const formData = new FormData();
   //   formData.append('file', this.photos.file);
-  
+
   //   this.utilisateurService.uploadPhotoUtilisateur(formData).subscribe(
   //     (photoUrl) => {
   //       console.log('Photo uploaded successfully:', photoUrl);
@@ -199,7 +176,7 @@ export class ProfilComponent {
   //       console.error('Erreur lors du téléchargement de la photo de profil', error);
   //     }
   //   );
-  // }  
+  // }
 
   onSaveChanges(): void {
     const updatedUtilisateur = { ...this.utilisateurForm.value };

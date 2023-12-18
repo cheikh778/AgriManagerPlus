@@ -1,4 +1,13 @@
+/*
+* Template Name: Learner
+* Template Author: Untree.co
+* Template License: https://creativecommons.org/licenses/by/3.0/
+* Author URI: https://untree.co/
 
+* Twitter: https://twitter.com/Untree_co
+* Facebook: https://web.facebook.com/Untree.co/
+* Pinterest: https://pinterest.com/Untree_co/
+*/
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
@@ -28,7 +37,7 @@ body {
   color: #000000 !important; }
 
 .text-secondary {
-  color: #28a745 !important; }
+  color: #00aeff !important; }
 
 .bg-primary-light {
   background-color: rgba(19, 106, 213, 0.05); }
@@ -37,12 +46,12 @@ body {
   background-color: rgba(0, 174, 255, 0.05); }
 
 a {
-  color: #28a745;
+  color: #136ad5;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a:hover {
-    color: #28a745;
+    color: #136ad5;
     text-decoration: none; }
 
 ::-moz-selection {
@@ -54,22 +63,16 @@ a {
   color: #ffffff; }
 
 .text-primary {
-  color: #28a745 !important;
-  text-decoration: none;
-}
+  color: #136ad5 !important; }
 
 a.text-primary {
-  color: #28a745 !important;
-  text-decoration: none;
-   }
+  color: #136ad5 !important; }
   a.text-primary:hover {
-    color: #28a745 !important;
-    text-decoration: none;
-     }
+    color: #136ad5 !important; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-family: "Display Playfair", serif;
-  color: black; }
+  color: #black; }
 
 .btn {
   padding-top: 15px;
@@ -86,21 +89,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .btn.btn-primary {
-    background: #28a745;
-    border-color: #28a745;
-    color: #fff; }
+    background: #136ad5;
+    border-color: #136ad5; }
     .btn.btn-primary:hover {
-      border-color: #28a745;
-      background: #fff;
-      color: #28a745; }
+      border-color: #1573e8;
+      background: #1573e8; }
   .btn.btn-secondary {
-    background: #fff;
-    color: #28a745;
-    border-color: #fff; }
+    background: #00aeff;
+    border-color: #00aeff; }
     .btn.btn-secondary:hover {
-      border-color: #28a745;
-      color: #fff;
-      background: #28a745; }
+      border-color: #14b4ff;
+      background: #14b4ff; }
   .btn.btn-sm {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -695,7 +694,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(61, 235, 105, 0.85);
+      background: rgba(19, 106, 213, 0.85);
       z-index: -0; }
   .untree_co-hero > .container, .bg-img > .container {
     position: relative;
@@ -814,7 +813,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     position: relative;
     margin-bottom: 30px;
     font-size: 30px;
-    color: #28a745;
+    color: #136ad5;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -854,7 +853,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     .feature [class^="icon-"].color-3,
     .feature [class^="uil uil-"].color-3 {
       background: rgba(79, 176, 220, 0.1);
-      color: #28a745; }
+      color: #4fb0dc; }
       .feature [class^="flaticon-"].color-3:after,
       .feature [class^="icon-"].color-3:after,
       .feature [class^="uil uil-"].color-3:after {
@@ -1261,7 +1260,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .img-wrap-2 .dotted:before {
     position: absolute;
     content: "";
-    background-image: url("../../assets/images/9372018.jpg");
+    background-image: url("../images/dotted.png");
     height: 273px;
     width: 313px;
     z-index: -1;

@@ -66,6 +66,7 @@ import { DetailsAssignationTacheComponent } from './Paysan/AssignerTache/details
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },

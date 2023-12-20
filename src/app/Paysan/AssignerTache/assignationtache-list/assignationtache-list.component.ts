@@ -26,11 +26,11 @@ export class AssignationtacheListComponent {
       this.assignation = apps;
     },
     error:(err) =>{
-      //this.errorMessage="Erreur de requete"
+
       console.log("Erreur de requete");
     },
     complete:() =>{
-      //this.sucessMessage="Requete valider"
+
       console.log("Requete valider");
     }
    } )
@@ -39,10 +39,12 @@ export class AssignationtacheListComponent {
       this.employee = apps;
     },
     error:(err) =>{
-      this.errorMessage="Erreur de requete"
+      // this.errorMessage="Erreur de requete"
+      console.log("Erreur de requete");
     },
     complete:() =>{
-      this.sucessMessage="Requete valider"
+      // this.sucessMessage="Requete valider"
+      console.log("Requete valider");
     }
    } )
    this.tacheService.getTachesParPaysan().subscribe((taches: Tache[]) => this.tache = taches);
@@ -104,34 +106,34 @@ export class AssignationtacheListComponent {
   getEmployeeName(employeeId: number): string {
     console.log('Employee ID:', employeeId);
     console.log('Employees:', this.employee);
-  
+
     const employee = this.employee.find(e => e.id === employeeId);
     console.log('Found Employee:', employee);
-  
+
     return employee ? `${employee.prenom} ${employee.nom}` : 'N/A';
   }
-  
+
   getTaskName(taskId: number): string {
     console.log('Task ID:', taskId);
     console.log('Tasks:', this.tache);
-  
+
     const task = this.tache.find(t => t.idTache === taskId);
     console.log('Found Task:', task);
-  
+
     return task ? task.nomTache : 'N/A';
   }
-  
+
   validerTache(t: AssignationTache): void {
-   
+
     t.dateFin = new Date();
-  
-    t.status = 'validé';
-  
-   
+
+    t.status = 'valider';
+
+
     this.assignerService.validerTache(t.assignationId).subscribe(
       () => {
         console.log('Tâche validée avec succès');
-      
+
         this.getEmployees();
       },
       (error) => {

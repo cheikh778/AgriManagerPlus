@@ -53,9 +53,8 @@ export class ListeProjetEnAttenteComponent {
               text-align: center;
           }
           header img {
-              max-width: 150px;
+              max-width: 100px;
               margin: 20px 0;
-              border-radius: 50%;
               object-fit: cover;
           }
           main {
@@ -119,10 +118,10 @@ export class ListeProjetEnAttenteComponent {
     }
     this.validerSevice.validerProjet(id).subscribe(
       response => {
-        
+
 
         console.log('Projet validé avec succès', response);
-         
+
       },
       error => {
         // Gérer les erreurs éventuelles
@@ -140,7 +139,7 @@ export class ListeProjetEnAttenteComponent {
         }
       )
   }
-  
+
 
   ngOnInit(): void {
     this.validerSevice.getListeProjet().subscribe(

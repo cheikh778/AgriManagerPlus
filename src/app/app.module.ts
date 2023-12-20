@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 import { AjoutCultureComponent } from './Paysan/Culture/ajout-culture/ajout-culture.component';
 import { AjoutUtilisateurComponent } from './Admin/ajout-utilisateur/ajout-utilisateur.component';
 import { DashboardAComponent } from './Admin/dashboard-a/dashboard-a.component';
@@ -76,6 +77,9 @@ import { PasswordOublierComponent } from './password-oublier/password-oublier.co
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
 import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
 import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
+import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
+import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
+
 
 
 
@@ -155,7 +159,10 @@ import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/
     PasswordPaysanComponent,
     AssignationtacheListComponent,
     ListeTacheEnAttenteComponent,
+    ListeTacheValiderComponent,
+    ValiderTachesComponent,
     
+
 
 
   ],
@@ -173,7 +180,7 @@ import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/
   ],
   exports: [
     HeaderPaysanModule,
-    // ... autres composants à exporter si nécessaire
+
   ],
   providers: [
     {

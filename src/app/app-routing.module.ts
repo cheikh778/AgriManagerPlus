@@ -48,7 +48,12 @@ import { AuthGuard } from "./shared/auth.guard";
 
 //Employee
 import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.component';
+
 import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
+import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
+import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
+
+
 import { PasswordEmployeComponent } from './Employee/password-employe/password-employe.component';
 import { ProfilEmployeComponent } from './Employee/profil-employe/profil-employe.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
@@ -65,6 +70,7 @@ import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/as
 import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
 import { DetailsAssignationTacheComponent } from './Paysan/AssignerTache/details-assignation-tache/details-assignation-tache.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+
 
 
 const routes: Routes = [
@@ -85,16 +91,22 @@ const routes: Routes = [
   { path:'listeCultures', component:ListeCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'ajoutCulture', component:AjoutCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateCulture/:id', component:UpdateCultureComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+
+
   //Semence
   { path:'ajoutSemence', component:AjoutSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeSemence', component:ListeSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateSemence/:id', component:UpdateSemenceComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+
+
   //Tache
   { path:'ajoutTache', component:AjoutTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateTache/:id', component:UpdateTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'listeTache', component:ListeTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path: 'listeTache', component: ListeTacheComponent, canActivate: [AuthGuard], data: { roles: ['paysan', 'employee'] } },
+
+
   //Employee
-  { path:'listeEmployee', component:ListeEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+  { path:'listeEmployee', component:ListeEmployeComponent, canActivate:[AuthGuard], data:{roles: ['paysan', 'employee'] } },
   { path:'ajoutEmployee', component:AjoutEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'updateEmployee/:id', component:UpdateEmployeComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
 
@@ -124,7 +136,7 @@ const routes: Routes = [
    { path:'assignationTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
+    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{roles: ['paysan', 'employee'] } },
     { path:'confirmation', component:ConfirmationDialogComponent},
 
   //profil
@@ -142,7 +154,9 @@ const routes: Routes = [
 //tout public
   { path:'changePassword', component:ChangePasswordComponent},
   //Employee
-  { path:'tacheEnAttente', component:ListeProjetEnAttenteComponent,canActivate:[AuthGuard], data:{role:'employe'} },
+  { path:'tacheEnAttente', component:ListeTacheEnAttenteComponent,canActivate:[AuthGuard], data:{role:'employe'} },
+  { path:'tacheValider', component:ListeTacheValiderComponent,canActivate:[AuthGuard], data:{role:'employe'} },
+  { path:'validerTache', component:ValiderTachesComponent,canActivate:[AuthGuard], data:{role:'employe'} },
 
 
 

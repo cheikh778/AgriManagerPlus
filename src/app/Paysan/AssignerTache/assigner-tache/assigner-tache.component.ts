@@ -16,13 +16,15 @@ import { TacheService } from 'src/app/tache.service';
 export class AssignerTacheComponent implements OnInit {
   
   employe : User[] = [];
-  
+  tache : Tache[] = [];
   assigner : AssignationTache = {
     assignationId: 0,
     dateDebut: new Date(),
     dateFin: new Date(),
     employee: this.employe[0], // Add this line
-    tache: 0, // Add this line
+    tache: this.tache[0], // Add this line
+    nomEmploye:'gbh',
+    nomTache:'' ,
     status: 'en_attente',
     
   };

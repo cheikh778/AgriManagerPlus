@@ -30,6 +30,10 @@ export class AssignationTacheService {
     return this.http.get<AssignationTache[]>(`${this.baseUrl}/tacheEnAttente`);
   }
 
+  getTacheValider(): Observable<AssignationTache[]> {
+    return this.http.get<AssignationTache[]>(`${this.baseUrl}/tacheValider`);
+  }
+
   createAssignation(assigner: AssignationTache): Observable<AssignationTache> {
     const url = `${this.baseUrl}/ajout`;
     return this.http.post<AssignationTache>(url, assigner);
@@ -43,7 +47,7 @@ export class AssignationTacheService {
   }
 
   validerTache(assignationId: number): Observable<AssignationTache> {
-    const url = `${this.baseUrl}/api/assignations-tache/valider/${assignationId}`;
+    const url = `${this.baseUrl}/valider/${assignationId}`;
     return this.http.put<AssignationTache>(url, {});
   }
 }

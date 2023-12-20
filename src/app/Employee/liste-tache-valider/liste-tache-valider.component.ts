@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AssignationTacheService } from 'src/app/assignationtache.service';
-import { EmployeeService } from 'src/app/employee.service';
-import { AssignationTache, Tache, User } from 'src/app/modeles';
-import { TacheService } from 'src/app/tache.service';
 
+  import { Router } from '@angular/router';
+  import { AssignationTacheService } from 'src/app/assignationtache.service';
+  import { EmployeeService } from 'src/app/employee.service';
+  import { AssignationTache, Tache, User } from 'src/app/modeles';
+  import { TacheService } from 'src/app/tache.service';
+  
+ 
 @Component({
-  selector: 'app-liste-tache-en-attente',
-  templateUrl: './liste-tache-en-attente.component.html',
-  styleUrls: ['./liste-tache-en-attente.component.scss']
+  selector: 'app-liste-tache-valider',
+  templateUrl: './liste-tache-valider.component.html',
+  styleUrls: ['./liste-tache-valider.component.scss']
 })
-export class ListeTacheEnAttenteComponent {
-
+export class ListeTacheValiderComponent {
+  
     assignation : AssignationTache[] = [];
     employee:User[]=[]
     tache:Tache[]=[]
@@ -22,23 +24,22 @@ export class ListeTacheEnAttenteComponent {
     constructor(private assignerService: AssignationTacheService,private _router: Router,private employeService:EmployeeService,private tacheService:TacheService){}
   
     ngOnInit(): void {
-      this.assignerService.getTacheEnAttente().subscribe(
+      this.assignerService.getTacheValider().subscribe(
       {next : (apps) => {
         this.assignation = apps;
       },
       error:(err) =>{
-  
+        //this.errorMessage="Erreur de requete"
         console.log("Erreur de requete");
       },
       complete:() =>{
-  
+        //this.sucessMessage="Requete valider"
         console.log("Requete valider");
       }
      } )
      this.employeService.getEmployeeByPaysan().subscribe(
       {next : (apps) => {
         this.employee = apps;
-        // this.getEmployees();
       },
       error:(err) =>{
         // this.errorMessage="Erreur de requete"
@@ -53,7 +54,7 @@ export class ListeTacheEnAttenteComponent {
     }
   
     private getEmployees() {
-      this.assignerService.getAllAssignations().subscribe({
+      this.assignerService.getTacheEnAttente().subscribe({
         next: (apps) => {
           this.assignation = apps;
         },
@@ -74,21 +75,21 @@ export class ListeTacheEnAttenteComponent {
       this._router.navigate(['updateAssignation', assignationId]);
     }
   
-    deleteAssignationTache(assignationId: number) {
-      this.assignerService.deleteAssignation(assignationId).subscribe({
-        next: (data) => {
-          console.log(data);
-          this.getEmployees();
-          this.sucessMessage="Suppression réussie";
-         // this.message=this.sucessMessage;
-        },
-        error: (e) => {
-          console.log(e);
-          this.errorMessage="Erreur lors de la suppression, Veuillez réessayer plus tard."
-          //this.message=this.errorMessage;
-        }
-      });
-    }
+    // deleteAssignationTache(assignationId: number) {
+    //   this.assignerService.deleteAssignation(assignationId).subscribe({
+    //     next: (data) => {
+    //       console.log(data);
+    //       this.getEmployees();
+    //       this.sucessMessage="Suppression réussie";
+    //      // this.message=this.sucessMessage;
+    //     },
+    //     error: (e) => {
+    //       console.log(e);
+    //       this.errorMessage="Erreur lors de la suppression, Veuillez réessayer plus tard."
+    //       //this.message=this.errorMessage;
+    //     }
+    //   });
+    // }
     redirectToAssignationList() {
       this._router.navigate(['listAssignation']);
     }
@@ -125,17 +126,18 @@ export class ListeTacheEnAttenteComponent {
       return task ? task.nomTache : 'N/A';
     }
   
+    
     validerTache(t: AssignationTache): void {
-  
+     
       t.dateFin = new Date();
-  
+    
       t.status = 'valider';
-  
-  
+    
+     
       this.assignerService.validerTache(t.assignationId).subscribe(
         () => {
           console.log('Tâche validée avec succès');
-  
+        
           this.getEmployees();
         },
         (error) => {
@@ -143,5 +145,6 @@ export class ListeTacheEnAttenteComponent {
         }
       );
     }
-  }
   
+  
+}

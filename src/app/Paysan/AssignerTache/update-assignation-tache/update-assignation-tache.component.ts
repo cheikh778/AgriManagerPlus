@@ -12,12 +12,16 @@ import { TacheService } from 'src/app/tache.service';
 })
 export class UpdateAssignationTacheComponent {
   employe: User[] = [];
+  tache: Tache[] = [];
+
   assigner: AssignationTache = {
     assignationId: 0,
     dateDebut: new Date(),
     dateFin: new Date(),
     employee: this.employe[0],
-    tache: 0,
+    tache: this.tache[0],
+    nomEmploye:'',
+    nomTache:'' ,
     status: 'en_attente',
   };
   errorMessage = "";

@@ -22,7 +22,9 @@ export class CorsInterceptor implements HttpInterceptor {
       // 'http://localhost:8081/api/demandeProjet/listerProjetEnAttente'
       'http://localhost:8081/api/demandeProjet/ajout',
       'http://localhost:8081/api/v1/users/change-password/',
-      'http://localhost:8081/api/v1/users/reset-password'
+      'http://localhost:8081/api/v1/users/reset-password',
+      // 'http://localhost:8081/api/v1/auth/authenticate',
+
       // Ajoutez d'autres URLs si nécessaire
     ]; 
     const shouldAddToken = !targetUrls.some(url => request.url.startsWith(url));

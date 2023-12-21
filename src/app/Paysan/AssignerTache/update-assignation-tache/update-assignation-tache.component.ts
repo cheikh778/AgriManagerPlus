@@ -12,12 +12,16 @@ import { TacheService } from 'src/app/tache.service';
 })
 export class UpdateAssignationTacheComponent {
   employe: User[] = [];
+  tache: Tache[] = [];
+
   assigner: AssignationTache = {
     assignationId: 0,
     dateDebut: new Date(),
     dateFin: new Date(),
-    employee: 0,
-    tache: 0,
+    employee: this.employe[0],
+    tache: this.tache[0],
+    nomEmploye:'',
+    nomTache:'' ,
     status: 'en_attente',
   };
   errorMessage = "";
@@ -54,6 +58,7 @@ export class UpdateAssignationTacheComponent {
     this.assignationService.getAssignationById(assignationId).subscribe(
       (assignation) => {
         this.assigner = assignation;
+        console.log("assigner",this.assigner)
       },
       (error) => {
         console.error('Erreur lors de la récupération de l\'assignation', error);

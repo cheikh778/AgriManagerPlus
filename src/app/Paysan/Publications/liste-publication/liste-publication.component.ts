@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./liste-publication.component.scss']
 })
 export class ListePublicationComponent {
+  status = false;
+
+  addToggle()
+  {
+    this.status = !this.status;
+  }
 
 }

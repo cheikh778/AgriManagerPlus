@@ -69,6 +69,8 @@ import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/as
 import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
 import { DetailsAssignationTacheComponent } from './Paysan/AssignerTache/details-assignation-tache/details-assignation-tache.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+import { CreatePublicationComponent } from './Paysan/Publications/create-publication/create-publication.component';
+import { ListePublicationComponent } from './Paysan/Publications/liste-publication/liste-publication.component';
 
 
 
@@ -136,6 +138,10 @@ const routes: Routes = [
     { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role: ['paysan', 'employee']} },
+
+    //publications
+    { path:'createPost', component:CreatePublicationComponent},
+    { path:'listePublication', component:ListePublicationComponent},
 
 
   //profil

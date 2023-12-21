@@ -33,7 +33,6 @@ import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-e
 //eau
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
 import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
-import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
@@ -109,21 +108,21 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'confirmation', component:ConfirmationDialogComponent},
+  
 
    //materiel
    { path:'ajoutMateriel', component:AjoutMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'updateMateriel/:id', component:UpdateMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'materiel-datails/:eauId', component:DetailsMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'listeMateriel', component:ListMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-   { path:'confirmation', component:ConfirmationDialogComponent},
+   
 
    //parcell
    { path:'ajoutParcelle', component:AjoutParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'parcelle-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'confirmation', component:ConfirmationDialogComponent},
+  //  
 
 
    //assignation tache
@@ -131,7 +130,7 @@ const routes: Routes = [
     { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-    { path:'confirmation', component:ConfirmationDialogComponent},
+    
 
   //profil
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},

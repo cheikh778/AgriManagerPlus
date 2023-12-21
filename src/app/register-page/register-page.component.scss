@@ -10,6 +10,25 @@ body {
   //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.fa-eye ,.fa-eye-slash{
+  color: #28a745;
+}
+.fa-eye:hover ,.fa-eye-slash:hover{
+  color:#fff;
+
+}
+.fa-eye:focus ,.fa-eye-slash:focus{
+  color: #28a745;
+}
+.btn-outline-secondary{
+  color: #28a745;
+  background-color: #fff;
+}
+.btn-outline-secondary:hover{
+  color: #fff;
+  background-color: #28a745;
+}
+
 .btn-success {
   background-color: #28a745;
   border-color: #28a745;

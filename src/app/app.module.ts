@@ -83,6 +83,7 @@ import { CreatePublicationComponent } from './Paysan/Publications/create-publica
 import { ListePublicationComponent } from './Paysan/Publications/liste-publication/liste-publication.component';
 import { DetailsPublicationComponent } from './Paysan/Publications/details-publication/details-publication.component';
 import { UpdatePublicationComponent } from './Paysan/Publications/update-publication/update-publication.component';
+import { DetailsPublicationsComponent } from './details-publications/details-publications.component';
 
 
 
@@ -169,6 +170,7 @@ import { UpdatePublicationComponent } from './Paysan/Publications/update-publica
     ListePublicationComponent,
     DetailsPublicationComponent,
     UpdatePublicationComponent,
+    DetailsPublicationsComponent,
     
 
 

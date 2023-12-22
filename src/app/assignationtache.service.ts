@@ -50,4 +50,27 @@ export class AssignationTacheService {
     const url = `${this.baseUrl}/valider/${assignationId}`;
     return this.http.put<AssignationTache>(url, {});
   }
+
+  uploadPhotoTache(formData: FormData,id:number): Observable<string> {
+    // Utilisez 'file' comme clé, correspondant au champ 'name' de l'input de type 'file'
+
+    // Retournez directement l'observable sans appeler subscribe ici
+    return this.http.post<string>('http://localhost:8081/api/imageTahe/'+ id, formData);
+}
+photo: string | null = null; // Autoriser la nullabilité ici
+
+  // ...
+
+  setPhoto(photo: string): void {
+    this.photo = photo;
+    console.log("photo",this.photo)
+    // localStorage.setItem('image', photo); // Commentez ou retirez cette ligne si vous ne voulez pas stocker dans le localStorage
+  }
+
+  getPhoto(): string | null {
+    
+ 
+// Vous pouvez aussi retourner directement la valeur de la variable photo sans utiliser le localStorage
+    return this.photo;
+  }
 }

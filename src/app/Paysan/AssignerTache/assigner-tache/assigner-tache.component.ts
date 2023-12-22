@@ -23,9 +23,10 @@ export class AssignerTacheComponent implements OnInit {
     dateFin: new Date(),
     employee: this.employe[0], // Add this line
     tache: this.tache[0], // Add this line
-    nomEmploye:'gbh',
+    nomEmploye:'',
     nomTache:'' ,
     status: 'en_attente',
+    image:'enAttente',
     
   };
   errorMessage = "";  

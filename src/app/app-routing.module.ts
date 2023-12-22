@@ -52,6 +52,7 @@ import { DashboardEComponent } from './Employee/dashboard-e/dashboard-e.componen
 import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
 import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
 import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
+import { AjoutImageTacheComponent } from './Employee/ajout-image-tache/ajout-image-tache.component';
 
 
 import { PasswordEmployeComponent } from './Employee/password-employe/password-employe.component';
@@ -157,6 +158,7 @@ const routes: Routes = [
   { path:'tacheEnAttente', component:ListeTacheEnAttenteComponent,canActivate:[AuthGuard], data:{role:'employe'} },
   { path:'tacheValider', component:ListeTacheValiderComponent,canActivate:[AuthGuard], data:{role:'employe'} },
   { path:'validerTache', component:ValiderTachesComponent,canActivate:[AuthGuard], data:{role:'employe'} },
+  { path:'ajoutImage/:id', component:AjoutImageTacheComponent,canActivate:[AuthGuard], data:{role:'employe'} },
 
 
 

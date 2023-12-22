@@ -79,6 +79,7 @@ import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-a
 import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
 import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
 import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
+import { AjoutImageTacheComponent } from './Employee/ajout-image-tache/ajout-image-tache.component';
 
 
 
@@ -161,6 +162,7 @@ import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches
     ListeTacheEnAttenteComponent,
     ListeTacheValiderComponent,
     ValiderTachesComponent,
+    AjoutImageTacheComponent,
     
 
 

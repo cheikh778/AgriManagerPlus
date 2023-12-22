@@ -23,6 +23,7 @@ export class UpdateAssignationTacheComponent {
     nomEmploye:'',
     nomTache:'' ,
     status: 'en_attente',
+    image:'enAttente'
   };
   errorMessage = "";
   successMessage = "";

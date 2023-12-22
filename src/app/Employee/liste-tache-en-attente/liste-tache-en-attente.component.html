@@ -64,10 +64,10 @@
               <tr>
                 <th>Date Debut </th>
                 <!-- <th>Date Fin</th> -->
-                <th>Statut </th>
+                <!-- <th>Statut </th> -->
                 <th>Employe</th>
                 <th>Tache</th>
-                <th colspan="3">Action</th>
+                <th colspan="3">Status</th>
               </tr>
             </thead>
             <tbody *ngFor="let t of assignation">
@@ -79,6 +79,8 @@
                 <td >{{t.status}}</td>
                 <td >{{t.employee.prenom}} {{t.employee.nom}}</td>
                 <td >{{t.tache.nomTache}}</td>
+                <button class="btn btn-success">{{t.status}}</button>
+
                 <!-- <td >{{ getEmployeeName(t.employee.id) }}</td>
                 <td >{{ getTaskName(t.tache.idTache) }}</td> -->
                 

@@ -67,10 +67,10 @@ export class ValiderTachesComponent {
         });
       }
     
-      modifierAssignation(assignationId: number) {
+      ajoutImage(assignationId: number) {
     
         console.log("id : ",assignationId)
-        this._router.navigate(['updateAssignation', assignationId]);
+        this._router.navigate(['ajoutImage', assignationId]);
       }
     
       deleteAssignationTache(assignationId: number) {

@@ -127,6 +127,7 @@ export interface  AssignationTache
      nomTache:string ; 
     dateDebut : Date;
     dateFin : Date;
+    image : string;
   // Add this line
   status: 'en_attente' | 'valider'; // Mettez à jour ici
 }

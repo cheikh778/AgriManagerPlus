@@ -1,0 +1,83 @@
+<header-employe></header-employe>
+
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i (click)="addToggle()" class='bx bx-menu' ></i>
+      <a class="nav-link" href="#">Categories</a>
+      <form action="#">
+        <div class="form-input">
+          <input placeholder="Search..." type="search">
+          <button class="search-btn" type="button"><i class='bx bx-search' ></i></button>
+        </div>
+      </form>
+      <a class="notification" href="#">
+        <i class='bx bxs-bell' ></i>
+        <span class="num">8</span>
+      </a>
+      <a class="profile" href="#">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+    </nav>
+  
+    <main>
+  
+      <div class="head-title">
+        <div class="left">
+          <h1>Dashboard</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Dashboard</a>
+            </li>
+            <li><i class='bx bx-chevron-right' ></i></li>
+            <li>
+              <a class="active" href="#" style="color: #28a745;">Profil</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn-download" href="#">
+          <i class='bx bxs-cloud-download' ></i>
+          <span class="text">Download PDF</span>
+        </a>
+      </div>
+  
+  
+      <div class="container-xl px-4 mt-4">
+  
+        <nav class="nav nav-borders">
+        <a class="nav-link active ms-0" href="profilPaysan" >Profile</a>
+  
+        <!-- <a class="nav-link" href="paysanChangePassword" >Security</a> -->
+  
+        </nav>
+        <hr class="mt-0 mb-4">
+        <div class="row">
+          <div class="col-xl-4">
+          <div class="card mb-4 mb-xl-0">
+            <div class="card-header">Profile Picture</div>
+            <div class="card-body text-center">
+              <img class="img-account-profile rounded-circle mb-2" [src]="getPhotoProfil()" alt="profil">
+              <form  (ngSubmit)="onUploadPhoto()" method="post">
+              <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+              <input type="file" name="file" (change)="onFileSelected($event)" accept="image/*">
+              <input type="text" name="photo" value="admin" hidden="false">
+              <button class="btn btn-primary" type="submit" >Modifier son profil</button>
+            </form>
+            </div>
+          </div>
+        </div>
+  
+        <!-- <div class="col-xl-8">
+  
+        <div class="card mb-4">
+        <div class="card-header">Details </div>
+        <div class="card-body">
+        
+        </div>
+        </div>
+        </div> -->
+      </div>
+    </div>
+  
+    </main>
+    </section>

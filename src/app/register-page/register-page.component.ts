@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterPageService } from '../register-page.service';
-import { FormBuilder, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,11 +20,24 @@ export class RegisterPageComponent {
     role:  this.builder.control('client'),
   });
 
+  userForm: FormGroup;
+  showPassword = false;
+
+
+
+
   successMessage: string | undefined;
   errorMessage: string | undefined;
 
   constructor(private registerService: RegisterPageService, private _router: Router,
-    private builder: FormBuilder) {}
+    private builder: FormBuilder, private fb: FormBuilder) {
+      this.userForm = this.fb.group({
+        password: ['', Validators.required]
+      });
+    }
+    togglePasswordVisibility() {
+      this.showPassword = !this.showPassword;
+    }
 
   submitForm() {
     console.log('Formulaire soumis', this.user.value);
@@ -48,4 +61,7 @@ export class RegisterPageComponent {
         }
     );
   }
+
+
+
 }

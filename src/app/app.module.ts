@@ -75,6 +75,15 @@ import { BarChart2Component } from './Admin/bar-chart2/bar-chart2.component';
 import { PasswordPaysanComponent } from './Paysan/password-paysan/password-paysan.component';
 import { PasswordOublierComponent } from './password-oublier/password-oublier.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
+import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/liste-tache-en-attente.component';
+import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
+import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
+import { CreatePublicationComponent } from './Paysan/Publications/create-publication/create-publication.component';
+import { ListePublicationComponent } from './Paysan/Publications/liste-publication/liste-publication.component';
+import { DetailsPublicationComponent } from './Paysan/Publications/details-publication/details-publication.component';
+import { UpdatePublicationComponent } from './Paysan/Publications/update-publication/update-publication.component';
+import { DetailsPublicationsComponent } from './details-publications/details-publications.component';
 
 
 
@@ -127,7 +136,9 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
     AjoutEmployeComponent,
     ListeEmployeComponent,
     UpdateEmployeComponent,
+    //AssigneTache
     AssignerTacheComponent,
+    UpdateAssignationTacheComponent,
     //Eau
     AjoutEauComponent,
     ListEauComponent,
@@ -152,6 +163,14 @@ import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignatio
     ProfilComponent,
     PasswordPaysanComponent,
     AssignationtacheListComponent,
+    ListeTacheEnAttenteComponent,
+    ListeTacheValiderComponent,
+    ValiderTachesComponent,
+    CreatePublicationComponent,
+    ListePublicationComponent,
+    DetailsPublicationComponent,
+    UpdatePublicationComponent,
+    DetailsPublicationsComponent,
     
 
 

@@ -1,0 +1,106 @@
+
+<header-employe></header-employe>
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu' ></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search' ></i></button>
+      </div>
+    </form>
+    <a class="notification" href="#">
+      <i class='bx bxs-bell' ></i>
+      <span class="num">8</span>
+    </a>
+    <a class="profile" href="#">
+      <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+    </a>
+  </nav>
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="listeEau" style="color: #28a745;">Source d'eaux</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
+
+    <a  class="btn btn-secondary" href="assignationTache" style="background-color: #28a745; border-color: #28a745;" >Assignation Tache</a>
+
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Historique des Taches Assigner</h3>
+          <i class='bx bx-search' ></i>
+          <i class='bx bx-filter'></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Date Debut </th>
+              <th>Date Fin</th>
+              <th>Employe</th>
+              <th>Tache</th>
+              <th colspan="3">Status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let t of assignation">
+            <tr>
+              <td>
+                <p> {{ t.dateDebut | date: 'yyyy-MM-dd' }}</p>
+              </td>
+              <td> {{t.dateFin | date: 'yyyy-MM-dd' }}</td>
+              <td >{{t.employee.prenom}} {{t.employee.nom}}</td>
+              <td >{{t.tache.nomTache}}</td>
+              <td >
+                <button class="btn btn-success">{{t.status}}</button>
+
+              <!-- <td >{{ getEmployeeName(t.employee.id) }}</td>
+              <td >{{ getTaskName(t.tache.idTache) }}</td> -->
+              
+              <!-- <td *ngFor="let e of employee">{{ e.prenom}}</td>
+              <td *ngFor="let ta of tache">{{ ta.nomTache}}</td> -->
+           
+              <!-- <td><button class="btn btn-warning" (click)="modifierAssignation(t.assignationId)">Update</button></td> -->
+              <!-- <td><button class="btn btn-danger" (click)="deleteAssignationTache(t.assignationId)">Supprimer</button></td> -->
+              <!-- <button (click)="detailsAssignation(t.assignationId)" class="btn btn-info">View</button> -->
+              <!-- <td>
+                  <button class="btn btn-success" (click)="validerTache(t)">Valider</button>
+                </td> -->
+              <!-- <td><button type="submit" class="status completed" (click)="valider(v.idDemande,v.email)">Pour valider</button></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+  </main>
+  <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+

@@ -26,6 +26,13 @@ export class AssignationTacheService {
   getAssignationsByPaysan(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/liste`);
   }
+  getTacheEnAttente(): Observable<AssignationTache[]> {
+    return this.http.get<AssignationTache[]>(`${this.baseUrl}/tacheEnAttente`);
+  }
+
+  getTacheValider(): Observable<AssignationTache[]> {
+    return this.http.get<AssignationTache[]>(`${this.baseUrl}/tacheValider`);
+  }
 
   createAssignation(assigner: AssignationTache): Observable<AssignationTache> {
     const url = `${this.baseUrl}/ajout`;
@@ -40,7 +47,7 @@ export class AssignationTacheService {
   }
 
   validerTache(assignationId: number): Observable<AssignationTache> {
-    const url = `${this.baseUrl}/api/assignations-tache/valider/${assignationId}`;
+    const url = `${this.baseUrl}/valider/${assignationId}`;
     return this.http.put<AssignationTache>(url, {});
   }
 }

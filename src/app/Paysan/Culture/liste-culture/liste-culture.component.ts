@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { CultureService } from 'src/app/culture.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from '../../confirmation-dialog/confirmation-dialog.component';
+
 
 
 @Component({
@@ -27,13 +27,13 @@ export class ListeCultureComponent {
 
   toggleNotificationDropdown() {
     this.showNotificationDropdown = !this.showNotificationDropdown;
-   
+
     this.showProfileDropdown = false;
   }
 
   toggleProfileDropdown() {
     this.showProfileDropdown = !this.showProfileDropdown;
-   
+
     this.showNotificationDropdown = false;
   }
 
@@ -57,12 +57,12 @@ export class ListeCultureComponent {
     },
     error:() =>{
       console.log("Erreur de requete");
-      
+
     },
     complete:() =>{
       console.log("Requete valider");
-      
-      
+
+
     }
    } )
   }
@@ -71,7 +71,7 @@ export class ListeCultureComponent {
     this.cultureService.getCultures().subscribe({
       next: (apps) => {
         this.culture = apps;
-      },  
+      },
       error: (err) => {
 
         this.errorMessage = "Nouvelle liste";
@@ -92,21 +92,21 @@ export class ListeCultureComponent {
   deleteCulture(cultureId: number) {
     this.cultureService.supprimerCulture(cultureId).subscribe({
       next: (data) => {
-        
+
         this.successMessage = "Suppression reussie";
-        
+
         this.getEmployees();
       },
       error: (e) => {
-        
+
         this.errorMessage="Erreur  lors de la suppression";
       }
     });
   }
-  
 
- 
-  
+
+
+
   redirectToCultureList() {
     this._router.navigate(['listeCulture']);
   }

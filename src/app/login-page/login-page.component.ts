@@ -15,17 +15,17 @@ export class LoginPageComponent {
   };
   // errorMessage = '';
   // successMessage = '';
-  
+
 
 
   constructor(private authService: LoginPageService,
     private _router: Router) {}
 
   submitForm() {
-    console.log('Formulaire soumis', this.user); 
+    console.log('Formulaire soumis', this.user);
     this.authService.signIn(this.user)
 
-   
+
 
   }
 
@@ -34,14 +34,14 @@ export class LoginPageComponent {
 
 
     if (message) {
-      
+
       setTimeout(() => {
-        this.authService.clearErrorMessage(); 
+        this.authService.clearErrorMessage();
       }, 2000);
     }
-  
+
     return message;
-    
+
   }
 
   get successMessage(): string {
@@ -52,6 +52,11 @@ export class LoginPageComponent {
     this.authService.errorMessage = '';
     this.authService.successMessage = '';
   }
+  showPassword = false;
 
-  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+
 }

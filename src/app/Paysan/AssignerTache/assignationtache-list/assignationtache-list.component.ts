@@ -91,6 +91,8 @@ export class AssignationtacheListComponent {
     this._router.navigate(['listAssignation']);
   }
 
+  
+
   status = false;
   addToggle()
   {
@@ -125,7 +127,7 @@ export class AssignationtacheListComponent {
 
     t.dateFin = new Date();
 
-    t.status = 'validé';
+    t.status = 'valider';
 
 
     this.assignerService.validerTache(t.assignationId).subscribe(

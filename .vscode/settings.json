@@ -4,5 +4,6 @@
         "liste",
         "paysan",
         "semence"
-    ]
+    ],
+    "DockerRun.DisableDockerrc": true
 }

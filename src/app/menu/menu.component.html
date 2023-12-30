@@ -14,27 +14,27 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#accueil"><i class="fas fa-home"></i> Accueil</a>
+          <a class="nav-link" [routerLink]="['/accueil/']"><i class="fas fa-home"></i> Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="accueil/#apropos"><i class="fas fa-info-circle"></i> À propos de nous</a>
+          <a class="nav-link" [routerLink]="['/accueil/#apropos']"><i class="fas fa-info-circle"></i> À propos de nous</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="accueil/#services"><i class="fas fa-arrow-circle-down"></i> Nos services</a>
+          <a class="nav-link" [routerLink]="['/accueil/#services']"><i class="fas fa-arrow-circle-down"></i> Nos services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="publications"><i class="fas fa-seedling"></i> Les Cultures</a>
+          <a class="nav-link" [routerLink]="['/publications']"><i class="fas fa-seedling"></i> Les Cultures</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="accueil/#contact"><i class="fas fa-phone"></i> Contacts</a>
+          <a class="nav-link" [routerLink]="['/accueil/#contact']"><i class="fas fa-phone"></i> Contacts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="accueil/#joinUsSection"><i class="fas fa-signature"></i> Rejoins Nous</a>
+          <a class="nav-link"  [routerLink]="['/accueil/#joinUsSection']"><i class="fas fa-signature"></i> Rejoins Nous</a>
         </li>
       </ul>
       <div class="d-flex">
-        <button class="btn btn-light mr-2"><i class="fas fa-lock"></i> <a class="login" href="login"> Se connecter</a></button>
-        <button class="btn btn-light"><i class="fas fa-user-plus"></i> <a class="login" href="register"> S'inscrire</a></button>
+        <button class="btn btn-light mr-2"><i class="fas fa-lock"></i> <a class="login" [routerLink]="['/login']"> Se connecter</a></button>
+        <button class="btn btn-light"><i class="fas fa-user-plus"></i> <a class="login" [routerLink]="['/register']"> S'inscrire</a></button>
       </div>
     </div>
 

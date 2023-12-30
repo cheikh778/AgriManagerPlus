@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -171,7 +171,7 @@ import { DetailsPublicationsComponent } from './details-publications/details-pub
     DetailsPublicationComponent,
     UpdatePublicationComponent,
     DetailsPublicationsComponent,
-    
+
 
 
 
@@ -198,6 +198,9 @@ import { DetailsPublicationsComponent } from './details-publications/details-pub
       useClass: CorsInterceptor,
       multi: true,
     },
+    { provide: LocationStrategy,
+      useClass: HashLocationStrategy
+      },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,66 +1,66 @@
 <section [ngClass]="status ? 'hide' : ''" id="sidebar">
-    <a class="brand" href="paysanDashboard">
+    <a class="brand" [routerLink]="['/paysanDashboard']">
       <!-- <i class='bx bxs-smile'></i>
       <span class="text">AdminHub</span> -->
       <img alt="" src="../../../assets/images/Am3.png" style="width: 210px; left: 90px; top: 100px;">
     </a>
     <ul class="side-menu top">
       <li class="active">
-        <a href="paysanDashboard">
+        <a [routerLink]="['/paysanDashboard']">
           <i class='bx bxs-dashboard' ></i>
           <span class="text">Dashboard</span>
         </a>
       </li>
       <li>
-        <a href="listeCultures">
+        <a [routerLink]="['/listeCultures']">
           <i class='fas fa-seedling'> &nbsp;</i>
           <span class="text">Les Cultures</span>
         </a>
       </li>
       <li>
-        <a href="listeEmployee">
+        <a [routerLink]="['/listeEmployee']">
           <i class='bx bxs-group'></i>
           <span class="text">Les employés</span>
         </a>
       </li>
       <li>
-        <a href="listeMateriel">
+        <a [routerLink]="['/listeMateriel']">
           <i class='bx bx-store-alt'></i>
           <span class="text">Materiels</span>
         </a>
       </li>
       <li>
-        <a href="listeSemence">
+        <a [routerLink]="['/listeSemence']">
           <i class='bx bxs-basket'></i>
           <span class="text">Semences</span>
         </a>
       </li>
       <li>
-        <a href="listeParcelle">
+        <a [routerLink]="['/listeParcelle']">
           <i class='bx bxs-layer-plus'></i>
           <span class="text">Parcelles Agricoles</span>
         </a>
       </li>
       <li>
-        <a href="listeEau">
+        <a [routerLink]="['/listeEau']">
           <i class='bx bx-water'></i>
           <span class="text">Gestion de l'eau</span>
         </a>
       </li>
       <li>
-        <a href="listeTache">
+        <a [routerLink]="['/listeTache']">
           <i class='bx bx-task'></i>
           <span class="text">Tâches</span>
         </a>
       </li>
       <li>
-        <a href="listePublication">
+        <a [routerLink]="['/listePublication']">
           <i class='bx bx-repost'></i>
           <span class="text">Mes Publications</span>
         </a>
       </li>
       <li>
-        <a href="listAssignation">
+        <a [routerLink]="['/listAssignation']">
           <i class='bx bx-paper-plane'></i>
           <span class="text">Tâches Assignées</span>
         </a>
@@ -68,7 +68,7 @@
     </ul>
     <ul class="side-menu">
       <li>
-        <a href="profilPaysan">
+        <a [routerLink]="['/profilPaysan']">
           <i class='bx bxs-cog' ></i>
           <span class="text">Settings</span>
         </a>

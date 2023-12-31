@@ -47,7 +47,7 @@
 
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
-      <a  class="btn btn-secondary"  href="ajoutUser" >Ajouter un Utilisateur</a>
+      <a  class="btn btn-secondary" [routerLink]="['/ajoutUser']" >Ajouter un Utilisateur</a>
 
       <div class="table-data">
 
@@ -82,11 +82,7 @@
                 <td>{{v.role}}</td>
 
 
-                  <!-- <td>
-                    <button type="button" class="status completed btn btn-warning" (click)="v.status === 'bloquer' ? unblockUser(v.id) : blockUser(v.id)">
-                      {{ v.status === 'bloquer' ? 'Débloquer' : 'Bloquer' }}
-                  </button>
-                  </td> -->
+
 
                   <td>
                     <button type="button" class="status completed btn btn-warning" (click)="toggleUserStatus(v)">
@@ -98,7 +94,7 @@
             <mat-paginator style="background-color: #28a745; color:#fff;" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
 
           </table>
-          
+
         </div>
 
       </div>

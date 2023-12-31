@@ -46,9 +46,9 @@
     <div class="container-xl px-4 mt-4">
 
       <nav class="nav nav-borders">
-      <a class="nav-link active ms-0" href="profilAdmin" >Profile</a>
+      <a class="nav-link active ms-0" [routerLink]="['/profilAdmin']" >Profile</a>
 
-      <a class="nav-link" href="AdminChangePassword" >Security</a>
+      <a class="nav-link" [routerLink]="['/AdminChangePassword']">Security</a>
 
       </nav>
       <hr class="mt-0 mb-4">
@@ -77,40 +77,36 @@
 
 
           <div class="row gx-3 mb-3">
-    
+
           <div class="col-md-6">
           <label class="small mb-1" for="inputFirstName">Prenom</label>
           <input class="form-control" id="inputFirstName" type="text" name="prenom" placeholder="Entrer Votre Prenom" [(ngModel)]="user.prenom">
           </div>
-    
+
           <div class="col-md-6">
           <label class="small mb-1" for="inputLastName">Nom</label>
           <input class="form-control" id="inputLastName" type="text" placeholder="Entrer votre Nom" name="nom" [(ngModel)]="user.nom">
           </div>
           </div>
-    
-    
+
+
           <div class="mb-3">
           <label class="small mb-1" for="inputEmailAddress">Email address</label>
-          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" 
+          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address"
           name="email" [(ngModel)]="user.email">
           </div>
-    
+
           <div class="row gx-3 mb-3">
-    
+
           <div class="col-md-6">
           <label class="small mb-1" for="inputPhone">Numéro de téléphone</label>
-          <input class="form-control" id="inputPhone" type="tel" placeholder="Enter votre numéro de téléphone" 
+          <input class="form-control" id="inputPhone" type="tel" placeholder="Enter votre numéro de téléphone"
           name="contact" [(ngModel)]="user.contact">
           </div>
-    
-          <!-- <div class="col-md-6">
-          <label class="small mb-1" for="inputBirthday">Profil</label>
-          <input class="form-control" id="inputBirthday" type="text" name="role" placeholder="Enter your birthday" 
-          [(ngModel)]="user.role">
-          </div> -->
+
+         
           </div>
-    
+
           <button class="btn btn-primary" type="submit">Enregistrer les changements</button>
           </form>
       </div>

@@ -48,7 +48,7 @@
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
 
-      <a  class="btn btn-secondary" href="assignationTache" style="background-color: #28a745; border-color: #28a745;" >Assignation Tache</a>
+      <a  class="btn btn-secondary" [routerLink]="['/assignationTache']" style="background-color: #28a745; border-color: #28a745;" >Assignation Tache</a>
 
       <div class="table-data">
         <div class="order">
@@ -77,10 +77,10 @@
                 <td >{{t.status}}</td>
                 <td >{{ getEmployeeName(t.employee.id) }}</td>
                 <td >{{ getTaskName(t.tache.idTache) }}</td>
-                
+
                 <!-- <td *ngFor="let e of employee">{{ e.prenom}}</td>
                 <td *ngFor="let ta of tache">{{ ta.nomTache}}</td> -->
-             
+
 
                 <!-- <td *ngFor="let e of employee">{{ e.prenom}}</td> -->
                 <!-- <td *ngFor="let ta of tache">{{ ta.nomTache}}</td> -->

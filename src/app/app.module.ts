@@ -2,6 +2,10 @@ import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/c
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from "angular-datatables";
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -183,7 +187,11 @@ import { DetailsPublicationsComponent } from './details-publications/details-pub
     HttpClientModule,
     HeaderPaysanModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

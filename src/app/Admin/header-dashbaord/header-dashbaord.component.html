@@ -1,23 +1,23 @@
 <section [ngClass]="status ? 'hide' : ''" id="sidebar">
-    <a class="brand" href="adminDashboard">
+    <a class="brand" [routerLink]="['/adminDashboard']">
 
       <img alt="" src="../../../assets/images/Am3.png" style="width: 210px; left: 90px; top: 100px;">
     </a>
     <ul class="side-menu top">
       <li class="active">
-        <a href="adminDashboard">
+        <a [routerLink]="['/adminDashboard']">
           <i class='bx bxs-dashboard' ></i>
           <span class="text">Dashboard</span>
         </a>
       </li>
       <li>
-        <a href="listeProjet">
+        <a [routerLink]="['/listeProjet']">
           <i class='fas fa-seedling'> &nbsp;</i>
            <span class="text">Les Demandes</span>
         </a>
       </li>
       <li>
-        <a href="listeUser">
+        <a [routerLink]="['/listeUser']">
           <i class='bx bxs-group'></i>
           <span class="text">Liste Utilisateurs</span>
         </a>
@@ -26,7 +26,7 @@
     </ul>
     <ul class="side-menu">
       <li>
-        <a href="profilAdmin">
+        <a [routerLink]="['/profilAdmin']">
           <i class='bx bxs-cog' ></i>
           <span class="text">Settings</span>
         </a>

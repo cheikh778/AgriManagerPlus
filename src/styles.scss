@@ -28,6 +28,8 @@ $AgriManagerPlus-theme: mat.define-light-theme((
   )
 ));
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~datatables.net-dt/css/jquery.dataTables.css";
+
 
 
 // Include theme styles for core and each component used in your app.

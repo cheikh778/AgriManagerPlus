@@ -101,4 +101,6 @@ export class AccueilComponent implements OnInit {
     const randomSpeed = 100 + Math.random() * 100;
     setTimeout(() => this.animateText(), this.isAdding ? randomSpeed : 50);
   }
+
+ 
 }

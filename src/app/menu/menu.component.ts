@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,10 +8,16 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  constructor(private router: Router) {}
+
 
   ngOnInit(): void {}
 
+  scrollToSection(sectionId: string): void {
+    this.router.navigate(['/accueil'], { fragment: sectionId });
+  }
 
- 
+
+
 
 }

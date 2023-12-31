@@ -14,22 +14,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/accueil/']"><i class="fas fa-home"></i> Accueil</a>
+          <a class="nav-link" [routerLink]="['/accueil']"><i class="fas fa-home"></i> Accueil</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" (click)="scrollToSection('apropos')"><i class="fas fa-info-circle"></i> À propos de nous</a>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'#apropos'"><i class="fas fa-info-circle"></i> À propos de nous</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['#services']" ><i class="fas fa-arrow-circle-down"></i> Nos services</a>
+          <a class="nav-link" (click)="scrollToSection('services')" ><i class="fas fa-arrow-circle-down"></i> Nos services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/publications']"><i class="fas fa-seedling"></i> Les Cultures</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/#contact']"><i class="fas fa-phone"></i> Contacts</a>
+          <a class="nav-link" (click)="scrollToSection('contacts')"><i class="fas fa-phone"></i> Contacts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['/#joinUsSection']"><i class="fas fa-signature"></i> Rejoins Nous</a>
+          <a class="nav-link"  (click)="scrollToSection('joinUs')"><i class="fas fa-signature"></i> Rejoins Nous</a>
         </li>
       </ul>
       <div class="d-flex">
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <!-- Boutons à droite -->
+
 
   </div>
 </nav>

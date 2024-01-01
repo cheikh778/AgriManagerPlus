@@ -50,7 +50,13 @@
 
     <a  class="btn btn-secondary" href="ajoutEmployee" >Ajout Employe</a>
 
-    <div class="table-data">
+    <div *ngIf="employe.length === 0" class="alert alert text-center">
+      <h2 class="text-danger">Aucun employé disponible.</h2>
+      <br>
+      <img src="../../../../assets/images/vide.gif" style="width: 500px;">
+    </div>
+
+    <div class="table-data" *ngIf="employe.length > 0">
 
       <div class="order">
 

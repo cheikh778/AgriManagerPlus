@@ -51,7 +51,13 @@
     
       <a  class="btn btn-success" href="ajoutParcelle" >Ajout Parcelle</a>
 
-      <div class="table-data">
+      <div *ngIf="parcelle.length === 0" class="alert alert text-center">
+        <h2 class="text-danger">Aucune parcelle disponible.</h2>
+        <br>
+        <img src="../../../../assets/images/vide.gif" style="width: 500px;">
+      </div>
+  
+      <div class="table-data" *ngIf="parcelle.length > 0">
         <div class="order">
           <div class="head">
             <h3>Listes des Parcelles Agricoles</h3>

@@ -49,7 +49,13 @@
 
       <a  class="btn btn-success" style="background: #28a745;" href="ajoutTache" >Ajout Tache</a>
 
-      <div class="table-data">
+      <div *ngIf="taches.length === 0" class="alert alert text-center">
+        <h2 class="text-danger">Aucun tache disponible.</h2>
+        <br>
+        <img src="../../../../assets/images/vide.gif" style="width: 500px;">
+      </div>
+  
+      <div class="table-data" *ngIf="taches.length > 0">
         <div class="order">
           <div class="head">
             <h3>Listes des Taches</h3>

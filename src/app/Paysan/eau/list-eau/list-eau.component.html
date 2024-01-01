@@ -50,7 +50,13 @@
 
       <a  class="btn btn-secondary" href="ajoutEau" style="background-color: #28a745; border-color: #28a745;" >Ajout Eau</a>
 
-      <div class="table-data">
+      <div *ngIf="eaux.length === 0" class="alert alert text-center">
+        <h2 class="text-danger">Aucune source d'eaux disponible.</h2>
+        <br>
+        <img src="../../../../assets/images/vide.gif" style="width: 500px;">
+      </div>
+  
+      <div class="table-data" *ngIf="eaux.length > 0">
         <div class="order">
           <div class="head">
             <h3>Listes des Eau</h3>

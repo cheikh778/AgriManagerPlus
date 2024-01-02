@@ -80,6 +80,11 @@ import { ListeTacheEnAttenteComponent } from './Employee/liste-tache-en-attente/
 import { ListeTacheValiderComponent } from './Employee/liste-tache-valider/liste-tache-valider.component';
 import { ValiderTachesComponent } from './Employee/valider-taches/valider-taches.component';
 import { AjoutImageTacheComponent } from './Employee/ajout-image-tache/ajout-image-tache.component';
+import { CreatePublicationComponent } from './Paysan/Publications/create-publication/create-publication.component';
+import { ListePublicationComponent } from './Paysan/Publications/liste-publication/liste-publication.component';
+import { DetailsPublicationComponent } from './Paysan/Publications/details-publication/details-publication.component';
+import { UpdatePublicationComponent } from './Paysan/Publications/update-publication/update-publication.component';
+import { DetailsPublicationsComponent } from './details-publications/details-publications.component';
 
 
 
@@ -163,6 +168,11 @@ import { AjoutImageTacheComponent } from './Employee/ajout-image-tache/ajout-ima
     ListeTacheValiderComponent,
     ValiderTachesComponent,
     AjoutImageTacheComponent,
+    CreatePublicationComponent,
+    ListePublicationComponent,
+    DetailsPublicationComponent,
+    UpdatePublicationComponent,
+    DetailsPublicationsComponent,
     
 
 

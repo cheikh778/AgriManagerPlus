@@ -1,0 +1,137 @@
+
+<header-paysan></header-paysan>
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu' ></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search' ></i></button>
+      </div>
+    </form>
+    <a class="notification" href="#">
+      <i class='bx bxs-bell' ></i>
+      <span class="num">8</span>
+    </a>
+    <a class="profile" href="#">
+      <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+    </a>
+  </nav>
+
+  <main>
+
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active" href="listePublication" style="color: #28a745;">Liste des Publications</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download' ></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
+    <div>
+      <a href="createPost" class="btn btn-secondary" style="background-color: #28a745; border-color: #28a745;">Publier une recolte</a>
+    </div>
+    <br>
+
+    <!-- publication-list.component.html -->
+<div class="row">
+  <!-- <div class="col-md-4">
+    <div class="card">
+      <img src="../../../../assets/images/9372006.jpg" class="card-img-top" alt="Image de la publication">
+      <div class="card-body">
+        <h5 class="card-title">Titre</h5>
+        <p class="card-text">Description</p>
+        <button class="btn btn-primary" >Modifier</button>&nbsp;
+        <button class="btn btn-secondary" >Détails</button>&nbsp;
+        <button class="btn btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col-md-4">
+    <div class="card">
+      <img src="../../../../assets/images/9372006.jpg" class="card-img-top" alt="Image de la publication">
+      <div class="card-body">
+        <h5 class="card-title">Titre</h5>
+        <p class="card-text">Description</p>
+        <button class="btn btn-primary" >Modifier</button>&nbsp;
+        <button class="btn btn-secondary" >Détails</button>&nbsp;
+        <button class="btn btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div> -->
+  <hr>
+  <h3>Tout les Publications</h3>
+  <hr>
+
+  <div class="col-md-4" *ngFor="let p of publication">
+    <div class="card">
+      <img src="{{p.photo}}" class="card-img-top" alt="Image de la publication">
+      <div class="card-body">
+        <h2 class="card-title">{{p.titrePUB}}</h2>
+        <h4 class="card-title">{{p.datePublication}}</h4>
+        <h5 class="card-title">{{p.idCulture.nom}}</h5>
+        <p class="card-text">{{p.description}}</p>
+        <button class="btn btn-primary" (click)="modifierPub(p.idPublication)">Modifier</button>&nbsp;
+        <button class="btn btn-secondary" (click)="publier(p)">Cliquer Pour publier</button>&nbsp;
+        <button class="btn btn-danger" (click)="deletePublication(p.idPublication)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h3>Culture Non Publiée</h3>
+  <hr>
+
+  <div class="col-md-4" *ngFor="let p of pubNonPublier">
+    <div class="card">
+      <img src="{{p.photo}}" class="card-img-top" alt="Image de la publication">
+      <div class="card-body">
+        <h2 class="card-title">{{p.titrePUB}}</h2>
+        <h4 class="card-title">{{p.datePublication}}</h4>
+        <h5 class="card-title">{{p.idCulture.nom}}</h5>
+        <p class="card-text">{{p.description}}</p>
+        <!-- <button class="btn btn-primary" (click)="modifierPub(p.idPublication)">Modifier</button>&nbsp;
+        <button class="btn btn-secondary" (click)="publier(p)">Cliquer Pour publier</button>&nbsp;
+        <button class="btn btn-danger" (click)="deletePublication(p.idPublication)">Supprimer</button> -->
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h3>Culture Publiée</h3>
+  <hr>
+  <div class="col-md-4" *ngFor="let p of pubPublier">
+    <div class="card">
+      <img src="{{p.photo}}" class="card-img-top" alt="Image de la publication">
+      <div class="card-body">
+        <h2 class="card-title">{{p.titrePUB}}</h2>
+        <h4 class="card-title">{{p.datePublication}}</h4>
+        <h5 class="card-title">{{p.idCulture.nom}}</h5>
+        <p class="card-text">{{p.description}}</p>
+        <!-- <button class="btn btn-primary" (click)="modifierPub(p.idPublication)">Modifier</button>&nbsp;
+        <button class="btn btn-secondary" (click)="publier(p)">Cliquer Pour publier</button>&nbsp;
+        <button class="btn btn-danger" (click)="deletePublication(p.idPublication)">Supprimer</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    </main>
+
+    </section>

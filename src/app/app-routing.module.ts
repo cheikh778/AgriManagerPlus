@@ -33,7 +33,6 @@ import { UpdateEmployeComponent } from './Paysan/Employe/update-employe/update-e
 //eau
 import { PasswordAdminComponent } from './Admin/password-admin/password-admin.component';
 import { ProfilAdminComponent } from './Admin/profil-admin/profil-admin.component';
-import { ConfirmationDialogComponent } from './Paysan/confirmation-dialog/confirmation-dialog.component';
 import { DashboardPComponent } from './Paysan/dashboard-p/dashboard-p.component';
 import { AjoutEauComponent } from './Paysan/eau/ajout-eau/ajout-eau.component';
 import { DetailsEauComponent } from './Paysan/eau/details-eau/details-eau.component';
@@ -71,13 +70,17 @@ import { AssignerTacheComponent } from './Paysan/AssignerTache/assigner-tache/as
 import { UpdateAssignationTacheComponent } from './Paysan/AssignerTache/update-assignation-tache/update-assignation-tache.component';
 import { DetailsAssignationTacheComponent } from './Paysan/AssignerTache/details-assignation-tache/details-assignation-tache.component';
 import { AssignationtacheListComponent } from './Paysan/AssignerTache/assignationtache-list/assignationtache-list.component';
+import { CreatePublicationComponent } from './Paysan/Publications/create-publication/create-publication.component';
+import { ListePublicationComponent } from './Paysan/Publications/liste-publication/liste-publication.component';
+import { DetailsPublicationsComponent } from './details-publications/details-publications.component';
+import { UpdatePublicationComponent } from './Paysan/Publications/update-publication/update-publication.component';
+import { DetailsPublicationComponent } from './Paysan/Publications/details-publication/details-publication.component';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
-  { path: 'publications', component: PublicationsComponent},
   { path: 'conditions', component:ConditionsComponent},
   { path: 'termes', component:TermesComponent},
   { path: 'login', component:LoginPageComponent },
@@ -116,29 +119,39 @@ const routes: Routes = [
   { path:'updateEau/:id', component:UpdateEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'eau-datails/:eauId', component:DetailsEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
   { path:'listeEau', component:ListEauComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  { path:'confirmation', component:ConfirmationDialogComponent},
+
 
    //materiel
    { path:'ajoutMateriel', component:AjoutMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'updateMateriel/:id', component:UpdateMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'materiel-datails/:eauId', component:DetailsMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'listeMateriel', component:ListMaterielComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-   { path:'confirmation', component:ConfirmationDialogComponent},
+
 
    //parcell
    { path:'ajoutParcelle', component:AjoutParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'updateParcelle/:id', component:UpdateParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'parcelle-datails/:eauId', component:DetailsParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
    { path:'listeParcelle', component:ListParcelleAgricoleComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-  //  { path:'confirmation', component:ConfirmationDialogComponent},
+  //
 
 
    //assignation tache
    { path:'assignationTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{roles: ['paysan', 'employee'] } },
-    { path:'confirmation', component:ConfirmationDialogComponent},
+    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role: 'paysan'} },
+      //['paysan', 'employee']} },
+
+    //publications partie paysan
+    { path:'createPost', component:CreatePublicationComponent},
+    { path:'listePublication', component:ListePublicationComponent},
+    { path:'updatePublication/:id', component:UpdatePublicationComponent},
+    { path:'detailsPublications', component:DetailsPublicationComponent},
+    //tout public
+    { path: 'publications', component: PublicationsComponent},
+    { path: 'details/:id', component:DetailsPublicationsComponent},
+
 
   //profil
   { path:'profilAdmin', component:ProfilAdminComponent, canActivate:[AuthGuard], data:{role:'admin'}},

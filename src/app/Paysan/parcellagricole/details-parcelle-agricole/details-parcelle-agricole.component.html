@@ -1,25 +1,69 @@
-<h2>Parcelle Details</h2> 
+<header-paysan>
+  <!-- Your existing code for the header goes here -->
+</header-paysan>
 
-<hr/>
-<div *ngIf="parcelle">
-  <div>
-    <label><b>Nom: </b></label> {{parcelle.parcelle_nom}}
-  </div>
-  <div>
-    <label><b>Description: </b></label> {{parcelle.parcelle_description}}
-  </div>
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a class="nav-link" href="#">Categories</a>
+    <form action="#">
+      <div class="form-input">
+        <input placeholder="Search..." type="search">
+        <button class="search-btn" type="button"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+    <div class="dropdown">
+      <a (click)="toggleNotificationDropdown()" class="notification" href="">
+        <i class='bx bxs-bell'></i>
+        <span class="num">8</span>
+      </a>
+      <div *ngIf="showNotificationDropdown" class="dropdown-content">
+        <!-- Dropdown Notification Content -->
+        <a href="#">Notification 1</a>
+        <a href="#">Notification 2</a>
+        <!-- Add more items as needed -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <a (click)="toggleProfileDropdown()" class="profile" href="">
+        <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+      </a>
+      <div *ngIf="showProfileDropdown" class="dropdown-content">
+        <!-- Dropdown Profile Content -->
+        <a href="#">Mon Profil</a>
+        <a href="#">Paramètres</a>
+        <a href="#">Déconnexion</a>
+      </div>
+    </div>
+  </nav>
 
-  <div>
-    <label><b>Type: </b></label> {{parcelle.parcelle_type}}
-  </div>
+  <!-- MAIN -->
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <ul class="breadcrumb">
+          <li><a href="#">Dashboard</a></li>
+          <li><i class='bx bx-chevron-right'></i></li>
+          <li><a class="active" href="#" style="color: #28a745;">Ajout D'une Parcelle Agricole</a></li>
+        </ul>
+      </div>
+      <a class="btn-download" href="#">
+        <i class='bx bxs-cloud-download'></i>
+        <span class="text">Download PDF</span>
+      </a>
+    </div>
 
-  <div>
-    <label><b>Location </b></label> {{parcelle.parcelle_location}}
-  </div>
-  
-</div>
+    <h2>Parcelle Details</h2>
+    <hr/>
+    <div *ngIf="parcelle" class="parcelle-details">
+      <div><label><b>Nom: </b></label> {{parcelle.parcelle_nom}}</div>
+      <div><label><b>Description: </b></label> {{parcelle.parcelle_description}}</div>
+      <div><label><b>Type: </b></label> {{parcelle.parcelle_type}}</div>
+      <div><label><b>Location </b></label> {{parcelle.parcelle_location}}</div>
+    </div>
 
-<br>
-<br> 
-
-
+  </main>
+</section>

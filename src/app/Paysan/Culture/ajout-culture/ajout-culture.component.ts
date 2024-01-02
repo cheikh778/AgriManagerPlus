@@ -68,7 +68,7 @@ export class AjoutCultureComponent {
   }
 
   redirectToCultureList() {
-    this._router.navigate(['listeCulture']);
+    this._router.navigate(['listeCultures']);
   }
 
   status = false;

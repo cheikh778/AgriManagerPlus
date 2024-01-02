@@ -33,22 +33,24 @@
 <div class="untree_co-section bg-light">
   <div class="container">
     <div class="row align-items-stretch">
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100" *ngFor="let p of publication">
         <div class="media-h d-flex h-100">
           <figure>
-            <img src="../../assets/images/recolte.png" alt="Image">
+            <img src="{{p.photo}}" alt="Image">
           </figure>
           <div class="media-h-body">
-            <h2 class="mb-3"><a class="text-primary" >Education for Tomorrow's Leaders</a></h2>
-            <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <!-- <h2 class="mb-3"><a class="text-primary" >{{p.paysanNom}}</a></h2> -->
+            <h4 class="mb-3"><a class="text-primary" >{{p.titrePUB}}</a></h4>
+            <div class="meta "><span class="icon-calendar mr-2"></span><span>{{p.datePublication}}, </span>  <span class="icon-person mr-2">{{p.paysan.nom}} {{p.paysan.prenom}}</span>
+            </div>
+            <p>{{p.description}}</p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><button (click)="detailsPub(p.idPublication)" class="btn btn-primary">En savoir plus</button></p>
 
           </div>
 
         </div>
       </div>
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+      <!-- <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
         <div class="media-h d-flex h-100">
           <figure>
             <img src="../../assets/images/recolte.png" alt="Image">
@@ -57,12 +59,12 @@
             <h2 class="mb-3"><a class="text-primary" >Enroll Your Kids This Summer to get 30% off</a></h2>
             <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="details" class="btn btn-primary">En savoir plus</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+      <!-- <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
         <div class="media-h d-flex h-100">
           <figure>
             <img src="../../assets/images/recolte.png" alt="Image">
@@ -71,11 +73,11 @@
             <h2 class="mb-3"><a class="text-primary" >Education for Tomorrow's Leaders</a></h2>
             <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="details" class="btn btn-primary">En savoir plus</a></p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+      </div> -->
+      <!-- <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
         <div class="media-h d-flex h-100">
           <figure>
             <img src="../../assets/images/recolte.png" alt="Image">
@@ -84,13 +86,13 @@
             <h2 class="mb-3"><a class="text-primary" >Enroll Your Kids This Summer to get 30% off</a></h2>
             <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="details" class="btn btn-primary">En savoir plus</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
+      <!-- <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="100">
         <div class="media-h d-flex h-100">
           <figure>
             <img src="../../assets/images/recolte.png" alt="Image">
@@ -99,11 +101,11 @@
             <h2 class="mb-3"><a class="text-primary" >Education for Tomorrow's Leaders</a></h2>
             <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="details" class="btn btn-primary">En savoir plus</a></p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
+      </div> -->
+      <!-- <div class="col-lg-6 mb-4"  data-aos="fade-up" data-aos-delay="200">
         <div class="media-h d-flex h-100">
           <figure>
             <img src="../../assets/images/recolte.png" alt="Image">
@@ -112,23 +114,13 @@
             <h2 class="mb-3"><a class="text-primary" >Enroll Your Kids This Summer to get 30% off</a></h2>
             <div class="meta "><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Untree.co</div>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">En savoir plus</a></p>
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="details" class="btn btn-primary">En savoir plus</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
-    <!-- <div class="row mt-5">
-      <div class="col-12 text-center">
-        <ul class="list-unstyled custom-pagination">
-          <li><a class="text-primary" >1</a></li>
-          <li class="active"><a >2</a></li>
-          <li><a >3</a></li>
-          <li><a >4</a></li>
-        </ul>
-      </div>
-    </div> -->
   </div>
 </div>
 

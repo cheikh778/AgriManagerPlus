@@ -1,0 +1,58 @@
+/* publication-details.component.css */
+.container {
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+.col-md-6 {
+  padding: 20px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.details-container {
+  position: relative;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: flex;
+  margin-top: 10px;
+}
+
+
+.icons a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #28a745;
+  transition: color 0.3s ease;
+}
+
+.icons a:hover {
+  color: #28a745;
+
+}
+
+.contact-owner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-top: 1px solid #dee2e6;
+  font-weight: bold;
+}

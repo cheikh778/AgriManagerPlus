@@ -61,7 +61,7 @@ export class UpdateCultureComponent {
   }
 
   redirectToCultureList() {
-    this.router.navigate(['listeCulture']);
+    this.router.navigate(['listeCultures']);
   }
 
   onSubmit() {

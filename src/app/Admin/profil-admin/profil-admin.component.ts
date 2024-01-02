@@ -113,7 +113,7 @@ export class ProfilAdminComponent {
   }
 
 
-
+  
   onFileSelected(event: any): void {
     this.photoFile = event.target.files[0] as File;
   }

@@ -106,6 +106,14 @@ export interface  ParcelleAgricole
 export interface  Publication
 {
 
+    idPublication : number;
+    idCulture : Culture;
+    description : string;
+    titrePUB : string;
+    photo : string;
+    paysan : User;
+    datePublication : Date;
+    status : string;
 }
 
 export interface  Materiel

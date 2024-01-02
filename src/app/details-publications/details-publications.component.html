@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<br><br><br>
+
+<!-- publication-details.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ publication.photo }}" class="img-fluid" alt="Image de la publication">
+    </div>
+    <div class="col-md-6 details-container">
+      <h2>Titre : {{ publication.titrePUB }}</h2>
+      <p>Description: {{ publication.description }}</p>
+      <p>Culture: {{ publication.idCulture.nom }}</p>
+      <p>Nom du Paysan: {{ publication.paysan.prenom }} {{ publication.paysan.nom }}</p>
+
+      <div class="contact-owner">
+        Contacter le Proprietaire:
+        <div class="icons">
+          <a href="https://wa.me/777026066" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:agrimanagerplus@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+          <a href="tel:777026066"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

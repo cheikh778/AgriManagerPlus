@@ -23,6 +23,8 @@ export class CorsInterceptor implements HttpInterceptor {
       'http://localhost:8081/api/demandeProjet/ajout',
       'http://localhost:8081/api/v1/users/change-password/',
       'http://localhost:8081/api/v1/users/reset-password',
+      'http://localhost:8081/api/publications/publier',
+      'http://localhost:8081/api/publications/details',
       // 'http://localhost:8081/api/v1/auth/authenticate',
 
       // Ajoutez d'autres URLs si nécessaire

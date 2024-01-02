@@ -41,10 +41,10 @@ export class UpdateAssignationTacheComponent {
 
     this.employeService.getEmployeeByPaysan().subscribe(
       {
-        next: (apps: User[]) => {
+        next: (apps) => {
           this.employe = apps;
         },
-        error: () => {
+        error: (err) => {
           this.errorMessage = "Erreur de requete";
         },
         complete: () => {
@@ -56,11 +56,11 @@ export class UpdateAssignationTacheComponent {
     this.tacheService.getTachesParPaysan().subscribe((taches: Tache[]) => this.taches = taches);
 
     this.assignationService.getAssignationById(assignationId).subscribe(
-      (assignation: AssignationTache) => {
+      (assignation) => {
         this.assigner = assignation;
         console.log("assigner",this.assigner)
       },
-      (error: any) => {
+      (error) => {
         console.error('Erreur lors de la récupération de l\'assignation', error);
       }
     );
@@ -70,10 +70,10 @@ export class UpdateAssignationTacheComponent {
     console.log('Formulaire mis à jour', this.assigner);
     this.assignationService.updateAssignation(this.assigner.assignationId, this.assigner)
       .subscribe(
-        () => {
+        (response) => {
           this._router.navigate(['listAssignation']);
         },
-        (error: { error: any; }) => {
+        (error) => {
           console.error('Erreur lors de la mise à jour', error);
           if (error.error) {
             console.error('Contenu de l\'erreur :', JSON.stringify(error.error, null, 2));

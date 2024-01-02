@@ -48,7 +48,7 @@
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
 
-      <a  class="btn btn-secondary" href="ajoutEau" style="background-color: #28a745; border-color: #28a745;" >Ajout Eau</a>
+      <a  class="btn btn-secondary" [routerLink]="['/ajoutEau']" style="background-color: #28a745; border-color: #28a745;" >Ajout Eau</a>
 
       <div *ngIf="eaux.length === 0" class="alert alert text-center">
         <h2 class="text-danger">Aucune source d'eaux disponible.</h2>

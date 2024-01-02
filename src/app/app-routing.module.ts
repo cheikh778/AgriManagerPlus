@@ -139,7 +139,7 @@ const routes: Routes = [
    { path:'assignationTache', component:AssignerTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'updateAssignation/:id', component:UpdateAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
     { path:'assignation-datails/:eauId', component:DetailsAssignationTacheComponent, canActivate:[AuthGuard], data:{role:'paysan'} },
-    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role: ['paysan', 'employee']} },
+    { path:'listAssignation', component:AssignationtacheListComponent, canActivate:[AuthGuard], data:{role: 'paysan'} },
 
     //publications partie paysan
     { path:'createPost', component:CreatePublicationComponent},

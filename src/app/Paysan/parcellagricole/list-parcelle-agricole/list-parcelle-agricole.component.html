@@ -49,7 +49,7 @@
       <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
 
     
-      <a  class="btn btn-success" href="ajoutParcelle" >Ajout Parcelle</a>
+      <a  class="btn btn-success" [routerLink]="['/ajoutParcelle']" >Ajout Parcelle</a>
 
       <div *ngIf="parcelle.length === 0" class="alert alert text-center">
         <h2 class="text-danger">Aucune parcelle disponible.</h2>

@@ -48,7 +48,7 @@
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
-      <a  class="btn btn-success" href="ajoutSemence" >Ajout Semence</a>
+      <a  class="btn btn-success"[routerLink]="['/ajoutSemence']">Ajout Semence</a>
 
       <br><br><br>
       <div *ngIf="semence.length === 0" class="alert alert text-center">

@@ -47,7 +47,7 @@
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
-      <a  class="btn btn-success" style="background: #28a745;" href="ajoutTache" >Ajout Tache</a>
+      <a  class="btn btn-success" style="background: #28a745;" [routerLink]="['/ajoutTache']">Ajout Tache</a>
 
       <div *ngIf="taches.length === 0" class="alert alert text-center">
         <h2 class="text-danger">Aucun tache disponible.</h2>

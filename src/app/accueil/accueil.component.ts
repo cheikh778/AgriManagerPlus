@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { DemandeValidationProjetService } from '../demande-validation-projet.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent implements AfterViewInit {
+
+  @ViewChild('aproposSection') aproposSection!: ElementRef;
+  @ViewChild('servicesSection') servicesSection!: ElementRef;
+  @ViewChild('contactsSection') contactsSection!: ElementRef;
+  @ViewChild('joinUsSection') joinUsSection!: ElementRef;
 
   demande = {
     nomComplet: '',
@@ -20,7 +26,31 @@ export class AccueilComponent implements OnInit {
   message: string | undefined;
   messageError: string |undefined;
 
-  constructor(private demandeService: DemandeValidationProjetService, private _router: Router) {}
+  constructor(private demandeService: DemandeValidationProjetService, private _router: Router, private route: ActivatedRoute, private router: Router) {}
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        this.scrollToSection(fragment);
+      }
+    });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          this.scrollToSection(fragment);
+        }
+      }
+    });
+  }
+
+  private scrollToSection(sectionId: string): void {
+    const sectionElement = (this as any)[sectionId + 'Section']?.nativeElement;
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 
   demandeValidation() {
     console.log('Formulaire soumis', this.demande);
@@ -49,6 +79,8 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit() {
     this.animateText();
+
+
   }
 
   animateText() {
@@ -101,4 +133,6 @@ export class AccueilComponent implements OnInit {
     const randomSpeed = 100 + Math.random() * 100;
     setTimeout(() => this.animateText(), this.isAdding ? randomSpeed : 50);
   }
+
+
 }

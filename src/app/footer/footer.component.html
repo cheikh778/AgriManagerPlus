@@ -6,11 +6,11 @@
           <div class="col-md-4">
               <h4>Menu</h4>
               <ul class="list-unstyled">
-                  <li><a href="#accueil" class="text-white">Accueil</a></li>
-                  <li><a href="#apropos" class="text-white">À propos de nous</a></li>
-                  <li><a href="#services" class="text-white">Nos services</a></li>
-                  <li><a href="cultures.html" class="text-white">Les Cultures</a></li>
-                  <li><a href="#contact" class="text-white">Contacts</a></li>
+                  <li><a [routerLink]="['/accueil']" class="text-white">Accueil</a></li>
+                  <li><a (click)="scrollToSection('apropos')" class="text-white">À propos de nous</a></li>
+                  <li><a (click)="scrollToSection('services')" class="text-white">Nos services</a></li>
+                  <li><a [routerLink]="['/publications']" class="text-white">Les Cultures</a></li>
+                  <li><a (click)="scrollToSection('contacts')" class="text-white">Contacts</a></li>
               </ul>
           </div>
 
@@ -18,9 +18,9 @@
           <div class="col-md-4">
               <h4>Informations</h4>
               <ul class="list-unstyled">
-                  <li><a href="blog" class="text-white">Blog</a></li>
-                  <li><a href="conditions" class="text-white">Conditions & Termes</a></li>
-                  <li><a href="termes" class="text-white">Politiques de Confidentialité</a></li>
+                  <li><a [routerLink]="['/blog']" class="text-white">Blog</a></li>
+                  <li><a [routerLink]="['/conditions']" class="text-white">Conditions & Termes</a></li>
+                  <li><a [routerLink]="['/termes']" class="text-white">Politiques de Confidentialité</a></li>
               </ul>
           </div>
 

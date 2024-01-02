@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
+import { Component,AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MaterielService } from 'src/app/materiel.service';
 import { Materiel } from 'src/app/modeles';
 
+
+declare var $: any;
 @Component({
   selector: 'app-list-materiel',
   templateUrl: './list-materiel.component.html',
   styleUrls: ['./list-materiel.component.scss']
 })
-export class ListMaterielComponent {
+export class ListMaterielComponent implements AfterViewInit{
   materiel : Materiel[] = [];
 
   errorMessage = "";
   sucessMessage= "";
 
+
   constructor(private materialService: MaterielService,private _router: Router){}
+
+  ngAfterViewInit(): void {
+    $(document).ready(() => {
+      $('#materielTable').DataTable();
+    });
+  }
 
   ngOnInit(): void {
     this.materialService.getMaterialParPaysan().subscribe(
@@ -23,7 +32,7 @@ export class ListMaterielComponent {
     },
     error:(err) =>{
       console.log("Erreur de requete")
-      
+
     },
     complete:() =>{
       console.log("Requete valider")
@@ -60,7 +69,7 @@ export class ListMaterielComponent {
         setTimeout(() => {
 
           this.redirectToMaterielList();
-          
+
         }, 2000);
        this.getEmployees();
       },
@@ -85,3 +94,4 @@ export class ListMaterielComponent {
     this._router.navigate(['materiel-datails', id]);
   }
 }
+

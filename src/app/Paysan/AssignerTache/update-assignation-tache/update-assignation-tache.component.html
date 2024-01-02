@@ -62,66 +62,37 @@
       </a>
     </div>
 
-    <!-- <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
-    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div> -->
-   
-
-          <div class="table-data">
-
-            <div class="order">
-              <h1>Assignation Tache</h1>
-
-              <div class="head">
-                <form  method="POST" #etuForm="ngForm" (ngSubmit)="updateForm()" class="form-ajout">
-                  
-                  
-                  <div class="column">
-                    <label for="employee">Employee:</label>
-                    <select name="employee" [(ngModel)]="assigner.employee">
-                      <option *ngFor="let employee of employe" [ngValue]="employee">{{ employee.prenom }}</option>
-                    </select>
-                </div>
-                
-
-                  <div class="column">
-                    <label for="tache">Tache:</label>
-                  <select name="tache" [(ngModel)]="assigner.tache">
-                    <option *ngFor="let tache of taches" [ngValue]="tache">{{ tache.nomTache }}</option>
-                  </select>
-                </div>
-                 
-                
-                  <div class="column">
-                    <label for="dateDebut">Date de début :</label>
- 
-                  <input type="date" class="form-control" id="dateDebut" [(ngModel)]="assigner.dateDebut" name="dateDebut" required>
-
-                 
-                </div>
-
-                <div class="column">
-                  <label for="dateFin">Date de Fin :</label>
-
-                <input type="date" class="form-control" id="dateFin" [(ngModel)]="assigner.dateFin" name="dateFin" required>
-
-               
-              </div>
-                
-                
-                
-              <!-- <div class="column">
-                <label for="name">statu</label>
-                <input type="text" id="name" name="status" [(ngModel)]="assigner.status" required="true" >
-            </div> -->
-                
-                  <button type="submit" >Create Assignation</button>
-                </form>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
 
-                </div>
+    <div class="table-data">
+      <div class="order">
+        <h1>Mise à jour Assignation Tache</h1>
+
+        <div class="head">
+          <form method="POST" (ngSubmit)="updateForm()" class="form-ajout">
+            <!-- ... autres champs du formulaire ... -->
+
+            <div class="column">
+              <label for="employee">Employee:</label>
+              <select name="employee" [(ngModel)]="assigner.employee">
+                <option *ngFor="let employee of employe" [ngValue]="employee" [selected]="employee.id === assigner.employee.id">{{ employee.prenom }}</option>
+              </select>
             </div>
-          </div>
 
+            <div class="column">
+              <label for="tache">Tache:</label>
+              <select name="tache" [(ngModel)]="assigner.tache">
+                <option *ngFor="let tache of taches" [ngValue]="tache" [selected]="tache.idTache === assigner.tache.idTache">{{ tache.nomTache }}</option>
+              </select>
+            </div>
+
+            <button type="submit">Mettre à jour Assignation</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
   </main>
@@ -172,4 +143,4 @@
 
 
 
-  
+

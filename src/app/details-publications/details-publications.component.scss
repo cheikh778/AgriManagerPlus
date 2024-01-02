@@ -8,14 +8,17 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .col-md-6 {
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .img-fluid {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -33,7 +36,6 @@ h2 {
   margin-top: 10px;
 }
 
-
 .icons a {
   font-size: 24px;
   margin-right: 10px;
@@ -42,8 +44,7 @@ h2 {
 }
 
 .icons a:hover {
-  color: #28a745;
-
+  color: #218838;
 }
 
 .contact-owner {
@@ -55,4 +56,11 @@ h2 {
   padding: 10px;
   border-top: 1px solid #dee2e6;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    width: 100%;
+    padding: 10px;
+  }
 }

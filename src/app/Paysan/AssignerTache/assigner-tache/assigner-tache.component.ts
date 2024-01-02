@@ -72,6 +72,7 @@ export class AssignerTacheComponent implements OnInit {
     this.assignationService.createAssignation(this.assigner)
     .subscribe(
       (response) => {
+        // this.assigner.dateDebut=new Date();
         this._router.navigate(['listAssignation']);
       },
       (error) => {

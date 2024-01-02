@@ -52,7 +52,7 @@
           </li>
           <li><i class='bx bx-chevron-right' ></i></li>
           <li>
-            <a class="active" href="#" style="color: #28a745;">Ajout D'une Culture</a>
+            <a class="active"  style="color: #28a745;">Ajout D'une Culture</a>
           </li>
         </ul>
       </div>
@@ -64,7 +64,7 @@
 
     <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
     <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
-   
+
 
           <div class="table-data">
 
@@ -80,20 +80,11 @@
                       </div>
                       <div class="column">
                           <label for="email">Date de début</label>
-                          <input type="date" id="form6Example4" 
+                          <input type="date" id="form6Example4"
                           name="dateDebut" [(ngModel)]="culture.dateDebut" id="email" placeholder="Your email here">
                       </div>
                   </div>
-                  <!-- <div class="row">
-                      <div class="column">
-                          <label for="subject">Subject</label>
-                          <input type="text" id="subject" placeholder="Your subject here">
-                      </div>
-                      <div class="column">
-                          <label for="contact">Contact Number</label>
-                          <input type="tel" id="contact" placeholder="Your phone number here">
-                      </div>
-                  </div> -->
+                  
                   <div class="row">
                       <div class="column">
                           <label for="issue">Description du projet</label>

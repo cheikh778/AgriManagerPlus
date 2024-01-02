@@ -48,9 +48,14 @@
       <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div *ngIf="sucessMessage" class="alert alert-success">{{ sucessMessage }}</div>
 
-      <a  class="btn btn-success" style="background-color: #28a745; border-color: #28a745;" href="ajoutMateriel" >Ajout Materiel</a>
-
-      <div class="table-data">
+      <a  class="btn btn-success" style="background-color: #28a745; border-color: #28a745;"  [routerLink]="['/ajoutMateriel']" >Ajout Materiel</a>
+      <div *ngIf="materiel.length === 0" class="alert alert text-center">
+        <h2 class="text-danger">Aucun materiel disponible.</h2>
+        <br>
+        <img src="../../../../assets/images/vide.gif" style="width: 500px;">
+      </div>
+  
+      <div class="table-data" *ngIf="materiel.length > 0">
         <div class="order">
           <div class="head">
             <h3>Listes des Materiels Agricoles</h3>
@@ -85,6 +90,9 @@
         </div>
 
       </div>
+
+
+
 
 
     </main>

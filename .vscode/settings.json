@@ -3,6 +3,8 @@
         "ENCOURS",
         "liste",
         "paysan",
-        "semence"
-    ]
+        "semence",
+        "toastr"
+    ],
+    "DockerRun.DisableDockerrc": true
 }

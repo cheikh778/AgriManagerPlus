@@ -96,7 +96,7 @@ export class ListeProjetEnAttenteComponent {
   <body>
       <div id="container">
           <header>
-              <img src="https://i.postimg.cc/7Z73Hwq1/Am1.jpg" alt="Logo AgriManager+">
+              <img src="https://i.postimg.cc/zXp7t32d/logoAM.png" alt="Logo AgriManager+">
           </header>
           <main>
               <h1>Bienvenue dans AgriManager+ !</h1>

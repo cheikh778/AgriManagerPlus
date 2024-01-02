@@ -20,15 +20,15 @@ $AgriManagerPlus-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$AgriManagerPlus-theme: mat.define-light-theme((
+$AgriManagerPlus-theme: mat.define-light-theme(
   color: (
     primary: $AgriManagerPlus-primary,
     accent: $AgriManagerPlus-accent,
     warn: $AgriManagerPlus-warn,
   )
 ));
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~datatables.net-dt/css/jquery.dataTables.css";
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+// @import "~datatables.net-dt/css/jquery.dataTables.css";
 
 
 

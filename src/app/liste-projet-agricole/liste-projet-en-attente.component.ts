@@ -102,11 +102,11 @@ export class ListeProjetEnAttenteComponent {
               <h1>Bienvenue dans AgriManager+ !</h1>
               <p>Cher(e) ${nom} ,</p>
               <p>Nous sommes ravis de vous accueillir dans la communauté AgriManager+ ! Merci de faire partie de notre plateforme dédiée à la gestion agricole avancée.</p>
-              <a href="http://localhost:4200/accueil" class="visit-button">Visitez notre site</a>
+              <a href="http://localhost:4200/#/accueil" class="visit-button">Visitez notre site</a>
           </main>
           <footer>
               <p>&copy; 2023 AgriManager+. Tous droits réservés.</p>
-              <a href="http://localhost:4200/register">S'inscrire</a>
+              <a href="http://localhost:4200/#/register">S'inscrire</a>
           </footer>
       </div>
   </body>
@@ -116,7 +116,7 @@ export class ListeProjetEnAttenteComponent {
     `,
 
     }
-    this.validerSevice.validerProjet(id).subscribe(
+    this.validerSevice.valider(id,mail,envoie).subscribe(
       response => {
 
 
@@ -129,15 +129,15 @@ export class ListeProjetEnAttenteComponent {
       }
     );
 
-    this.validerSevice.envoieEmail(mail,envoie).subscribe(
-        response => {
-          console.log('Envoie mail reussi', response);
-        },
-        error => {
-          // Gérer les erreurs éventuelles
-          console.error('Erreur lors de lenvoie de mail', error);
-        }
-      )
+    // this.validerSevice.envoieEmail(mail,envoie).subscribe(
+    //     response => {
+    //       console.log('Envoie mail reussi', response);
+    //     },
+    //     error => {
+    //       // Gérer les erreurs éventuelles
+    //       console.error('Erreur lors de lenvoie de mail', error);
+    //     }
+    //   )
   }
 
 

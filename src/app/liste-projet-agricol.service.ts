@@ -14,6 +14,9 @@ export class ListeProjetAgricolService {
 
   }
 
+  private apiUrl = 'http://localhost:8081/api/demandeProjet/valider';
+
+
   getListeProjetValider() : Observable<ValidationProjet[]>{
     return this.__httpClient.get<ValidationProjet[]>("http://localhost:8081/api/demandeProjet/listerProjetValider");
 
@@ -22,6 +25,11 @@ export class ListeProjetAgricolService {
   validerProjet(id: number) {
     const numericId = parseInt(id.toString(), 10);
     return this.__httpClient.post('http://localhost:8081/api/demandeProjet/validerStatus/'+numericId, {});
+  } 
+  valider(id: number,mail: string,data: any) {
+    //const numericId = parseInt(id.toString(), 10);
+    const url = `${this.apiUrl}/${mail}/${id}`;
+    return this.__httpClient.post(url, data);
   } 
 
   // listeEnAttente(data: any): Observable<ValidationProjet[]>{

@@ -17,7 +17,7 @@ export class RegisterPageComponent {
       email: this.builder.control('', [Validators.required, Validators.email]),
       password: this.builder.control('', Validators.required),
       photo: this.builder.control('indefini'),
-    role:  this.builder.control('client'),
+    role:  this.builder.control('paysan'),
   });
 
   userForm: FormGroup;
